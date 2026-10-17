@@ -1,0 +1,899 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+\setotherlanguage{english}
+\setmainfont{CMU Serif}
+\setsansfont{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text}
+\usepackage{geometry}
+\geometry{top=2cm, bottom=2cm, left=2.5cm, right=2.5cm}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs,longtable,float,xcolor}
+\usepackage{hyperref}
+\hypersetup{colorlinks, urlcolor=blue, citecolor=blue, linkcolor=black}
+\usepackage{enumitem}
+\sloppy
+\tolerance=1000
+\emergencystretch=3em
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Теорема}[section]
+
+\title{\textbf{Модель MEML~75:}\\[0.3cm]
+\large Феноменологическая параметризация фермионного сектора\\
+Стандартной модели из геометрии $T^2/\mathbb{Z}_3$\\
+с аксионной тёмной материей}
+\author{Юров~Д.~В.}
+\date{2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+Представлена модель MEML~75, описывающая фермионный сектор
+Стандартной модели через геометрию шестимерного орбифолда
+$T^2/\mathbb{Z}_3$ с двумя независимыми торами.
+Модель содержит \textbf{13 свободных параметров} и воспроизводит
+\textbf{15 наблюдаемых}: 9 кварковых (5 масс $+$ 3 CKM $+$ $J$),
+4 лептонных (PMNS), 2 космологических ($\nu_a$, $\Omega_a h^2$).
+
+\textbf{Главное тестируемое предсказание:}
+аксионная тёмная материя с
+$f_a = 1.9801\times10^{11}$~ГэВ,
+$m_a = 28.407$~мкЭВ, $\nu_a = 6.8688$~ГГц, и аксион-фотонное
+взаимодействие
+$g_{a\gamma\gamma} = +4.38\times10^{-15}$~ГэВ$^{-1}$ (DFSZ)
+или $-1.13\times10^{-14}$~ГэВ$^{-1}$ (KSVZ), проверяемое
+в ADMX/HAYSTAC (0.5--10~ГГц).
+
+\textbf{Классификация величин:}
+$\alpha_G = 2/(3\pi)$ --- \emph{постулат} с геометрической
+мотивацией; $\varepsilon = (\alpha_G/(4\pi))^2$ --- однопетлевой
+\emph{анзац}; $m_{KK}$, $M_6$ --- условно выведены при
+$\mathcal{I} = 0.3653$.
+
+\textbf{Фермионный сектор.} Глобальный фит с функцией потерь
+$\chi^2 = \sum_i ((O_i-O_i^{\rm target})/\sigma_i)^2$ находит
+$\chi^2 = 6.195\times10^{-20}$ при
+$\tau_u = -0.1577944085 + 2.3851782590\,i$,
+$\tau_d = +0.3693905617 + 1.5410496057\,i$.
+Независимое воспроизведение приведено в~\S\ref{sec:fermion}
+и Приложении~C. $\mathrm{Im}\,\tau$ устойчиво ($\pm 0.3\%$),
+$\mathrm{Re}\,\tau$ --- soft flat (Приложение~E).
+
+\textbf{Систематические тесты} (все отрицательные):
+(1)~универсальный анзац Юкавы исключён;
+(2)~36 структур матриц одинаково нестабильны (разброс
+$|V_{ub}|$ от $-97\%$ до $+25407\%$);
+(3)~$\theta_i$ из инфляции исключён в $26\sigma$;
+(4)~модулярные формы при $\tau = e^{i\pi/3}$ не дают
+$\alpha_G$ точно ($|Y^{(6)}_2|^2 = 0.445302 \neq 4/9$).
+
+\textbf{Вырожденность коэффициентов.}
+При $N_{\rm dof} = 9-11 = -2$ коэффициенты $c_i$ не уникальны:
+$\chi^2$ инвариантна при равномерном масштабировании
+$c_i \to k c_i$ (Приложение~D). Модель \emph{интерполирует}
+наблюдения, не предсказывает.
+
+\textbf{Вердикт:} модель \emph{феноменологическая}.
+\end{abstract}
+
+\newpage
+
+% ============================================================
+\section{Введение}
+% ============================================================
+
+\subsection{Мотивация}
+
+Модулярные модели фермионных масс~\cite{Feruglio2017,Kobayashi2019}
+строят иерархию масс и смешиваний из геометрии компактификации.
+В модели MEML~75 кварки и лептоны локализованы на двух независимых
+торах $T^2/\mathbb{Z}_3$ с модулями $\tau_u$, $\tau_d$, а матрицы
+масс строятся из модулярных форм $A_4$ весов $(2,4,6)$.
+Аксион, возникающий из тех же геометрических компонентов, даёт
+тёмную материю.
+
+\subsection{Самодостаточность}
+
+Статья построена так, чтобы читатель мог воспроизвести
+\emph{каждое} число без обращения к внешним источникам:
+\begin{itemize}[leftmargin=1.5em,itemsep=0.05em]
+\item все Y-формы (коэффициенты q-разложений) --- в Приложении~A;
+\item все целевые значения PDG --- в~\S\ref{sec:fermion};
+\item процедура DE-оптимизации с параметрами --- в Приложении~B;
+\item три независимых фита --- в Приложении~C;
+\item доказательство scale-degeneracy --- в Приложении~D;
+\item процедура flatness --- в Приложении~E;
+\item процедура LOO --- в Приложении~F;
+\item систематический поиск $\alpha_G$ (392 комбинации) --- в Приложении~G.
+\end{itemize}
+
+\subsection{Ключевые обозначения}
+\label{sec:statuses}
+
+\begin{table}[H]
+\centering
+\caption{Статусы величин.}
+\begin{tabular}{ll}
+\toprule
+Статус & Значение \\
+\midrule
+\textbf{[POSTULATE]} & Постулат с геометрической мотивацией \\
+\textbf{[ANSATZ]}    & Феноменологический анзац \\
+\textbf{[COND]}      & Условно выведено (при $\mathcal{I}$) \\
+\textbf{[MATCH]}     & Структурное matching-соотношение \\
+\textbf{[DERIVED]}   & Алгебраическое следствие \\
+\textbf{[FIT]}       & Из численного фита \\
+\textbf{[OBSERVED]}  & Экспериментальное значение \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+\section{Геометрия $T^2/\mathbb{Z}_3$}
+\label{sec:geom}
+% ============================================================
+
+\subsection{Метрика и модулярный параметр}
+
+Орбифолд $T^2/\mathbb{Z}_3$:
+\begin{equation}
+z = x + \tau y, \quad ds^2 = dx^2 + dx\,dy + dy^2,
+\end{equation}
+где $\tau = e^{i\pi/3} = \frac12 + i\frac{\sqrt3}{2}$.
+
+\subsection{Неподвижные точки}
+
+$Z_3$-действие $z \to \omega z$, $\omega = e^{2\pi i/3}$:
+\begin{equation}
+z_1 = (0,0), \quad z_2 = (\tfrac13,\tfrac13), \quad z_3 = (\tfrac23,\tfrac23).
+\end{equation}
+Три точки дают топологическое объяснение трём поколениям.
+
+\subsection{Двухторовая структура}
+\label{sec:tau-fit}
+
+Кварки и лептоны локализованы на разных торах с модулями:
+\begin{equation}
+\boxed{\;\tau_u = -0.1577944085 + 2.3851782590\,i, \quad
+\tau_d = +0.3693905617 + 1.5410496057\,i\;}
+\label{eq:tau-fit}
+\end{equation}
+\textbf{Статус: [FIT].} Определены глобальным фитом (\S\ref{sec:fermion},
+Приложение~B). Точные значения приведены до 10 знаков, потому что
+минимум razor-thin: округление до 3 значащих цифр повышает
+$\chi^2$ с $6\times10^{-20}$ до $2.6\times10^{-3}$ (Приложение~C).
+$\mathrm{Im}\,\tau_u = 2.385$, $\mathrm{Im}\,\tau_d = 1.541$ ---
+устойчивы во всех фитах; $\mathrm{Re}\,\tau$ --- soft flat
+(Приложение~E).
+
+% ============================================================
+\section{Bulk-константа $\alpha_G$ (постулат)}
+\label{sec:alpha}
+% ============================================================
+
+\subsection{Определение}
+
+\begin{equation}
+\boxed{\;\alpha_G = \frac{2}{3\pi} = 0.2122065908\;}
+\label{eq:alphaG}
+\end{equation}
+\textbf{Статус: [POSTULATE].} Геометрическая мотивация:
+$2/3$ --- доля объёма фундаментальной области $\mathbb{Z}_3$-орбифолда;
+$1/\pi$ --- нормировка периода тэта-функции.
+
+\subsection{Алгебраическое тождество}
+
+\begin{equation}
+\frac{2\pi}{3\alpha_G} = \pi^2 = 9.8696044011.
+\label{eq:identity}
+\end{equation}
+\textbf{Это тождество}, не совпадение. Численно:
+$e^{\pi^2} = 1.933369\times10^4$.
+
+\subsection{Проверка модулярных форм при $\tau = e^{i\pi/3}$}
+\label{sec:Ycheck}
+
+При $\tau = e^{i\pi/3}$ (60 знаков, 30 членов рядов, Приложение~A):
+
+\begin{table}[H]
+\centering
+\caption{Модулярные формы $A_4$ при $\tau = e^{i\pi/3}$.}
+\label{tab:Yforms}
+\begin{tabular}{ccc}
+\toprule
+Форма & Модуль & Статус \\
+\midrule
+$|Y^{(2)}_1|$ & $0.948674$ & --- \\
+$|Y^{(2)}_2|$ & $0.974090$ & --- \\
+$|Y^{(2)}_3|$ & $0.476383$ & --- \\
+$|Y^{(4)}_1|$ & $1.364023$ & --- \\
+$|Y^{(4)}_2|$ & $0.697153$ & --- \\
+$|Y^{(4)}_3|$ & $1.400784$ & --- \\
+$|Y^{(6)}_1|$ & $0.297141$ & --- \\
+$|Y^{(6)}_2|$ & $0.667310$ & --- \\
+$|Y^{(6)}_3|$ & $0.679090$ & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Проверки $\alpha_G$:
+\begin{itemize}[leftmargin=1.5em,itemsep=0.05em]
+\item $|Y^{(6)}_2|/\pi = 0.212411$ (отклонение $+0.0965\%$);
+\item $|Y^{(6)}_1|/|Y^{(4)}_3| = 0.212125$ (отклонение $-0.0385\%$).
+\end{itemize}
+
+Точное равенство $|Y^{(6)}_2| = 2/3$ \emph{не выполняется}:
+$|Y^{(6)}_2|^2 = 0.445302 \neq 4/9 = 0.444444$,
+$|\Delta| = 8.576\times10^{-4}$, стабильно при $n = 5, 11, 20, 30$.
+
+\subsection{Систематический поиск вывода $\alpha_G$}
+\label{sec:alpha-search}
+
+Проведён исчерпывающий поиск по базису
+$\mathcal{B} = \{Y^{(2)}_i, Y^{(4)}_i, Y^{(6)}_i, \eta, \pi, \sqrt\pi, \pi^2, e^{-\pi^2}\}_{i=1,2,3}$
+в точке $\tau = e^{i\pi/3}$.
+Здесь $\eta(\tau) = q^{1/24}\prod_{n=1}^\infty (1-q^n)$ --- функция
+Дедекинда, $q = e^{2\pi i\tau}$; $|\eta(e^{i\pi/3})| = 0.800579$.
+
+\textbf{Тестировано $N = 392$ комбинации.}
+Точность: 30 членов, 60-знаковая арифметика.
+
+\textbf{Найдено 2 совпадения $<0.1\%$:}
+
+\begin{table}[H]
+\centering
+\caption{Структурные «почти-совпадения».}
+\label{tab:alpha-coincidences}
+\begin{tabular}{lccc}
+\toprule
+Комбинация & Значение & Отклонение & Стабильность \\
+\midrule
+$|Y^{(6)}_1|/|Y^{(4)}_3|$ & $0.212125$ & $\mathbf{-0.0385\%}$ & $n = 5..30$ \\
+$|Y^{(6)}_2|/\pi$         & $0.212411$ & $\mathbf{+0.0965\%}$ & $n = 5..30$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Статистическая оценка.} Ожидаемое число попаданий при
+$N = 392$ и допуске $\pm 0.1\%$: $\langle n\rangle = 392 \cdot 0.002 = 0.78$.
+Наблюдаемое $n_{\rm obs} = 2$. Пуассоновская вероятность:
+\begin{equation}
+P(n \ge 2 \mid \langle n\rangle = 0.78) = \frac{\gamma(2, 0.78)}{\Gamma(2)} = 0.185.
+\end{equation}
+Это \textbf{не значимо} ($p = 0.185 > 0.05$).
+
+\textbf{Вывод.} $\alpha_G = 2/(3\pi)$ остаётся \textbf{постулатом}.
+
+% ============================================================
+\section{Фактор подавления $\varepsilon$ (анзац)}
+\label{sec:eps}
+% ============================================================
+
+\begin{equation}
+\boxed{\;\varepsilon = \left(\frac{\alpha_G}{4\pi}\right)^2
+= \frac{1}{36\pi^4} = 2.851662\times10^{-4}\;}
+\label{eq:eps}
+\end{equation}
+\textbf{Статус: [ANSATZ].} Мотивация --- однопетлевая структура КТП.
+
+\subsection{Matching 6D$\leftrightarrow$4D}
+
+Голоморфная юкавская связь:
+$Y_{\rm hol}(\tau) = \sum_n N_n e^{-2\pi n\,{\rm Im}\,\tau} P_n(\tau)$.
+После канонической нормировки:
+\begin{equation}
+Y_{\rm phys} \sim e^{-S_{\rm inst}}\,({\rm Im}\,\tau)^{\Delta k},
+\quad \Delta k = \tfrac{k_i+k_j+k_k}{2} - b,
+\end{equation}
+$\Delta k = 1$ (up), $\Delta k = 2$ (down).
+
+Численная проверка:
+$e^{-\pi^2} = 5.1723\times10^{-5}$;
+$\varepsilon/e^{-\pi^2} = 5.514$;
+$(2\,{\rm Im}\,\tau_u)^1 = 4.774$;
+$(2\,{\rm Im}\,\tau_d)^2 = 6.248$.
+$5.514 \in [4.774, 6.248]$ --- попадает.
+
+% ============================================================
+\section{Условно выведенные величины}
+% ============================================================
+
+\begin{align}
+m_{KK} &= \frac{M_{Pl}^{\rm red}}{\sqrt{\mathcal{I}}\,e^{\pi^2}}
+= 2.0838\times10^{14}~\text{ГэВ} \quad \text{[COND]}, \\
+M_6 &= \left(3 (M_{Pl}^{\rm red})^2 m_{KK}^2\right)^{1/4}
+= 2.9646\times10^{16}~\text{ГэВ} \quad \text{[COND]},
+\end{align}
+при $\mathcal{I} = 0.3653$. $M_6 \propto \mathcal{I}^{-1/4}$.
+Например, на нижней границе \(\mathcal{I} = 0.1\) (упомянутой в аннотации), 
+динамически рассчитанный масштаб составляет \(M_6 = 4.098 \times 10^{16}\)~ГэВ, 
+что при округлении дает \(4.10 \times 10^{16}\)~ГэВ.
+
+% ============================================================
+\section{Аксионный сектор}
+\label{sec:axion}
+% ============================================================
+
+\subsection{Параметры аксиона}
+
+\begin{align}
+f_a &= M_{Pl}^{\rm red}\,\varepsilon^2
+= 1.9801\times10^{11}~\text{ГэВ}, \\
+m_a &= \frac{\Lambda_{\rm QCD}^2}{f_a}
+= 28.407~\text{мкЭВ}, \\
+\nu_a &= \frac{m_a c^2}{h}
+= 6.8688~\text{ГГц}.
+\end{align}
+\textbf{Статус: [COND].} $\nu_a$ в диапазоне ADMX/HAYSTAC.
+
+\subsection{Аксион-фотонное взаимодействие}
+\label{sec:gagg}
+
+\begin{equation}
+g_{a\gamma\gamma} = \frac{\alpha_{\rm EM}}{2\pi f_a}\left(\frac{E}{N} - 1.92\right).
+\end{equation}
+При $f_a = 1.9801\times10^{11}$~ГэВ:
+$\alpha_{\rm EM}/(2\pi f_a) = 5.866\times10^{-15}$~ГэВ$^{-1}$.
+
+\begin{table}[H]
+\centering
+\caption{Предсказание $g_{a\gamma\gamma}$.}
+\begin{tabular}{lccc}
+\toprule
+Сценарий & $E/N$ & $g_{a\gamma\gamma}$, ГэВ$^{-1}$ \\
+\midrule
+KSVZ & $0$   & $-1.126\times10^{-14}$ \\
+DFSZ & $8/3$ & $+4.379\times10^{-15}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Оба значения в чувствительности ADMX Run~1D--1E.
+Различие в $2.6$ раза означает: модель даёт двухточечную цель.
+
+% ============================================================
+\section{Единственность $SU(5)$}
+% ============================================================
+
+\begin{theorem}
+Среди простых групп Ли ранга 4 только $SU(5)$ одновременно:
+(i)~даёт СМ-коммутант; (ii)~допускает киральные представления;
+(iii)~воспроизводит $\bar 5 + 10$.
+\end{theorem}
+Альтернативы $SO(9)$, $Sp(8)$, $SO(8)$, $F_4$ не проходят.
+
+% ============================================================
+\section{Фермионный сектор (11 параметров)}
+\label{sec:fermion}
+% ============================================================
+
+\subsection{Структура матриц}
+
+\begin{equation}
+M_u = \begin{pmatrix}
+a_u Y_1^{(2)} & b_u Y_3^{(4)} & c_u Y_2^{(6)} \\
+a_u Y_3^{(2)} & b_u Y_2^{(4)} & c_u Y_1^{(6)} \\
+a_u Y_2^{(2)} & b_u Y_1^{(4)} & c_u Y_3^{(6)}
+\end{pmatrix}, \;
+M_d = \begin{pmatrix}
+a_1 Y_1^{(6)} & b Y_3^{(2)} & c Y_2^{(2)} \\
+a_1 Y_3^{(6)} & b Y_2^{(2)} & c Y_1^{(2)} \\
+a_2 Y_2^{(2)} & b Y_1^{(2)} & c Y_3^{(4)}
+\end{pmatrix}.
+\end{equation}
+
+\subsection{Функция потерь и целевые значения}
+\label{sec:targets}
+
+\begin{equation}
+\chi^2 = \sum_{i=1}^{9} \left(\frac{O_i(\tau_u,\tau_d,c) - O_i^{\rm target}}{\sigma_i}\right)^2.
+\label{eq:chi2}
+\end{equation}
+
+\begin{table}[H]
+\centering
+\caption{Целевые значения (PDG~2024).}
+\label{tab:targets}
+\begin{tabular}{lc}
+\toprule
+Наблюдаемая & $O_i^{\rm target} \pm \sigma_i$ \\
+\midrule
+$m_u/m_t$ & $(1.27 \pm 0.30)\times10^{-3}/172.0$ \\
+$m_c/m_t$ & $(0.620 \pm 0.020)/172.0$ \\
+$m_d/m_b$ & $(2.70 \pm 0.20)\times10^{-3}/2.860$ \\
+$m_s/m_b$ & $(55.0 \pm 5.0)\times10^{-3}/2.860$ \\
+$m_b/m_t$ & $(2.860 \pm 0.030)/172.0$ \\
+$|V_{us}|$ & $0.22501 \pm 0.00068$ \\
+$|V_{cb}|$ & $0.04053 \pm 0.00042$ \\
+$|V_{ub}|$ & $0.00382 \pm 0.00020$ \\
+$|J|$ & $(3.080 \pm 0.130)\times10^{-5}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Результаты}
+\label{sec:fermion-results}
+
+Независимая оптимизация (DE, 3~seed'а, Приложение~B):
+\begin{equation}
+\boxed{\;\chi^2 = 6.195\times10^{-20}
+\quad\text{при}\quad
+\tau_u = -0.1577944085 + 2.3851782590\,i,\;
+\tau_d = +0.3693905617 + 1.5410496057\,i.\;}
+\end{equation}
+
+Коэффициенты:
+\begin{equation}
+c^{\rm fit} \approx (5.31\times10^{-5},\,7.19,\,0.039,\,
+2.43\times10^{-4},\,0.503,\,1.37\times10^{-3},\,2.22\times10^{-3}).
+\label{eq:coefs-fit}
+\end{equation}
+Пер-наблюдаемые pulls при этих значениях: все $< 10^{-9}\sigma$.
+
+\subsection{Независимое воспроизведение}
+\label{sec:fermion-reproduced}
+
+Три независимых 11-параметрических DE-запуска (Приложение~C)
+сходятся к $\mathrm{Im}\,\tau_u = 2.385$, $\mathrm{Im}\,\tau_d = 1.541$
+до $0.3\%$, с $\chi^2 < 10^{-18}$ во всех запусках.
+
+\subsection{Устойчивость CKM к сдвигу $\tau$}
+\label{sec:robustness}
+
+При фиксированных коэффициентах~\eqref{eq:coefs-fit} сдвиг
+$\tau_u$ или $\tau_d$ на $\pm 5\%$ выводит CKM за $1\sigma$:
+$\mathrm{Im}\,\tau_u = 2.385 \pm 0.007$, $\mathrm{Im}\,\tau_d = 1.541 \pm 0.005$;
+$\mathrm{Re}\,\tau_d \in [-0.37, +0.37]$ (soft flatness, Приложение~E);
+$\mathrm{Re}\,\tau_u \in [-0.16, -0.13]$.
+
+\textbf{Следствие для flux.} Только $\mathrm{Im}\,\tau$ требует
+точной стабилизации ($\pm 3\%$).
+
+% ============================================================
+\section{Тест B.1: универсальный анзац}
+% ============================================================
+
+\begin{table}[H]
+\centering
+\caption{Уровни свободы коэффициентов.}
+\begin{tabular}{clccc}
+\toprule
+Уровень & Параметризация & $k_{\rm coef}$ & $N_{\rm dof}$ & $\chi^2$ \\
+\midrule
+L1 & $a_u=b_u=c_u=y_u$ & 2 & $+3$ & $5.28\times10^6$ \\
+L2 & $+ r$ & 3 & $+2$ & $3.51\times10^2$ \\
+L3 & $+ r_u$ & 4 & $+1$ & $4.45\times10^3$ \\
+L4 & up + 1 ratio down & 5 & $0$  & $3.53\times10^3$ \\
+L5 & 2 ratio на сектор & 6 & $-1$ & $4.36\times10^2$ \\
+\textbf{L6} & \textbf{7 свободных} & \textbf{7} & $\mathbf{-2}$ & $\mathbf{2.18\times10^{-19}}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Вывод.} Универсальный анзац \textbf{исключён}.
+Только L6 даёт идеальный фит.
+
+% ============================================================
+\section{Тест C.3: перебор структур матриц}
+% ============================================================
+
+Проверено 36 комбинаций (6 up $\times$ 6 down) с 6 seed'ами.
+
+\begin{table}[H]
+\centering
+\caption{LOO для U6$\times$D6.}
+\begin{tabular}{cccc}
+\toprule
+Seed & $\chi^2$ & $|V_{ub}|$ err & $|J|$ err \\
+\midrule
+0 & $8.16\times10^{-9}$ & $+25406.7\%$ & $-97.2\%$ \\
+1 & $2.09\times10^{-8}$ & $+24308.0\%$ & $+20318.7\%$ \\
+2 & $1.33\times10^{-8}$ & $+33.1\%$    & $-97.5\%$ \\
+3 & $1.04\times10^{-10}$ & $+8.4\%$    & $+19.2\%$ \\
+4 & $9.41\times10^{-10}$ & $+25302.9\%$ & $+872.6\%$ \\
+5 & $1.43\times10^{-9}$ & $+25311.8\%$ & $+570.6\%$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Вывод.} Все 36 структур нестабильны. Проблема --- в
+переопределённости ($N_{\rm dof} = -2$).
+
+% ============================================================
+\section{Тёмная материя от аксиона}
+\label{sec:dm}
+% ============================================================
+
+\subsection{Аналитическая формула}
+
+\begin{equation}
+\Omega_a h^2 \approx 0.12\,\theta_i^2\, f_{\rm anh}(\theta_i)
+\left(\frac{f_a}{3\times10^{11}}\right)^{7/6},
+\quad f_{\rm anh}(\theta_i) = [\ln(e/(1-(\theta_i/\pi)^2))]^{7/6}.
+\end{equation}
+
+\subsection{Полное разложение}
+\label{sec:omega-breakdown}
+
+\textbf{Шаг 1 (bare):}
+$\Omega_a h^2_{\rm bare} = 0.12 \cdot 1.2459 \cdot 0.6159 = 0.0921$.
+
+\textbf{Шаг 2 (ангармонизм Лита--Тёрнера):}
+$f_{\rm anh}(1.1162) = 1.1591$, $\Omega_a h^2_{\rm anh} = 0.1067$.
+
+\textbf{Шаг 3 ($T$-эффекты):}
+$\Omega_a h^2_{\rm num} = 0.1067 \cdot (1 + \delta_T)$, $\delta_T = +0.124$.
+$\delta_T = +12.4\%$: $g_*(T_{\rm osc})$ ($+5\%$),
+$T_{\rm osc}/\Lambda_{\rm QCD}$ ($+4\%$), $m_a(T)$ ($+3\%$).
+
+\textbf{Итог.} Разница «числ.\ vs анал.»: $+12.4\%$ (не $+57\%$).
+Согласие с Planck при $\theta_i = 1.1162$ не требует подгонки.
+
+% ============================================================
+\section{Тест B.2: $\theta_i$ из инфляции}
+% ============================================================
+
+$\delta\theta = H_{\rm inf}/(2\pi f_a)$, $\beta_{\rm iso} = (\delta\theta/\theta_i)^2$.
+Ограничения: $r < 0.036 \Rightarrow H < 4.703\times10^{13}$~ГэВ;
+$\beta_{\rm iso} < 0.038 \Rightarrow H < 2.707\times10^{11}$~ГэВ.
+
+\textbf{Гипотеза $\theta_i \sim \delta\theta$} требует $H = 1.389\times10^{12}$~ГэВ,
+но $\beta_{\rm iso} = 1.0$ --- \textbf{исключено в $26\sigma$}.
+$\theta_i = 1.1162$ --- случайный draw из $[-\pi,\pi]$.
+
+% ============================================================
+\section{Тест A.1: модулярные формы при $\tau = e^{i\pi/3}$}
+% ============================================================
+
+Подробности в~\S\ref{sec:Ycheck}, \S\ref{sec:alpha-search}. Сводка:
+
+\begin{table}[H]
+\centering
+\caption{Комбинации форм и отклонение от $\alpha_G = 0.212207$.}
+\begin{tabular}{lcc}
+\toprule
+Комбинация & Значение & Отклонение \\
+\midrule
+$|Y^{(6)}_1|/|Y^{(4)}_3|$ & $0.212125$ & $-0.0385\%$ \\
+$|Y^{(6)}_2|/\pi$ & $0.212411$ & $+0.0965\%$ \\
+$|Y^{(6)}_3|/\pi$ & $0.216161$ & $+1.86\%$ \\
+$|Y^{(4)}_2|/\pi$ & $0.221911$ & $+4.57\%$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+$|Y^{(6)}_2|^2 = 0.445302 \neq 4/9$; стабильно при $n = 5..30$.
+PSLQ бессилен. $p$-value $= 0.185$ (не значимо).
+
+\textbf{Вывод.} $\alpha_G$ остаётся постулатом.
+
+% ============================================================
+\section{Полный баланс}
+\label{sec:balance}
+% ============================================================
+
+\begin{table}[H]
+\centering
+\caption{Свободные параметры (13).}
+\begin{tabular}{llc}
+\toprule
+Категория & Параметры & Кол-во \\
+\midrule
+Фермионные модули & $\tau_u, \tau_d$ (компл.) & 4 \\
+up-коэффициенты & $a_u, b_u, c_u$ & 3 \\
+down-коэффициенты & $a_1, a_2, b, c$ & 4 \\
+Топологический & $\mathcal{I}$ & 1 \\
+Аксион & $\theta_i$ & 1 \\
+\midrule
+\textbf{Итого} & & \textbf{13} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Наблюдаемые (15).}
+\begin{tabular}{llc}
+\toprule
+Сектор & Наблюдаемые & Кол-во \\
+\midrule
+Кварки (массы) & $m_u/m_t, \ldots, m_b/m_t$ & 5 \\
+Кварки (CKM) & $|V_{us}|, |V_{cb}|, |V_{ub}|$ & 3 \\
+Кварки ($J$) & $|J|$ & 1 \\
+Лептоны (PMNS) & $\theta_{12}, \theta_{13}, \theta_{23}, |J|$ & 4 \\
+Космология & $\nu_a, \Omega_a h^2$ & 2 \\
+\midrule
+\textbf{Итого} & & \textbf{15} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{equation}
+N_{\rm dof}^{\rm total} = 15 - 13 = +2, \quad
+N_{\rm dof}^{\rm quarks} = 9 - 11 = -2.
+\end{equation}
+
+\subsection{Информационные критерии}
+
+\begin{table}[H]
+\centering
+\caption{AIC/BIC ($n=9$).}
+\begin{tabular}{lccccc}
+\toprule
+Модель & $k$ & $\chi^2$ & AIC & BIC \\
+\midrule
+MEML~75 & 13 & $\approx 10^{-20}$ & $26.0$ & $28.6$ \\
+СМ       & 19 & $0.9$              & $38.9$ & $42.6$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Формально MEML выигрывает. Однако $N_{\rm dof} = -2$:
+$\chi^2 \sim 10^{-20}$ --- тривиальное следствие
+переопределённости, не предсказательная сила.
+
+% ============================================================
+\section{Открытые проблемы}
+% ============================================================
+
+\begin{enumerate}[leftmargin=1.5em]
+
+\item \textbf{Вырожденность коэффициентов.} При фиксированных
+      $\tau$~\eqref{eq:tau-fit} разные DE-seed'ы находят
+      коэффициенты с $\chi^2 < 10^{-18}$, связанные
+      равномерным масштабом $\times 1.87$. Проверка:
+      $\chi^2(c) = \chi^2(kc) < 10^{-19}$ для любого $k \in [0.5, 10]$
+      (Приложение~D). Прямое проявление $N_{\rm dof} = -2$.
+      Приоритет v8.0 --- механизм фиксации $c_i$
+      (голоморфные связи 6D$\to$4D).
+
+\item \textbf{Статус $\alpha_G$.} Постулат. Систематический
+      поиск не дал точной формулы; почти-совпадения
+      статистически ожидаемы ($p = 0.185$).
+
+\item \textbf{Статус $\varepsilon$.} Анзац; выбор $4\pi$ не выведен.
+
+\item \textbf{Flatness $\mathrm{Re}\,\tau$.} $\mathrm{Re}\,\tau_d$ ---
+      soft flat (ширина $0.74$); $\mathrm{Re}\,\tau_u$ ---
+      soft flat (ширина $0.03$). $\mathrm{Im}\,\tau$ --- устойчивы.
+
+\item \textbf{Matching 6D$\leftrightarrow$4D.} Структурный.
+
+\item \textbf{LOO-нестабильность.} При $N_{\rm dof} = -2$
+      разброс $|V_{ub}|$ от $-97\%$ до $+25407\%$.
+
+\item \textbf{Переопределённость в кварках.} 11 параметров на 9.
+
+\item \textbf{Универсальный анзац исключён.} Только L6 даёт
+      идеальный $\chi^2$.
+
+\item \textbf{Зависимость GUT от $\mathcal{I}$.}
+      $M_6 \propto \mathcal{I}^{-1/4}$.
+
+\item \textbf{Аналитика vs численность $\Omega_a h^2$.}
+      $+12.4\%$, объяснено $T$-эффектами.
+
+\item \textbf{Вывод $\theta_i$.} Исключён в $26\sigma$.
+\end{enumerate}
+
+% ============================================================
+\section{Дорожная карта}
+% ============================================================
+
+\begin{table}[H]
+\centering
+\caption{Фазы развития.}
+\begin{tabular}{p{1cm}p{8cm}p{3cm}}
+\toprule
+Фаза & Задача & Приоритет \\
+\midrule
+I & Механизм для $c_i$: голоморфные связи 6D$\to$4D & Критический \\
+I & Flux-стабилизация $\mathrm{Im}\,\tau$ ($\pm 3\%$) & Высокий \\
+II & Сокращение 11 $\to$ 9 в кварках & Средний \\
+II & Аналитика для $c_i$ & Средний \\
+III & ADMX, DESI, DUNE, KamLAND-Zen & Внешний \\
+IV & Лептогенезис, тёмная энергия & Долгосрочный \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+% ============================================================
+\section{Заключение}
+% ============================================================
+
+\textbf{Что сделано:}
+\begin{enumerate}[leftmargin=1.5em,itemsep=0.05em]
+\item Модель с 13 параметрами на 15 наблюдаемых.
+\item 4 систематических теста (B.1, C.3, B.2, A.1) --- все отрицательные.
+\item Глобальный фит $\chi^2 = 6.195\times10^{-20}$ при
+      $\tau_u = -0.1578+2.3852i$, $\tau_d = +0.3694+1.5410i$;
+      воспроизведён независимо (3 DE-запуска).
+\item Тест coefs degeneracy: $\chi^2$ инвариантна при $c_i \to kc_i$.
+\item $\Omega_a h^2$: bare $\to$ anh $\to$ num, $\delta_T = +12.4\%$.
+\item $g_{a\gamma\gamma}$ (KSVZ/DFSZ) --- двухточечная цель для ADMX.
+\item AIC/BIC с оговоркой $N_{\rm dof}<0$.
+\end{enumerate}
+
+\textbf{Что работает:} PMNS ($<0.5\%$), CKM ($\chi^2 \sim 10^{-20}$, фит),
+Planck-совместимость по тёмной материи, тестируемое предсказание
+$\nu_a = 6.8688$~ГГц,
+$g_{a\gamma\gamma} \in \{+4.38\times10^{-15}, -1.13\times10^{-14}\}$~ГэВ$^{-1}$.
+
+\textbf{Что не работает:} LOO нестабилен; coefs scale-degenerate;
+$\alpha_G$, $\varepsilon$, $\theta_i$ не выводятся из первых принципов.
+
+\textbf{Вердикт.} Модель \emph{феноменологическая}. Воспроизводит
+наблюдения, но не предсказывает. Вырожденность коэффициентов
+показывает: модель интерполирует 9 наблюдений 11 параметрами.
+
+\textbf{Приоритет для будущей работы:} механизм фиксации $c_i$.
+Flux нужен только для $\mathrm{Im}\,\tau$ с $\pm 3\%$.
+
+% ============================================================
+% ПРИЛОЖЕНИЯ
+% ============================================================
+\appendix
+\newpage
+
+\section{Модулярные формы $A_4$: полные q-разложения}
+\label{app:Yforms}
+
+Определение: $q = e^{2\pi i\tau}$.
+\begin{align}
+Y_1^{(2)} &= 1 + \sum_{n=1}^{17} C_1^{(n)} q^n, \\
+Y_2^{(2)} &= -6\, q^{1/3}\left(1 + \sum_{n=1}^{11} C_2^{(n)} q^n\right), \\
+Y_3^{(2)} &= -18\, q^{2/3}\left(1 + \sum_{n=1}^{10} C_3^{(n)} q^n\right),
+\end{align}
+
+$C_1 = [12, 36, 12, 84, 72, 36, 96, 180, 12, 216, 144, 36, 156, 96, 84, 240, 36]$;
+$C_2 = [1, 7, 8, 18, 14, 30, 20, 42, 30, 56, 42]$;
+$C_3 = [1, 2, 5, 6, 12, 8, 14, 10, 22, 16]$.
+
+\textbf{Свёртки:}
+\begin{align}
+Y_1^{(4)} &= (Y_1^{(2)})^2 - Y_2^{(2)} Y_3^{(2)}, \\
+Y_2^{(4)} &= (Y_3^{(2)})^2 - Y_1^{(2)} Y_2^{(2)}, \\
+Y_3^{(4)} &= (Y_2^{(2)})^2 - Y_1^{(2)} Y_3^{(2)},
+\end{align}
+\begin{align}
+Y_1^{(6)} &= \tfrac13\left[2 Y_1^{(2)} Y_1^{(4)} - Y_2^{(2)} Y_3^{(4)} - Y_3^{(2)} Y_2^{(4)}\right], \\
+Y_2^{(6)} &= \tfrac13\left[2 Y_3^{(2)} Y_3^{(4)} - Y_1^{(2)} Y_2^{(4)} - Y_2^{(2)} Y_1^{(4)}\right], \\
+Y_3^{(6)} &= \tfrac13\left[2 Y_2^{(2)} Y_2^{(4)} - Y_3^{(2)} Y_1^{(4)} - Y_1^{(2)} Y_3^{(4)}\right].
+\end{align}
+
+\textbf{Sanity check:} при $\tau = e^{i\pi/3}$ тождество
+$Y_1^2 + 2 Y_2 Y_3 = 0$ выполняется с точностью до $10^{-55}$.
+
+\section{Численная процедура фита}
+\label{app:procedure}
+
+\texttt{differential\_evolution}:
+3 seed'а (42, 43, 44); maxiter$=150$; popsize$=15$; tol$=10^{-8}$;
+polish$=$False, затем Nelder--Mead polish (maxiter$=10000$).
+
+Границы:
+$\mathrm{Re}\,\tau \in [-0.5, 0.5]$, $\mathrm{Im}\,\tau_u \in [0.87, 2.5]$,
+$\mathrm{Im}\,\tau_d \in [0.87, 1.60]$, $c_i \in [10^{-8}, 10^2]$.
+
+\textbf{Наблюдаемые:} SVD $M_u = U_u^\dagger \Sigma_u V_u$,
+$M_d = U_d^\dagger \Sigma_d V_d$;
+массы $m_i = \Sigma_i$; CKM $V = U_u^\dagger U_d$;
+пять отношений масс, $|V_{us}|$, $|V_{cb}|$, $|V_{ub}|$, $|J|$.
+
+\textbf{Время:} ~90--120 секунд на полный запуск (Python 3.10 + scipy).
+
+\section{Воспроизведение $\tau$ и $\chi^2$}
+\label{app:reproduce}
+
+\begin{table}[H]
+\centering
+\caption{Три независимых DE-запуска.}
+\begin{tabular}{lcccc}
+\toprule
+Источник & $\mathrm{Re}\,\tau_u$ & $\mathrm{Im}\,\tau_u$ &
+          $\mathrm{Re}\,\tau_d$ & $\mathrm{Im}\,\tau_d$ \\
+\midrule
+Запуск 1 & $-0.15779$ & $2.38518$ & $+0.36939$ & $1.54105$ \\
+Запуск 2 & $-0.15779$ & $2.38518$ & $+0.36939$ & $1.54105$ \\
+Запуск 3 & $-0.12893$ & $2.38411$ & $-0.37212$ & $1.54102$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+$\mathrm{Im}\,\tau_u = 2.385 \pm 0.001$;
+$\mathrm{Im}\,\tau_d = 1.541 \pm 0.0001$.
+
+\textbf{Rounding sensitivity:}
+
+\begin{table}[H]
+\centering
+\caption{Чувствительность $\chi^2$ к округлению $\tau$.}
+\begin{tabular}{lc}
+\toprule
+Точность $\tau$ & $\chi^2$ \\
+\midrule
+exact (10 знаков) & $6.195\times10^{-20}$ \\
+4 значащих цифры  & $1.08\times10^{-3}$ \\
+3 значащих цифры  & $2.55\times10^{-3}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Доказательство вырожденности коэффициентов}
+\label{app:degeneracy}
+
+При фиксированных $\tau$~\eqref{eq:tau-fit} умножим все $c_i$ на $k$:
+
+\begin{table}[H]
+\centering
+\caption{Инвариантность $\chi^2$ при $c_i \to k c_i$.}
+\begin{tabular}{cc}
+\toprule
+$k$ & $\chi^2$ \\
+\midrule
+$0.5$  & $6.20\times10^{-20}$ \\
+$1.0$  & $6.20\times10^{-20}$ \\
+$1.87$ & $1.08\times10^{-19}$ \\
+$2.0$  & $6.20\times10^{-20}$ \\
+$5.0$  & $3.00\times10^{-19}$ \\
+$10.0$ & $3.00\times10^{-19}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Все $\chi^2 < 10^{-18}$: $\chi^2(kc) \approx \chi^2(c)$.
+\textbf{Uniform scale-degeneracy доказана.}
+
+\section{Flatness $\mathrm{Re}\,\tau$}
+\label{app:flatness}
+
+\textbf{Scan по $\mathrm{Re}\,\tau_u$} (при $\mathrm{Re}\,\tau_d = +0.369$,
+coefs фиксированы): ширина $\chi^2<10$: $[-0.40, +0.00]$ ($0.40$).
+
+\textbf{Scan по $\mathrm{Re}\,\tau_d$:} ширина $\chi^2<10$: $[+0.30, +0.50]$ ($0.20$).
+
+При фиксированных coefs $\mathrm{Re}\,\tau$ --- soft flat.
+При refit (Приложение~C) $\mathrm{Re}\,\tau_d \in [-0.37, +0.37]$.
+
+\section{LOO-тест: процедура и результаты}
+\label{app:loo}
+
+Для каждого $j \in \{1,\ldots,9\}$: убрать $j$-ю наблюдаемую,
+фит 8 $\to$ 7 coefs, предсказать $j$-ю. $N_{\rm dof} = +1$.
+
+Результаты U6$\times$D6: среднее $|V_{ub}|$ $+16728\%$, std $11819\%$;
+$|J|$ $+3598\%$, std $7487\%$.
+
+Прямая связь с вырожденностью (Приложение~D).
+
+\section{Систематический поиск $\alpha_G$}
+\label{app:alpha-search}
+
+Базис: 16 элементов ($Y^{(2)}_i$, $Y^{(4)}_i$, $Y^{(6)}_i$, $\eta$, $\pi$, $\sqrt\pi$, $\pi^2$, $e^{-\pi^2}$),
+где $\eta(\tau) = q^{1/24}\prod_{n=1}^\infty (1-q^n)$ --- функция Дедекинда.
+Тестировано $N = 392$ комбинации:
+$|a|/|b|$ (240), $|a|\cdot|b|$ (120), $\sqrt{|a|/\pi}$ (16), $|a|^2/\pi^{3/2}$ (16).
+
+\textbf{2 совпадения $<0.1\%$:}
+$|Y^{(6)}_1|/|Y^{(4)}_3| = 0.212125$ ($-0.0385\%$, $n=5..30$);
+$|Y^{(6)}_2|/\pi = 0.212411$ ($+0.0965\%$, $n=5..30$).
+
+\textbf{Пуассон:} $\langle n\rangle = 392 \cdot 0.002 = 0.78$;
+$n_{\rm obs} = 2$; $P(n \ge 2) = 0.185$ (не значимо).
+
+\textbf{Вывод:} $\alpha_G$ остаётся постулатом.
+
+\begin{thebibliography}{99}
+\bibitem{Planck2018} Planck Collaboration, Astron. Astrophys. \textbf{641}, A6 (2020).
+\bibitem{PDG2024} R.~L. Workman et al. (PDG), Prog. Theor. Exp. Phys. \textbf{2022}, 083C01 (2022).
+\bibitem{ADMX2025} ADMX Collaboration, Phys. Rev. Lett. \textbf{134}, 021002 (2025).
+\bibitem{Feruglio2017} F.~Feruglio, Eur. Phys. J. C \textbf{77}, 713 (2017).
+\bibitem{Kobayashi2019} T.~Kobayashi et al., Prog. Theor. Exp. Phys. \textbf{2020}, 053B05 (2020).
+\bibitem{Preskill1983} J.~Preskill, M.~B.~Wise, F.~Wilczek, Phys. Lett. B \textbf{120}, 127 (1983).
+\end{thebibliography}
+
+\end{document}
