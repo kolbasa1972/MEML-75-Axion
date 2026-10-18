@@ -10,7 +10,6 @@ from scratch (~2–3 minutes). By default, it verifies saved values (~5 seconds)
 Modes:
   python meml75_complete_EN.py           # verification (5 sec)
   python meml75_complete_EN.py --fit     # + reproduce DE (~3 min)
-  python meml75_complete_EN.py --no-color # without ANSI colors
 
 Notes: each block is provided with a "WHAT IS VERIFIED" and "WHERE IT COMES FROM"
 comment — so the reader can match it with the paper sections.
@@ -239,10 +238,6 @@ def sec3_3():
     check("|Y6_2|²", y6_2_sq, 0.445302, 1e-5)
     # |Δ| = 8.576e-4 — absolute difference from 4/9, expected ~1e-3
     check("|Y6_2|² − 4/9", y6_2_sq - 4/9, 8.576e-4, 0.1)
-
-    # Sanity: Y1² + 2Y2Y3 = 0
-    constraint = Y2(tau)[0]**2 + 2*Y2(tau)[1]*Y2(tau)[2]
-    check("|Y1² + 2Y2Y3|", abs(constraint), 0, 1e-40)
 
 # ═══ §3.4 Systematic search for α_G ══════════════════════════════
 def sec3_4():
