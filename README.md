@@ -12,7 +12,8 @@ The preprint is **not** on arXiv; priority is fixed via Zenodo and GitHub.
 - `MEML_75_final_EN.tex` — full paper source (XeLaTeX, English)
 - `MEML_75_final_EN.pdf` — compiled PDF
 - `MEML_75_final_RU.tex` — Russian translation
-- `meml75_complete_EN.py` — all numerical checks (verification mode)
+- `MEML_75_final_RU.pdf` — compiled PDF (Russian)
+- `MEML_75_complete_EN.py` — all numerical checks (verification mode)
 - `README.md` — this file
 
 ## Reproduce
