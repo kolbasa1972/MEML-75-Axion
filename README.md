@@ -1,6 +1,6 @@
 # MEML 75 — Quark and lepton mass matrices from T²/Z₃ geometry
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23439547.svg)](https://doi.org/10.5281/zenodo.23439547)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23511319.svg)](https://doi.org/10.5281/zenodo.23511319)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/kolbasa1972/MEML-75-Complete)](https://github.com/kolbasa1972/MEML-75-Complete/releases)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
 ![LaTeX](https://img.shields.io/badge/LaTeX-XeLaTeX-green)
