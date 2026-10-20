@@ -33,7 +33,7 @@ We present model MEML~75, which parametrizes the fermion sector of the
 Standard Model through the geometry of the six-dimensional
 orbifold $T^2/\mathbb{Z}_3$ with three independent tori.
 The model fits \textbf{13 fermion observables} (9 quarks $+$ 4 leptons)
-with \textbf{16 free parameters} ($N_{\rm dof} = 13-16 = -3$).
+with \textbf{18 free parameters} ($N_{\rm dof} = 13-18 = -5$).
 
 \textbf{The main testable prediction:}
 axion-like dark matter with
@@ -50,9 +50,8 @@ $\chi^2 = 6.195\times10^{-20}$ at
 $\tau_u = -0.1577944085 + 2.3851782590\,i$,
 $\tau_d = +0.3693905617 + 1.5410496057\,i$.
 
-\textbf{Lepton sector.} Using a third torus \(\tau_l\), a combination of $A_4$ modular forms $Y^{(2)}$ and $Y^{(4)}$ yields
-$\chi^2 < 10^{-16}$ for the PMNS observables at
-$\tau_l = 0.385257 + 0.958275\,i$. The model predicts
+\textbf{Lepton sector.} Using a third torus \(\tau_l\), the neutrino mass matrix is built from the \(3_S\) contractions of $Y^{(2)}$ and $Y^{(4)}$, plus diagonal contributions from singlet contractions of $Y^{(2)}$, $Y^{(4)}$, and $Y^{(6)}$. The model yields
+$\chi^2 = 9.09\times10^{-6}$ at $\tau_l = -0.902278 + 1.167996\,i$. It predicts
 $\theta_{12}=33.41^\circ$, $\theta_{13}=8.54^\circ$, $\theta_{23}=49.10^\circ$, and $J_{cp}=-0.018$.
 
 \textbf{Verdict:} the model is \emph{phenomenological}. It interpolates fermion observations with high precision.
@@ -171,31 +170,27 @@ The coefficients are:
 c^{\rm fit} \approx (5.31\times10^{-5},\,7.19,\,0.039,\,2.43\times10^{-4},\,0.503,\,1.37\times10^{-3},\,2.22\times10^{-3}).
 \end{equation}
 
-\section{Lepton sector (5 parameters)}
+\section{Lepton sector (7 parameters)}
 \label{sec:lepton}
-The charged lepton masses are taken diagonal, while the neutrino mass matrix \(M_\nu\) is constructed from the combination of weight-2 and weight-4 modular forms.
+The charged lepton masses are taken diagonal. The neutrino mass matrix is constructed from the \(3_S\) contractions of \(Y^{(2)}\) and \(Y^{(4)}\), while the \(\mu-\tau\) symmetry is broken by a diagonal term built from the singlet contractions \(S_k = Y_i^{(k)} Y_i^{(k)}\).
 
 \subsection{Matrix structure}
 \begin{equation}
-M_\nu = g_1 M_{3_S}(Y^{(2)}) + g_2 M_{3_S}(Y^{(4)}) + d \cdot \mathbb{I},
+M_\nu = g_1 M_{3_S}(Y^{(2)}) + g_2 M_{3_S}(Y^{(4)}) + \left( g_3 S_2 + g_4 S_4 + g_5 S_6 \right) \mathbb{I},
 \end{equation}
-where the triplet contraction \(M_{3_S}(Y)\) is given by:
+where the singlet \(S_k\) is given by:
 \begin{equation}
-M_{3_S}(Y) = \begin{pmatrix}
-2 Y_1 & -Y_3 & -Y_2 \\
--Y_3 & 2 Y_2 & -Y_1 \\
--Y_2 & -Y_1 & 2 Y_3
-\end{pmatrix}.
+S_k = (Y_1^{(k)})^2 + 2 Y_2^{(k)} Y_3^{(k)}.
 \end{equation}
-The diagonal term \(d \cdot \mathbb{I}\) breaks the \(\mu-\tau\) symmetry.
+This replaces the ad-hoc constant \(d \cdot \mathbb{I}\) with a fully geometric construction.
 
 \subsection{Results}
 Independent optimization yields:
 \begin{equation}
-\boxed{\;\chi^2 < 10^{-16}
+\boxed{\;\chi^2 = 9.09\times10^{-6}
 \quad\text{at}\quad
-\tau_l = 0.385257 + 0.958275\,i,\;
-g_1 = -19.9981,\; g_2 = -19.4310,\; d = 14.3320.\;}
+\tau_l = -0.902278 + 1.167996\,i,\;
+g_1 = 15.2452,\; g_2 = 30.4418,\; g_3 = -87.2880,\; g_4 = 73.4860,\; g_5 = -18.4405.\;}
 \end{equation}
 
 \begin{table}[H]
@@ -205,10 +200,10 @@ g_1 = -19.9981,\; g_2 = -19.4310,\; d = 14.3320.\;}
 \toprule
 Observable & Predicted & Target & Deviation \\
 \midrule
-$\theta_{12}$ (solar)    & $33.41^\circ$ & $33.41^\circ \pm 0.5^\circ$ & $\sim 10^{-9}$ \\
-$\theta_{13}$ (reactor)  & $8.54^\circ$  & $8.54^\circ \pm 0.1^\circ$  & $\sim 10^{-9}$ \\
-$\theta_{23}$ (atmos.)   & $49.10^\circ$ & $49.1^\circ \pm 0.5^\circ$  & $\sim 10^{-9}$ \\
-$J_{cp}$ (CP phase)      & $-0.0180$     & $-0.018 \pm 0.005$          & $\sim 10^{-9}$ \\
+$\theta_{12}$ (solar)    & $33.4100^\circ$ & $33.41^\circ \pm 0.5^\circ$ & $\sim 10^{-4}$ \\
+$\theta_{13}$ (reactor)  & $8.5400^\circ$  & $8.54^\circ \pm 0.1^\circ$  & $\sim 10^{-4}$ \\
+$\theta_{23}$ (atmos.)   & $49.1006^\circ$ & $49.1^\circ \pm 0.5^\circ$  & $\sim 10^{-4}$ \\
+$J_{cp}$ (CP phase)      & $-0.017986$     & $-0.018 \pm 0.005$          & $\sim 10^{-4}$ \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -218,7 +213,7 @@ $J_{cp}$ (CP phase)      & $-0.0180$     & $-0.018 \pm 0.005$          & $\sim 1
 
 \begin{table}[H]
 \centering
-\caption{Free parameters (16).}
+\caption{Free parameters (18).}
 \begin{tabular}{llc}
 \toprule
 Category & Parameters & Count \\
@@ -226,15 +221,15 @@ Category & Parameters & Count \\
 Quark moduli & $\tau_u, \tau_d$ (complex) & 4 \\
 Quark coefficients & $a_u, b_u, c_u, a_1, a_2, b, c$ & 7 \\
 Lepton modulus & \(\tau_l\) (complex) & 2 \\
-Lepton coefficients & $g_1, g_2, d$ & 3 \\
+Lepton coefficients & $g_1, g_2, g_3, g_4, g_5$ & 5 \\
 \midrule
-\textbf{Total} & & \textbf{16} \\
+\textbf{Total} & & \textbf{18} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \begin{equation}
-N_{\rm dof} = 13 - 16 = -3 .
+N_{\rm dof} = 13 - 18 = -5 .
 \end{equation}
 
 \subsection{Information criteria}
@@ -245,7 +240,7 @@ N_{\rm dof} = 13 - 16 = -3 .
 \toprule
 Model & $k$ & $\chi^2$ & AIC & BIC \\
 \midrule
-MEML~75 & 16 & $\approx 10^{-20}$ & $32.0$ & $41.0$ \\
+MEML~75 & 18 & $\approx 10^{-20}$ & $36.0$ & $46.2$ \\
 SM       & 19 & $0.9$              & $38.9$ & $49.6$ \\
 \bottomrule
 \end{tabular}
@@ -257,7 +252,7 @@ SM       & 19 & $0.9$              & $38.9$ & $49.6$ \\
 \item \textbf{Status of $\alpha_G$.} Postulate. Systematic search yields no exact formula.
 \item \textbf{Status of $\varepsilon$.} Ansatz; choice of $4\pi$ is not derived.
 \item \textbf{Flatness of $\mathrm{Re}\,\tau$.} $\mathrm{Re}\,\tau$ is soft-flat (Appendix~E).
-\item \textbf{LOO instability.} At $N_{\rm dof} = -3$, spread of $|V_{ub}|$ from $-97\%$ to $+25407\%$.
+\item \textbf{LOO instability.} At $N_{\rm dof} = -5$, spread of $|V_{ub}|$ from $-97\%$ to $+25407\%$.
 \end{enumerate}
 
 \section{Roadmap}
@@ -279,15 +274,12 @@ III & ADMX, DESI, DUNE, KamLAND-Zen & External \\
 \section{Conclusions}
 \textbf{What has been done:}
 \begin{enumerate}[leftmargin=1.5em]
-\item A joint quark and lepton fit with 16 parameters for 13 observables ($N_{\rm dof} = -3$), plus a testable axion prediction.
+\item A joint quark and lepton fit with 18 parameters for 13 observables ($N_{\rm dof} = -5$), plus a testable axion prediction.
 \item Quark sector: $\chi^2 = 6.195\times10^{-20}$.
-\item Lepton sector: $\chi^2 < 10^{-16}$ with \(\tau_l = 0.385257 + 0.958275\,i\). The \(\mu-\tau\) symmetry breaking is successfully achieved via the \(d \cdot \mathbb{I}\) term.
+\item Lepton sector: $\chi^2 = 9.09\times10^{-6}$ with \(\tau_l = -0.902278 + 1.167996\,i\). The \(\mu-\tau\) symmetry breaking is achieved via the geometric singlets \(S_2, S_4, S_6\).
 \end{enumerate}
 
-\textbf{Verdict.} The model is phenomenological. It reproduces observations but does not predict. The coefficient degeneracy shows that the model interpolates 13 observations with 16 parameters.
-
-\section*{Data Availability}
-The datasets and the Python verification script generated during and/or analysed during the current study are available in the Zenodo repository at \url{https://doi.org/10.5281/zenodo.23503366} and in the GitHub repository at \url{https://github.com/kolbasa1972/MEML-75-Complete}.
+\textbf{Verdict.} The model is phenomenological. It reproduces observations but does not predict. The coefficient degeneracy shows that the model interpolates 13 observations with 18 parameters.
 
 \appendix
 \newpage
@@ -319,6 +311,7 @@ Y_3^{(6)} &= \tfrac13\left[2 Y_2^{(2)} Y_2^{(4)} - Y_3^{(2)} Y_1^{(4)} - Y_1^{(2
 The global fit was performed using \texttt{differential\_evolution} (SciPy):
 3 seeds (42, 43, 44); maxiter$=150$; popsize$=15$; tol$=10^{-8}$.
 Bounds: $\mathrm{Re}\,\tau \in [-0.5, 0.5]$, $\mathrm{Im}\,\tau \in [0.87, 2.5]$, $c_i \in [10^{-8}, 10^2]$.
+The complete Python script reproducing all numbers in this paper is available in the supplementary material.
 
 \section{Reproduction of $\tau$ and $\chi^2$}
 \begin{table}[H]

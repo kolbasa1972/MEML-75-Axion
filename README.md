@@ -1,7 +1,7 @@
 # MEML 75 — Quark and lepton mass matrices from T²/Z₃ geometry
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23503366.svg)](https://doi.org/10.5281/zenodo.23503366)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/kolbasa1972/MEML-75-Complete)](https://github.com/kolbasa1972/MEML-75-Axion/releases)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23439547.svg)](https://doi.org/10.5281/zenodo.23439547)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/kolbasa1972/MEML-75-Complete)](https://github.com/kolbasa1972/MEML-75-Complete/releases)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
 ![LaTeX](https://img.shields.io/badge/LaTeX-XeLaTeX-green)
 
@@ -10,7 +10,9 @@ Reference implementation of the model described in:
 - **Preprint:** Zenodo (archived with DOI)
 - **ORCID:** [0009-0006-5467-7510](https://orcid.org/0009-0006-5467-7510)
 
-This paper presents a **complete phenomenological parametrization of the quark and lepton mass matrices** through the geometry of the six-dimensional orbifold `T²/Z₃` with three independent tori, and predicts an **axion-like particle (ALP)** as dark matter.
+This paper presents a **complete phenomenological parametrization of the quark and lepton mass matrices** through the geometry of the six-dimensional orbifold `T²/Z₃` with three independent tori, and predicts an **axion-like particle (ALP)** as dark matter. 
+
+In the latest version (v9.0), the \(\mu-\tau\) symmetry breaking in the lepton sector is achieved via a **geometric singlet contraction** of \(A_4\) modular forms, eliminating the need for an ad-hoc diagonal parameter.
 
 ## Contents
 
@@ -23,10 +25,13 @@ This paper presents a **complete phenomenological parametrization of the quark a
 
 ### Verification
 
-- `meml75_complete_EN.py` — all numerical checks for quarks, leptons, and ALP.
-- `verification_log.txt` — snapshot of `✅ ALL ASSERTS PASSED` output (archived with the Zenodo release)
+- `meml75_complete_EN.py` — all numerical checks for quarks, leptons, and ALP sectors.
+- `verification_log.txt` — snapshot of `✅ ALL ASSERTS PASSED` output (archived with the Zenodo release).
+- `README.md` — this file.
 
 ## Reproduce
+
+To run the verification script (requires `numpy` and `scipy`):
 
 ```bash
 python meml75_complete_EN.py

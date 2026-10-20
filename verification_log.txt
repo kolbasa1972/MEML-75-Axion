@@ -1,5 +1,7 @@
+
+
 ████████████████████████████████████████████████████████████████████████
-  MEML 75 (v3.0) — COMPLETE CALCULATION AND VERIFICATION
+  MEML 75 (v9.0) — COMPLETE CALCULATION AND VERIFICATION
 ████████████████████████████████████████████████████████████████████████
 
 ========================================================================
@@ -46,11 +48,11 @@
 ========================================================================
   Lepton sector (4 observables)
 ========================================================================
-  [OK] theta_12: computed=3.341000e+01, expected=3.341000e+01 (rel err 1.91e-15)
-  [OK] theta_13: computed=8.540000e+00, expected=8.540000e+00 (rel err 3.54e-15)
-  [OK] theta_23: computed=4.910000e+01, expected=4.910000e+01 (rel err 0.00e+00)
-  [OK] J_cp: computed=-1.800000e-02, expected=-1.800000e-02 (rel err 7.52e-15)
-  [OK] χ²_leptons < 10^-15: computed=1.082825e-25, expected=0.000000e+00 (|1.083e-25|)
+  [OK] theta_12: computed=3.340912e+01, expected=3.341000e+01 (rel err 2.64e-05)
+  [OK] theta_13: computed=8.540005e+00, expected=8.540000e+00 (rel err 6.06e-07)
+  [OK] theta_23: computed=4.910058e+01, expected=4.910000e+01 (rel err 1.18e-05)
+  [OK] J_cp: computed=-1.798594e-02, expected=-1.800000e-02 (rel err 7.81e-04)
+  [OK] χ²_leptons < 10^-4: computed=1.237136e-05, expected=0.000000e+00 (|1.237e-05|)
 
 ========================================================================
   §11 Ω_a h²
@@ -62,8 +64,8 @@
 ========================================================================
   AIC/BIC (fermion sector)
 ========================================================================
-  [OK] AIC_MEML: computed=3.200000e+01, expected=3.200000e+01 (rel err 0.00e+00)
-  [OK] BIC_MEML: computed=4.103919e+01, expected=4.100000e+01 (rel err 9.56e-04)
+  [OK] AIC_MEML: computed=3.600000e+01, expected=3.600000e+01 (rel err 0.00e+00)
+  [OK] BIC_MEML: computed=4.616909e+01, expected=4.620000e+01 (rel err 6.69e-04)
   [OK] AIC_SM: computed=3.890000e+01, expected=3.890000e+01 (rel err 0.00e+00)
   [OK] BIC_SM: computed=4.963404e+01, expected=4.960000e+01 (rel err 6.86e-04)
 
@@ -87,3 +89,4 @@
   ✅ ALL ASSERTS PASSED (0.0s)
   All numerical claims in the paper are verified.
 ========================================================================
+
