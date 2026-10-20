@@ -23,7 +23,7 @@ as dark matter. The lepton sector is deferred to future work.
 ### Verification
 
 - `meml75_complete_EN.py` — all numerical checks (`--fit` reproduces the DE fit from scratch)
-- `verification_log.pdf` — snapshot of `✅ ALL ASSERTS PASSED` output
+- `verification_log.txt` — snapshot of `✅ ALL ASSERTS PASSED` output
   (archived with the Zenodo release; optional, regenerate locally with the command below)
 
 ### This file
