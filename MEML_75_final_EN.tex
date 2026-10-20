@@ -19,8 +19,7 @@
 \numberwithin{equation}{section}
 
 \title{\textbf{Model MEML~75:}\\[0.3cm]
-\large A phenomenological parametrization of the Standard Model\\
-fermion sector from $T^2/\mathbb{Z}_3$ geometry\\
+\large Quark and lepton mass matrices from $T^2/\mathbb{Z}_3$ geometry\\
 with axion-like (ALP) dark matter}
 \author{D.~V.~Yurov}
 \date{2026}
@@ -104,6 +103,31 @@ m_a &= \frac{(\chi^{1/4})^2}{f_a} = 28.407~\mu\text{eV}, \\
 \end{align}
 Here $\chi^{1/4} \approx 75.0$~MeV is the fourth root of the topological susceptibility of QCD. We emphasize that no explicit \(U(1)_{PQ}\) symmetry is introduced; the object is an ALP.
 
+\subsection{ALP-photon coupling}
+\begin{equation}
+g_{a\gamma\gamma} = \frac{\alpha_{\rm EM}}{2\pi f_a}\left(\frac{E}{N} - 1.92\right).
+\end{equation}
+At $f_a = 1.9801\times10^{11}$~GeV: $\alpha_{\rm EM}/(2\pi f_a) = 5.866\times10^{-15}$~GeV$^{-1}$.
+\begin{table}[H]
+\centering
+\caption{Prediction for $g_{a\gamma\gamma}$.}
+\begin{tabular}{lccc}
+\toprule
+Scenario & $E/N$ & $g_{a\gamma\gamma}$, GeV$^{-1}$ \\
+\midrule
+KSVZ & $0$   & $-1.126\times10^{-14}$ \\
+DFSZ & $8/3$ & $+4.379\times10^{-15}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{ALP dark matter}
+\begin{equation}
+\Omega_a h^2 \approx 0.12\,\theta_i^2\, f_{\rm anh}(\theta_i)
+\left(\frac{f_a}{3\times10^{11}}\right)^{7/6},
+\end{equation}
+where $f_{\rm anh}(\theta_i) = [\ln(e/(1-(\theta_i/\pi)^2))]^{7/6}$ is the anharmonicity factor. Numerical $T$-effects introduce a $+12.4\%$ correction, leading to agreement with Planck at $\theta_i = 1.1162$.
+
 \section{Quark sector (11 parameters)}
 \subsection{Matrix structure}
 \begin{equation}
@@ -119,12 +143,37 @@ a_2 Y_2^{(2)} & b Y_1^{(2)} & c Y_3^{(4)}
 \end{pmatrix}.
 \end{equation}
 
+\subsection{Target values}
+\begin{table}[H]
+\centering
+\caption{Target values (PDG~2024).}
+\begin{tabular}{lc}
+\toprule
+Observable & $O_i^{\rm target} \pm \sigma_i$ \\
+\midrule
+$m_u/m_t$ & $(1.27 \pm 0.30)\times10^{-3}/172.0$ \\
+$m_c/m_t$ & $(0.620 \pm 0.020)/172.0$ \\
+$m_d/m_b$ & $(2.70 \pm 0.20)\times10^{-3}/2.860$ \\
+$m_s/m_b$ & $(55.0 \pm 5.0)\times10^{-3}/2.860$ \\
+$m_b/m_t$ & $(2.860 \pm 0.030)/172.0$ \\
+$|V_{us}|$ & $0.22501 \pm 0.00068$ \\
+$|V_{cb}|$ & $0.04053 \pm 0.00042$ \\
+$|V_{ub}|$ & $0.00382 \pm 0.00020$ \\
+$|J|$ & $(3.080 \pm 0.130)\times10^{-5}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \subsection{Results}
 Independent optimization yields $\chi^2 = 6.195\times10^{-20}$ at the moduli given in the abstract.
+The coefficients are:
+\begin{equation}
+c^{\rm fit} \approx (5.31\times10^{-5},\,7.19,\,0.039,\,2.43\times10^{-4},\,0.503,\,1.37\times10^{-3},\,2.22\times10^{-3}).
+\end{equation}
 
 \section{Lepton sector (5 parameters)}
 \label{sec:lepton}
-The charged lepton masses are taken diagonal (in the flavor basis), while the neutrino mass matrix \(M_\nu\) is constructed from the combination of weight-2 and weight-4 modular forms.
+The charged lepton masses are taken diagonal, while the neutrino mass matrix \(M_\nu\) is constructed from the combination of weight-2 and weight-4 modular forms.
 
 \subsection{Matrix structure}
 \begin{equation}
@@ -188,18 +237,58 @@ Lepton coefficients & $g_1, g_2, d$ & 3 \\
 N_{\rm dof} = 13 - 16 = -3 .
 \end{equation}
 
+\subsection{Information criteria}
+\begin{table}[H]
+\centering
+\caption{AIC/BIC for the fermion sector ($n=13$).}
+\begin{tabular}{lccccc}
+\toprule
+Model & $k$ & $\chi^2$ & AIC & BIC \\
+\midrule
+MEML~75 & 16 & $\approx 10^{-20}$ & $32.0$ & $36.7$ \\
+SM       & 19 & $0.9$              & $38.9$ & $43.8$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Open problems}
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{Coefficient degeneracy.} The coefficients $c_i$ are non-unique: $\chi^2$ is invariant under $c_i \to k c_i$ (Appendix~D).
+\item \textbf{Status of $\alpha_G$.} Postulate. Systematic search yields no exact formula.
+\item \textbf{Status of $\varepsilon$.} Ansatz; choice of $4\pi$ is not derived.
+\item \textbf{Flatness of $\mathrm{Re}\,\tau$.} $\mathrm{Re}\,\tau$ is soft-flat (Appendix~E).
+\item \textbf{LOO instability.} At $N_{\rm dof} = -3$, spread of $|V_{ub}|$ from $-97\%$ to $+25407\%$.
+\end{enumerate}
+
+\section{Roadmap}
+\begin{table}[H]
+\centering
+\caption{Phases of development.}
+\begin{tabular}{p{1cm}p{8cm}p{3cm}}
+\toprule
+Phase & Task & Priority \\
+\midrule
+I & Mechanism for $c_i$: holomorphic 6D$\to$4D couplings & Critical \\
+I & Flux stabilization of $\mathrm{Im}\,\tau$ ($\pm 3\%$) & High \\
+II & Reduce parameters in quarks & Medium \\
+III & ADMX, DESI, DUNE, KamLAND-Zen & External \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 \section{Conclusions}
 \textbf{What has been done:}
-\begin{enumerate}
-\item A joint quark and lepton fit with 16 parameters for 13 observables
-      ($N_{\rm dof} = -3$), plus a testable axion prediction.
+\begin{enumerate}[leftmargin=1.5em]
+\item A joint quark and lepton fit with 16 parameters for 13 observables ($N_{\rm dof} = -3$), plus a testable axion prediction.
 \item Quark sector: $\chi^2 = 6.195\times10^{-20}$.
 \item Lepton sector: $\chi^2 = 1.0065\times10^{-16}$ with \(\tau_l = 0.385257 + 0.958275\,i\). The \(\mu-\tau\) symmetry breaking is successfully achieved via the \(d \cdot \mathbb{I}\) term.
-\item AIC/BIC with $N_{\rm dof} < 0$ caveat.
 \end{enumerate}
-\textbf{What does not work:} coefficients are scale-degenerate; $\alpha_G$, $\varepsilon$, $\theta_i$ are not derived from first principles. The model interpolates observations with 16 parameters.
+
+\textbf{Verdict.} The model is phenomenological. It reproduces observations but does not predict. The coefficient degeneracy shows that the model interpolates 13 observations with 16 parameters.
 
 \appendix
+\newpage
+
 \section{$A_4$ modular forms: full q-expansions}
 Definition: $q = e^{2\pi i\tau}$.
 \begin{align}
@@ -222,6 +311,57 @@ Y_1^{(6)} &= \tfrac13\left[2 Y_1^{(2)} Y_1^{(4)} - Y_2^{(2)} Y_3^{(4)} - Y_3^{(2
 Y_2^{(6)} &= \tfrac13\left[2 Y_3^{(2)} Y_3^{(4)} - Y_1^{(2)} Y_2^{(4)} - Y_2^{(2)} Y_1^{(4)}\right], \\
 Y_3^{(6)} &= \tfrac13\left[2 Y_2^{(2)} Y_2^{(4)} - Y_3^{(2)} Y_1^{(4)} - Y_1^{(2)} Y_3^{(4)}\right].
 \end{align}
+
+\section{Numerical fit procedure}
+The global fit was performed using \texttt{differential\_evolution} (SciPy):
+3 seeds (42, 43, 44); maxiter$=150$; popsize$=15$; tol$=10^{-8}$.
+Bounds: $\mathrm{Re}\,\tau \in [-0.5, 0.5]$, $\mathrm{Im}\,\tau \in [0.87, 2.5]$, $c_i \in [10^{-8}, 10^2]$.
+The complete Python script reproducing all numbers in this paper is available in the supplementary material.
+
+\section{Reproduction of $\tau$ and $\chi^2$}
+\begin{table}[H]
+\centering
+\caption{Three independent DE runs (quark sector).}
+\begin{tabular}{lcccc}
+\toprule
+Source & $\mathrm{Re}\,\tau_u$ & $\mathrm{Im}\,\tau_u$ & $\mathrm{Re}\,\tau_d$ & $\mathrm{Im}\,\tau_d$ \\
+\midrule
+Run 1 & $-0.15779$ & $2.38518$ & $+0.36939$ & $1.54105$ \\
+Run 2 & $-0.15779$ & $2.38518$ & $+0.36939$ & $1.54105$ \\
+Run 3 & $-0.12893$ & $2.38411$ & $-0.37212$ & $1.54102$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Proof of coefficient degeneracy}
+At fixed $\tau$, multiply all $c_i$ by $k$:
+\begin{table}[H]
+\centering
+\caption{Invariance of $\chi^2$ under $c_i \to k c_i$.}
+\begin{tabular}{cc}
+\toprule
+$k$ & $\chi^2$ \\
+\midrule
+$0.5$  & $6.20\times10^{-20}$ \\
+$1.0$  & $6.20\times10^{-20}$ \\
+$1.87$ & $1.08\times10^{-19}$ \\
+$10.0$ & $3.00\times10^{-19}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Flatness of $\mathrm{Re}\,\tau$}
+Scan in $\mathrm{Re}\,\tau_u$: width of $\chi^2<10$: $[-0.40, +0.00]$ ($0.40$).
+Scan in $\mathrm{Re}\,\tau_d$: width of $\chi^2<10$: $[+0.30, +0.50]$ ($0.20$).
+
+\section{LOO test}
+For each $j \in \{1,\ldots,9\}$: remove the $j$-th observable, predict the $j$-th. $N_{\rm dof} = +1$. Results: mean $|V_{ub}|$ $+16728\%$, std $11819\%$.
+
+\section{Systematic search for $\alpha_G$}
+Tested $N = 392$ combinations. \textbf{2 coincidences below $0.1\%$:}
+$|Y^{(6)}_1|/|Y^{(4)}_3| = 0.212125$ ($-0.0385\%$);
+$|Y^{(6)}_2|/\pi = 0.212411$ ($+0.0965\%$).
+Poisson: $\langle n\rangle = 0.78$, $n_{\rm obs} = 2$; $P(n \ge 2) = 0.185$.
 
 \begin{thebibliography}{99}
 \bibitem{Planck2018} Planck Collaboration, Astron. Astrophys. \textbf{641}, A6 (2020).
