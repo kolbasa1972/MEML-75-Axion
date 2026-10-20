@@ -1,22 +1,37 @@
-# MEML-75-Axion
+# MEML 75 — Axion-like (ALP) dark matter from T²/Z₃ geometry
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23439548.svg)](https://doi.org/10.5281/zenodo.23439548)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![License: CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by/4.0/)
+Reference implementation of the model described in
 
-Reference implementation and manuscript for model MEML 75.
-The paper is under review at *Physical Review D* (Manuscript ID DXR1128).
-The preprint is **not** on arXiv; priority is fixed via Zenodo and GitHub.
+- **Manuscript:** Phys. Rev. D (submitted as a Letter), ID **DXR1128**
+- **Preprint / priority:** Zenodo, DOI [10.5281/zenodo.23439548](https://doi.org/10.5281/zenodo.23439548)
+- **ORCID:** [0009-0006-5467-7510](https://orcid.org/0009-0006-5467-7510)
+
+The paper parametrizes the **quark sector** of the Standard Model
+through the geometry of the six-dimensional orbifold `T²/Z₃`
+with two independent tori, and predicts an **axion-like particle (ALP)**
+as dark matter. The lepton sector is deferred to future work.
 
 ## Contents
-- `MEML_75_final_EN.tex` — full paper source (XeLaTeX, English)
-- `MEML_75_final_EN.pdf` — compiled PDF
-- `MEML_75_final_RU.tex` — Russian translation
-- `MEML_75_final_RU.pdf` — compiled PDF (Russian)
-- `MEML_75_complete_EN.py` — all numerical checks (verification mode)
-- `README.md` — this file
+
+### Paper (source + compiled)
+
+- `MEML_75_final_EN.tex` — full paper source (XeLaTeX, `fontspec` + `polyglossia`)
+- `MEML_75_final_EN.pdf` — compiled English version (the one submitted to PRD)
+- `MEML_75_final_RU.tex` — Russian translation (source)
+- `MEML_75_final_RU.pdf` — compiled Russian version
+
+### Verification
+
+- `meml75_complete_EN.py` — all numerical checks (`--fit` reproduces the DE fit from scratch)
+- `verification_log.pdf` — snapshot of `✅ ALL ASSERTS PASSED` output
+  (archived with the Zenodo release; optional, regenerate locally with the command below)
+
+### This file
+
+- `README.md`
 
 ## Reproduce
+
 ```bash
-python meml75_complete_EN.py          # verification (~5 s)
-python meml75_complete_EN.py --fit    # + reproduce DE-fit (~3 min)
+python meml75_complete_EN.py
+# → "✅ ALL ASSERTS PASSED"

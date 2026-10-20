@@ -17,12 +17,11 @@
 \tolerance=1000
 \emergencystretch=3em
 \numberwithin{equation}{section}
-\newtheorem{theorem}{Theorem}[section]
 
 \title{\textbf{Model MEML~75:}\\[0.3cm]
 \large A phenomenological parametrization of the Standard Model\\
-fermion sector from $T^2/\mathbb{Z}_3$ geometry\\
-with axion dark matter}
+quark sector from $T^2/\mathbb{Z}_3$ geometry\\
+with axion-like (ALP) dark matter}
 \author{D.~V.~Yurov}
 \date{2026}
 
@@ -31,8 +30,8 @@ with axion dark matter}
 
 \begin{abstract}
 \noindent
-We present model MEML~75, which describes the Standard Model
-fermion sector through the geometry of the six-dimensional
+We present model MEML~75, which parametrizes the quark sector of the
+Standard Model through the geometry of the six-dimensional
 orbifold $T^2/\mathbb{Z}_3$ with two independent tori.
 The model fits \textbf{9 quark observables} (5 masses $+$ 3 CKM $+$ $J$)
 with \textbf{11 free parameters} ($N_{\rm dof} = 9-11 = -2$ in the
@@ -41,7 +40,7 @@ quark sector).
 \textbf{The main testable prediction:}
 axion-like dark matter with
 $f_a = 1.9801\times10^{11}$~GeV,
-$m_a = 28.407$~$\mu$eV, $\nu_a = 6.8688$~GHz, and axion-photon
+$m_a = 28.407$~$\mu$eV, $\nu_a = 6.8688$~GHz, and ALP-photon
 coupling
 $g_{a\gamma\gamma} = +4.38\times10^{-15}$~GeV$^{-1}$ (DFSZ)
 or $-1.13\times10^{-14}$~GeV$^{-1}$ (KSVZ), testable
@@ -55,7 +54,7 @@ motivation; $\varepsilon = (\alpha_G/(4\pi))^2$ is a one-loop
 \emph{ansatz}; $m_{KK}$, $M_6$ are conditionally derived at
 $\mathcal{I} = 0.3653$.
 
-\textbf{Fermion sector.} A global fit with loss function
+\textbf{Quark sector.} A global fit with loss function
 $\chi^2 = \sum_i ((O_i-O_i^{\rm target})/\sigma_i)^2$ yields
 $\chi^2 = 6.195\times10^{-20}$ at
 $\tau_u = -0.1577944085 + 2.3851782590\,i$,
@@ -90,11 +89,11 @@ under \(c_i \to k c_i\) (Appendix~D). The model
 
 Modular models of fermion masses~\cite{Feruglio2017,Kobayashi2019}
 build the mass hierarchy and mixing from compactification geometry.
-In model MEML~75, quarks and leptons are localized on two
+In model MEML~75, quarks are localized on two
 independent tori $T^2/\mathbb{Z}_3$ with moduli $\tau_u$ and
 $\tau_d$, and the mass matrices are built from $A_4$ modular
-forms of weights $(2,4,6)$. The axion arising from the same
-geometric ingredients provides dark matter.
+forms of weights $(2,4,6)$. An axion-like particle (ALP) arising from the same
+geometric ingredients provides dark matter. The lepton sector is deferred to future work.
 
 \subsection{Self-containment}
 
@@ -157,7 +156,7 @@ generations.
 \subsection{Two-torus structure}
 \label{sec:tau-fit}
 
-Quarks and leptons are localized on different tori with moduli:
+Quarks are localized on different tori with moduli:
 \begin{equation}
 \boxed{\;\tau_u = -0.1577944085 + 2.3851782590\,i, \quad
 \tau_d = +0.3693905617 + 1.5410496057\,i\;}
@@ -314,15 +313,15 @@ M_6 &= \left(3 (M_{Pl}^{\rm red})^2 m_{KK}^2\right)^{1/4}
 = 2.9646\times10^{16}~\text{GeV} \quad \text{[COND]},
 \end{align}
 at $\mathcal{I} = 0.3653$. $M_6 \propto \mathcal{I}^{-1/4}$.
-For instance, at the lower bound $\mathcal{I} = 0.1$ (mentioned in the Abstract), 
+For instance, at $\mathcal{I} = 0.1$, 
 the dynamically calculated scale is $M_6 = 4.098 \times 10^{16}$~GeV, 
 which rounds to $4.10 \times 10^{16}$~GeV.
 % ============================================================
-\section{Axion sector}
+\section{Axion-like (ALP) sector}
 \label{sec:axion}
 % ============================================================
 
-\subsection{Axion parameters}
+\subsection{ALP parameters}
 
 \begin{align}
 f_a &= M_{Pl}^{\rm red}\,\varepsilon^2
@@ -343,9 +342,11 @@ $\chi^{1/4} = 75.5$~MeV would give $m_a = 28.8$~$\mu$eV and
 $\nu_a = 6.96$~GHz; both values lie within the theoretical
 uncertainty of $\chi^{1/4}$ and are testable at ADMX/HAYSTAC.}
 
+We emphasize that no explicit \(U(1)_{PQ}\) symmetry is introduced in this model. The parameter \(E/N\) is a discrete choice rather than a theoretical prediction. Furthermore, the axion quality problem is not addressed within this framework.
+
 \textbf{Status: [COND].} $\nu_a$ within ADMX/HAYSTAC range.
 
-\subsection{Axion-photon coupling}
+\subsection{ALP-photon coupling}
 \label{sec:gagg}
 
 \begin{equation}
@@ -376,14 +377,16 @@ a \emph{two-point} target.
 % ============================================================
 
 While $SU(5)$ is the unique rank-4 group admitting the required
-SM content, the fermion sector here is built on $A_4$ modular
+SM content, the quark sector here is built on $A_4$ modular
 forms. The $SU(5)$ structure is not used for the mass generation
 mechanism and is mentioned only for completeness.
 
 % ============================================================
-\section{Fermion sector (11 parameters)}
+\section{Quark sector (11 parameters)}
 \label{sec:fermion}
 % ============================================================
+
+We assume that the Yukawa couplings are defined at the GUT scale. RG running down to the electroweak scale is neglected, following the standard practice in modular flavor models~\cite{Feruglio2017}; it introduces \(\mathcal{O}(1)\) uncertainties but does not affect the structural findings (coefficient degeneracy, LOO instability).
 
 \subsection{Matrix structure}
 
@@ -519,7 +522,7 @@ Seed & $\chi^2$ & $|V_{ub}|$ err & $|J|$ err \\
 lies in over-determination ($N_{\rm dof} = -2$).
 
 % ============================================================
-\section{Axion dark matter}
+\section{ALP dark matter}
 \label{sec:dm}
 % ============================================================
 
@@ -603,7 +606,7 @@ Fermion moduli & $\tau_u, \tau_d$ (complex) & 4 \\
 up coefficients & $a_u, b_u, c_u$ & 3 \\
 down coefficients & $a_1, a_2, b, c$ & 4 \\
 Topological & $\mathcal{I}$ & 1 \\
-Axion & $\theta_i$ & 1 \\
+ALP & $\theta_i$ & 1 \\
 \midrule
 \textbf{Total} & & \textbf{13} \\
 \bottomrule
@@ -620,7 +623,7 @@ Sector & Observables & Status \\
 Quark masses & $m_u/m_t, \ldots, m_b/m_t$ & 5 (fitted) \\
 Quark CKM & $|V_{us}|, |V_{cb}|, |V_{ub}|$ & 3 (fitted) \\
 Quark ($J$) & $|J|$ & 1 (fitted) \\
-Axion & $\nu_a$, $g_{a\gamma\gamma}$ & predicted \\
+ALP & $\nu_a$, $g_{a\gamma\gamma}$ & predicted \\
 Cosmology & $\Omega_a h^2$ & 1 (fitted via $\theta_i$) \\
 Lepton PMNS & $\theta_{12}, \theta_{13}, \theta_{23}, |J|$ & 4 (future work) \\
 \midrule
@@ -636,20 +639,18 @@ N_{\rm dof}^{\rm quarks} = 9 - 11 = -2 .
 \subsection{Information criteria}
 
 \begin{table}[H]
-\centering\caption{AIC/BIC ($n=9$). The count $k=13$ is the total number of model parameters; the quark-only fit uses $k_q=11$ (see \S\ref{sec:balance}).}
+\centering\caption{AIC/BIC for the quark sector ($n=9$). Here $k_q$ is the number of quark-sector parameters.}
 \begin{tabular}{lccccc}
 \toprule
-Model & $k$ & $\chi^2$ & AIC & BIC \\
+Model & $k_q$ & $\chi^2$ & AIC & BIC \\
 \midrule
-MEML~75 & 13 & $\approx 10^{-20}$ & $26.0$ & $28.6$ \\
-SM       & 19 & $0.9$              & $38.9$ & $42.6$ \\
+MEML~75 & 11 & $\approx 10^{-20}$ & $22.0$ & $24.2$ \\
+SM       & 10 & $0.9$              & $20.9$ & $22.9$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-Formally, MEML wins. However $N_{\rm dof} = -2$:
-$\chi^2 \sim 10^{-20}$ is a trivial consequence of
-over-determination, not of predictive power.
+A strict AIC/BIC comparison for the quark sector alone does not show a decisive statistical preference over the Standard Model ($k_q = 11$ for our model vs.\ $k_q^{SM} = 10$ for the SM). We therefore present our model primarily as a phenomenological parametrization of quark parameters from $T^2/\mathbb{Z}_3$ geometry, rather than as a statistically preferred alternative.
 
 % ============================================================
 \section{Open problems}
@@ -724,7 +725,7 @@ IV & Leptogenesis, dark energy & Long-term \\
 \textbf{What has been done:}
 \begin{enumerate}[leftmargin=1.5em,itemsep=0.05em]
 \item A quark-sector fit with 11 parameters for 9 observables
-      ($N_{\rm dof} = -2$), plus a testable axion prediction.
+      ($N_{\rm dof} = -2$), plus a testable ALP prediction.
 \item 4 systematic tests (B.1, C.3, B.2, A.1) --- all negative.
 \item A global fit $\chi^2 = 6.195\times10^{-20}$ at
       $\tau_u = -0.1578+2.3852i$, $\tau_d = +0.3694+1.5410i$;

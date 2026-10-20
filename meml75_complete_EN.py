@@ -4,12 +4,14 @@
 ================================================================================
 MEML 75 — COMPLETE CALCULATION AND VERIFICATION
 ================================================================================
-Verifies ALL numbers in the paper. In --fit mode, it reproduces the DE-fit
-from scratch (~2–3 minutes). By default, it verifies saved values (~5 seconds).
+Verifies the numerical claims of the paper. In --fit mode, it reproduces the
+DE-fit from scratch (~2–3 minutes). By default, it verifies saved values
+(~5 seconds).
 
 Modes:
-  python meml75_complete_EN.py           # verification (5 sec)
-  python meml75_complete_EN.py --fit     # + reproduce DE (~3 min)
+  python meml75_complete_EN.py                     # verification (5 sec)
+  python meml75_complete_EN.py --fit               # + reproduce DE (~3 min)
+  python meml75_complete_EN.py --output out.json   # + write JSON snapshot
 
 Notes: each block is provided with a "WHAT IS VERIFIED" and "WHERE IT COMES FROM"
 comment — so the reader can match it with the paper sections.
@@ -17,7 +19,6 @@ comment — so the reader can match it with the paper sections.
 """
 import numpy as np
 import sys, time, argparse
-from pathlib import Path
 
 # ═══ Try importing scipy (needed for --fit) ═══════════════════════
 try:
@@ -29,11 +30,11 @@ except ImportError:
 
 # ═══ Constants (all from the paper; see §4, §5, §6) ══════════════
 PI = np.pi
-M_Pl_red = 2.4350e18        # reduced Planck mass, GeV
-Lambda_QCD = 0.0750         # QCD scale, GeV
-h_eV_s = 4.135667696e-15    # Planck constant, eV·s
-alpha_EM = 1.0 / 137.036    # alpha_EM at M_Z
-M_PL = 2.435e18             # for mass matrices (same as M_Pl_red)
+M_Pl_red = 2.4350e18          # reduced Planck mass, GeV
+chi_quarter_GeV = 0.0750      # (topological susceptibility)^(1/4), GeV
+h_eV_s = 4.135667696e-15      # Planck constant, eV·s
+alpha_EM = 1.0 / 137.036      # alpha_EM at M_Z
+M_PL = M_Pl_red               # overall scale in mass matrices; cancels in ratios
 
 # ═══ Exact values (from paper §2.3, §8) ═════════════════════════
 # IMPORTANT: DO NOT ROUND. Rounding to 3 significant digits raises χ²
@@ -52,7 +53,7 @@ COEFS = np.array([
     0.002220219681204568,    # c_d
 ])
 
-# Paper χ² (§8)
+# Paper χ² (§8) — for reference / JSON snapshot
 CHI2_ARTICLE = 6.195093353331281e-20
 
 # ═══ Target values (PDG 2024, Table targets) ══════════════════════
@@ -244,7 +245,7 @@ def sec3_4():
     """WHAT IS VERIFIED: N=392, n_obs=2, p-value=0.185.
        WHERE IT COMES FROM: §3.4, Appendix G."""
     head("§3.4 Systematic search for α_G (392 combinations)")
-    from math import exp, factorial
+    from math import exp
 
     tau = np.exp(1j*PI/3)
     y2 = Y2(tau); y4 = Y4(tau); y6 = Y6(tau)
@@ -293,7 +294,7 @@ def sec3_4():
     p_ge_2 = 1 - exp(-n_exp_01) - n_exp_01*exp(-n_exp_01)
 
     print(f"  N_total = {N_total}, hits <1% = {len(hits)}, hits <0.1% = {n_obs_01}")
-    check("N_total", N_total, 392, 1e-3, )
+    check("N_total", N_total, 392, 1e-3)
     check("n_obs (<0.1%)", n_obs_01, 2, 1e-3)
     check("p-value (Poisson)", p_ge_2, 0.185, 5e-2)
 
@@ -311,10 +312,10 @@ def sec4():
 
 # ═══ §5 m_KK, M_6 ══════════════════════════════════════════════
 def sec5():
-    """WHAT IS VERIFIED: m_KK, M_6 (at 𝓘=0.3653 and 𝓘=0.1).
+    """WHAT IS VERIFIED: m_KK, M_6 (at 𝓘=0.3653 and illustrative 𝓘=0.1).
        WHERE IT COMES FROM: §5."""
     head("§5 m_KK, M_6")
-    
+
     # Standard value: I = 0.3653
     I = 0.3653
     m_KK = M_Pl_red / (np.sqrt(I)*np.exp(PI**2))
@@ -322,22 +323,22 @@ def sec5():
     check("m_KK (I=0.3653)", m_KK, 2.0838e14, 1e-3)
     check("M_6 (I=0.3653)", M_6, 2.9646e16, 1e-3)
 
-    # Lower bound scan mentioned in Abstract/Text: I = 0.1
+    # Illustrative lower value I = 0.1 (matches the paper example)
     I_low = 0.1
     m_KK_low = M_Pl_red / (np.sqrt(I_low)*np.exp(PI**2))
     M_6_low = (3.0 * M_Pl_red**2 * m_KK_low**2)**0.25
     check("M_6 (I=0.1)", M_6_low, 4.0984e16, 1e-4)
     print(f"    Note: M_6 at I=0.1 is {M_6_low:.4e} GeV, which rounds to 4.10e16 GeV.")
 
-# ═══ §6 Axion ══════════════════════════════════════════════════
+# ═══ §6 ALP ════════════════════════════════════════════════════
 def sec6():
     """WHAT IS VERIFIED: f_a, m_a, ν_a, g_aγγ (KSVZ/DFSZ).
        WHERE IT COMES FROM: §6."""
-    head("§6 Axion")
+    head("§6 ALP")
     alpha_G = 2.0/(3*PI)
     eps = (alpha_G/(4*PI))**2
     f_a = M_Pl_red * eps**2
-    m_a_GeV = Lambda_QCD**2 / f_a
+    m_a_GeV = chi_quarter_GeV**2 / f_a
     m_a_eV = m_a_GeV * 1e9
     m_a_uV = m_a_eV * 1e6
     nu_a_GHz = (m_a_eV / h_eV_s) / 1e9
@@ -387,20 +388,21 @@ def sec11(f_a):
     check("Ω_anh", Om_anh, 0.1067, 5e-3)
     check("δ_T", delta_T, 0.124, 5e-2)
 
-# ═══ §14.4 AIC/BIC ═════════════════════════════════════════════
+# ═══ §14.4 AIC/BIC (quark sector) ══════════════════════════════
 def sec14_4():
-    """WHAT IS VERIFIED: AIC/BIC for MEML and SM.
+    """WHAT IS VERIFIED: AIC/BIC for the quark sector
+       (k_q = 11 for MEML, k_q^SM = 10 for SM; n = 9).
        WHERE IT COMES FROM: §14.4."""
-    head("§14.4 AIC/BIC")
+    head("§14.4 AIC/BIC (quark sector)")
     n = 9
-    k_M, k_SM = 13, 19
+    k_q, k_q_SM = 11, 10
     chi2_M, chi2_SM = 1e-20, 0.9
-    AIC_M = chi2_M + 2*k_M; BIC_M = chi2_M + k_M*np.log(n)
-    AIC_S = chi2_SM + 2*k_SM; BIC_S = chi2_SM + k_SM*np.log(n)
-    check("AIC_MEML", AIC_M, 26.0, 1e-2)
-    check("BIC_MEML", BIC_M, 28.6, 1e-2)
-    check("AIC_SM", AIC_S, 38.9, 1e-2)
-    check("BIC_SM", BIC_S, 42.6, 1e-2)
+    AIC_M = chi2_M + 2*k_q; BIC_M = chi2_M + k_q*np.log(n)
+    AIC_S = chi2_SM + 2*k_q_SM; BIC_S = chi2_SM + k_q_SM*np.log(n)
+    check("AIC_MEML", AIC_M, 22.0, 1e-2)
+    check("BIC_MEML", BIC_M, 24.2, 1e-2)
+    check("AIC_SM", AIC_S, 20.9, 1e-2)
+    check("BIC_SM", BIC_S, 22.9, 1e-2)
 
 # ═══ App C: rounding sensitivity ═══════════════════════════════
 def appC():
@@ -456,7 +458,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--fit', action='store_true',
                     help='reproduce the DE-fit (~3 min)')
-    ap.add_argument('--output', default='results_complete.json')
+    ap.add_argument('--output', default=None,
+                    help='write verified values to JSON (e.g. results_complete.json)')
     args = ap.parse_args()
 
     print("\n" + "█"*72)
@@ -471,7 +474,7 @@ def main():
     sec3_3()
     sec3_4()
     sec4()
-    sec5() # Now includes dynamic I=0.1 check
+    sec5()                 # includes I=0.3653 and I=0.1 checks
     f_a = sec6()
     sec8()
     sec11(f_a)
@@ -498,9 +501,24 @@ def main():
         assert abs(td_fit - TAU_D) < 0.05, f"FAIL: τ_d differs by {abs(td_fit - TAU_D)}"
         print("  ✅ DE-fit converges to τ from the paper")
 
+    # Optional JSON snapshot (only values already asserted above)
+    if args.output:
+        import json
+        snapshot = {
+            "status": "ALL ASSERTS PASSED",
+            "chi2": float(CHI2_ARTICLE),
+            "f_a_GeV": float(f_a),
+            "tau_u": [TAU_U.real, TAU_U.imag],
+            "tau_d": [TAU_D.real, TAU_D.imag],
+            "coefs": COEFS.tolist(),
+        }
+        with open(args.output, "w") as fh:
+            json.dump(snapshot, fh, indent=2)
+        print(f"\n  → {args.output}")
+
     print(f"\n{'='*72}")
     print(f"  ✅ ALL ASSERTS PASSED ({time.time()-t0:.1f}s)")
-    print(f"  All numbers in the paper are verified.")
+    print(f"  All numerical claims in the paper are verified.")
     print(f"{'='*72}")
 
 if __name__ == '__main__':
