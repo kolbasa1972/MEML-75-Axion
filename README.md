@@ -1,6 +1,6 @@
 # MEML 75 — Axion-like (ALP) dark matter from T²/Z₃ geometry
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23439548.svg)](https://doi.org/10.5281/zenodo.23439548)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23439547.svg)](https://doi.org/10.5281/zenodo.23439547)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/kolbasa1972/MEML-75-Axion)](https://github.com/kolbasa1972/MEML-75-Axion/releases)
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
 ![LaTeX](https://img.shields.io/badge/LaTeX-XeLaTeX-green)
