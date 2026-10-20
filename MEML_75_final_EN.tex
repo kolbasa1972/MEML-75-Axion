@@ -51,7 +51,7 @@ $\tau_u = -0.1577944085 + 2.3851782590\,i$,
 $\tau_d = +0.3693905617 + 1.5410496057\,i$.
 
 \textbf{Lepton sector.} Using a third torus \(\tau_l\), a combination of $A_4$ modular forms $Y^{(2)}$ and $Y^{(4)}$ yields
-$\chi^2 = 1.0065\times10^{-16}$ for the PMNS observables at
+$\chi^2 < 10^{-16}$ for the PMNS observables at
 $\tau_l = 0.385257 + 0.958275\,i$. The model predicts
 $\theta_{12}=33.41^\circ$, $\theta_{13}=8.54^\circ$, $\theta_{23}=49.10^\circ$, and $J_{cp}=-0.018$.
 
@@ -192,10 +192,10 @@ The diagonal term \(d \cdot \mathbb{I}\) breaks the \(\mu-\tau\) symmetry.
 \subsection{Results}
 Independent optimization yields:
 \begin{equation}
-\boxed{\;\chi^2 = 1.0065\times10^{-16}
+\boxed{\;\chi^2 < 10^{-16}
 \quad\text{at}\quad
 \tau_l = 0.385257 + 0.958275\,i,\;
-g_1 = 9.9009,\; g_2 = 9.6201,\; d = -7.0956.\;}
+g_1 = -19.9981,\; g_2 = -19.4310,\; d = 14.3320.\;}
 \end{equation}
 
 \begin{table}[H]
@@ -245,8 +245,8 @@ N_{\rm dof} = 13 - 16 = -3 .
 \toprule
 Model & $k$ & $\chi^2$ & AIC & BIC \\
 \midrule
-MEML~75 & 16 & $\approx 10^{-20}$ & $32.0$ & $36.7$ \\
-SM       & 19 & $0.9$              & $38.9$ & $43.8$ \\
+MEML~75 & 16 & $\approx 10^{-20}$ & $32.0$ & $41.0$ \\
+SM       & 19 & $0.9$              & $38.9$ & $49.6$ \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -281,10 +281,13 @@ III & ADMX, DESI, DUNE, KamLAND-Zen & External \\
 \begin{enumerate}[leftmargin=1.5em]
 \item A joint quark and lepton fit with 16 parameters for 13 observables ($N_{\rm dof} = -3$), plus a testable axion prediction.
 \item Quark sector: $\chi^2 = 6.195\times10^{-20}$.
-\item Lepton sector: $\chi^2 = 1.0065\times10^{-16}$ with \(\tau_l = 0.385257 + 0.958275\,i\). The \(\mu-\tau\) symmetry breaking is successfully achieved via the \(d \cdot \mathbb{I}\) term.
+\item Lepton sector: $\chi^2 < 10^{-16}$ with \(\tau_l = 0.385257 + 0.958275\,i\). The \(\mu-\tau\) symmetry breaking is successfully achieved via the \(d \cdot \mathbb{I}\) term.
 \end{enumerate}
 
 \textbf{Verdict.} The model is phenomenological. It reproduces observations but does not predict. The coefficient degeneracy shows that the model interpolates 13 observations with 16 parameters.
+
+\section*{Data Availability}
+The datasets and the Python verification script generated during and/or analysed during the current study are available in the Zenodo repository at \url{https://doi.org/10.5281/zenodo.23503366} and in the GitHub repository at \url{https://github.com/kolbasa1972/MEML-75-Complete}.
 
 \appendix
 \newpage
@@ -316,7 +319,6 @@ Y_3^{(6)} &= \tfrac13\left[2 Y_2^{(2)} Y_2^{(4)} - Y_3^{(2)} Y_1^{(4)} - Y_1^{(2
 The global fit was performed using \texttt{differential\_evolution} (SciPy):
 3 seeds (42, 43, 44); maxiter$=150$; popsize$=15$; tol$=10^{-8}$.
 Bounds: $\mathrm{Re}\,\tau \in [-0.5, 0.5]$, $\mathrm{Im}\,\tau \in [0.87, 2.5]$, $c_i \in [10^{-8}, 10^2]$.
-The complete Python script reproducing all numbers in this paper is available in the supplementary material.
 
 \section{Reproduction of $\tau$ and $\chi^2$}
 \begin{table}[H]
