@@ -23,7 +23,7 @@ This paper presents a **complete phenomenological parametrization of the quark a
 
 ### Verification
 
-- `meml75_complete_EN7.py` — all numerical checks for quarks, leptons, and ALP.
+- `meml75_complete_EN.py` — all numerical checks for quarks, leptons, and ALP.
 - `verification_log.txt` — snapshot of `✅ ALL ASSERTS PASSED` output (archived with the Zenodo release)
 
 ## Reproduce
