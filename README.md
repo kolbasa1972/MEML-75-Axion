@@ -29,5 +29,5 @@ This paper presents a **complete phenomenological parametrization of the quark a
 ## Reproduce
 
 ```bash
-python meml75_complete_EN7.py
+python meml75_complete_EN.py
 # → "✅ ALL ASSERTS PASSED"
