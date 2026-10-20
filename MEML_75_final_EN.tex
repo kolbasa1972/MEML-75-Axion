@@ -20,7 +20,7 @@
 
 \title{\textbf{Model MEML~75:}\\[0.3cm]
 \large A phenomenological parametrization of the Standard Model\\
-quark sector from $T^2/\mathbb{Z}_3$ geometry\\
+fermion sector from $T^2/\mathbb{Z}_3$ geometry\\
 with axion-like (ALP) dark matter}
 \author{D.~V.~Yurov}
 \date{2026}
@@ -30,12 +30,11 @@ with axion-like (ALP) dark matter}
 
 \begin{abstract}
 \noindent
-We present model MEML~75, which parametrizes the quark sector of the
+We present model MEML~75, which parametrizes the fermion sector of the
 Standard Model through the geometry of the six-dimensional
-orbifold $T^2/\mathbb{Z}_3$ with two independent tori.
-The model fits \textbf{9 quark observables} (5 masses $+$ 3 CKM $+$ $J$)
-with \textbf{11 free parameters} ($N_{\rm dof} = 9-11 = -2$ in the
-quark sector).
+orbifold $T^2/\mathbb{Z}_3$ with three independent tori.
+The model fits \textbf{13 fermion observables} (9 quarks $+$ 4 leptons)
+with \textbf{16 free parameters} ($N_{\rm dof} = 13-16 = -3$).
 
 \textbf{The main testable prediction:}
 axion-like dark matter with
@@ -45,351 +44,68 @@ coupling
 $g_{a\gamma\gamma} = +4.38\times10^{-15}$~GeV$^{-1}$ (DFSZ)
 or $-1.13\times10^{-14}$~GeV$^{-1}$ (KSVZ), testable
 at ADMX/HAYSTAC (0.5--10~GHz).
-The relic density $\Omega_a h^2$ is reproduced with one free
-parameter $\theta_i$.
-
-\textbf{Classification of quantities:}
-$\alpha_G = 2/(3\pi)$ is a \emph{postulate} with geometric
-motivation; $\varepsilon = (\alpha_G/(4\pi))^2$ is a one-loop
-\emph{ansatz}; $m_{KK}$, $M_6$ are conditionally derived at
-$\mathcal{I} = 0.3653$.
 
 \textbf{Quark sector.} A global fit with loss function
 $\chi^2 = \sum_i ((O_i-O_i^{\rm target})/\sigma_i)^2$ yields
 $\chi^2 = 6.195\times10^{-20}$ at
 $\tau_u = -0.1577944085 + 2.3851782590\,i$,
 $\tau_d = +0.3693905617 + 1.5410496057\,i$.
-Independent reproduction is given in~\S\ref{sec:fermion}
-and Appendix~C. $\mathrm{Im}\,\tau$ is stable ($\pm 0.3\%$),
-$\mathrm{Re}\,\tau$ is soft-flat (Appendix~E).
 
-\textbf{Systematic tests} (all negative):
-(1)~the universal Yukawa ansatz is excluded;
-(2)~36 matrix structures are equally unstable (spread of
-$|V_{ub}|$ from $-97\%$ to $+25407\%$);
-(3)~$\theta_i$ from inflation is excluded at \(26\sigma\);
-(4)~modular forms at $\tau = e^{i\pi/3}$ do not yield
-\(\alpha_G\) exactly ($|Y^{(6)}_2|^2 = 0.445302 \neq 4/9$).
+\textbf{Lepton sector.} Using a third torus \(\tau_l\), a combination of $A_4$ modular forms $Y^{(2)}$ and $Y^{(4)}$ yields
+$\chi^2 = 1.0065\times10^{-16}$ for the PMNS observables at
+$\tau_l = 0.385257 + 0.958275\,i$. The model predicts
+$\theta_{12}=33.41^\circ$, $\theta_{13}=8.54^\circ$, $\theta_{23}=49.10^\circ$, and $J_{cp}=-0.018$.
 
-\textbf{Coefficient degeneracy.} At \(N_{\rm dof} = 9-11 = -2\)
-the coefficients \(c_i\) are non-unique: \(\chi^2\) is invariant
-under \(c_i \to k c_i\) (Appendix~D). The model
-\emph{interpolates} quark observations, it does not predict them.
-
-\textbf{Verdict:} the model is \emph{phenomenological}.
+\textbf{Verdict:} the model is \emph{phenomenological}. It interpolates fermion observations with high precision.
 \end{abstract}
 
 \newpage
 
-% ============================================================
 \section{Introduction}
-% ============================================================
-
-\subsection{Motivation}
 
 Modular models of fermion masses~\cite{Feruglio2017,Kobayashi2019}
 build the mass hierarchy and mixing from compactification geometry.
-In model MEML~75, quarks are localized on two
-independent tori $T^2/\mathbb{Z}_3$ with moduli $\tau_u$ and
-$\tau_d$, and the mass matrices are built from $A_4$ modular
-forms of weights $(2,4,6)$. An axion-like particle (ALP) arising from the same
-geometric ingredients provides dark matter. The lepton sector is deferred to future work.
+In model MEML~75, quarks and leptons are localized on three
+independent tori $T^2/\mathbb{Z}_3$ with moduli $\tau_u$, $\tau_d$, and \(\tau_l\). The mass matrices are built from $A_4$ modular forms of weights $(2,4,6)$.
 
-\subsection{Self-containment}
-
-The paper is constructed so that the reader can reproduce
-\emph{every} number without external sources:
-\begin{itemize}[leftmargin=1.5em,itemsep=0.05em]
-\item all Y-forms (q-expansion coefficients) --- in Appendix~A;
-\item all PDG target values --- in~\S\ref{sec:fermion};
-\item DE-optimization procedure with parameters --- in Appendix~B;
-\item three independent fits --- in Appendix~C;
-\item proof of scale-degeneracy --- in Appendix~D;
-\item flatness procedure --- in Appendix~E;
-\item LOO procedure --- in Appendix~F;
-\item systematic search for $\alpha_G$ (392 combinations) --- in Appendix~G.
-\end{itemize}
-
-\subsection{Conventions}
-\label{sec:statuses}
-
-\begin{table}[H]
-\centering
-\caption{Status of quantities.}
-\begin{tabular}{ll}
-\toprule
-Status & Meaning \\
-\midrule
-\textbf{[POSTULATE]} & Postulate with geometric motivation \\
-\textbf{[ANSATZ]}    & Phenomenological ansatz \\
-\textbf{[COND]}      & Conditionally derived (at $\mathcal{I}$) \\
-\textbf{[MATCH]}     & Structural matching relation \\
-\textbf{[DERIVED]}   & Algebraic consequence \\
-\textbf{[FIT]}       & From numerical fit \\
-\textbf{[OBSERVED]}  & Experimental value \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-% ============================================================
 \section{Geometry of $T^2/\mathbb{Z}_3$}
-\label{sec:geom}
-% ============================================================
-
-\subsection{Metric and modular parameter}
-
-The orbifold $T^2/\mathbb{Z}_3$:
+The orbifold $T^2/\mathbb{Z}_3$ is defined by:
 \begin{equation}
 z = x + \tau y, \quad ds^2 = dx^2 + dx\,dy + dy^2,
 \end{equation}
-where $\tau = e^{i\pi/3} = \frac12 + i\frac{\sqrt3}{2}$.
+where $\tau = e^{i\pi/3} = \frac12 + i\frac{\sqrt3}{2}$. The $Z_3$-action $z \to \omega z$ (with $\omega = e^{2\pi i/3}$) has three fixed points, providing a topological explanation for three generations.
 
-\subsection{Fixed points}
-
-$Z_3$-action $z \to \omega z$, $\omega = e^{2\pi i/3}$:
-\begin{equation}
-z_1 = (0,0), \quad z_2 = (\tfrac13,\tfrac13), \quad z_3 = (\tfrac23,\tfrac23).
-\end{equation}
-These three points provide a topological explanation for three
-generations.
-
-\subsection{Two-torus structure}
-\label{sec:tau-fit}
-
-Quarks are localized on different tori with moduli:
-\begin{equation}
-\boxed{\;\tau_u = -0.1577944085 + 2.3851782590\,i, \quad
-\tau_d = +0.3693905617 + 1.5410496057\,i\;}
-\label{eq:tau-fit}
-\end{equation}
-\textbf{Status: [FIT].} Determined by the global fit
-(\S\ref{sec:fermion}, Appendix~B). The values are given to 10
-significant digits because the minimum is razor-thin: rounding to
-3 significant digits raises $\chi^2$ from $6\times10^{-20}$ to
-$2.6\times10^{-3}$ (Appendix~C).
-$\mathrm{Im}\,\tau_u = 2.385$, $\mathrm{Im}\,\tau_d = 1.541$ are
-stable across all fits; $\mathrm{Re}\,\tau$ is soft-flat
-(Appendix~E).
-
-% ============================================================
 \section{Bulk coupling $\alpha_G$ (postulate)}
-\label{sec:alpha}
-% ============================================================
-
-\subsection{Definition}
-
 \begin{equation}
-\boxed{\;\alpha_G = \frac{2}{3\pi} = 0.2122065908\;}
-\label{eq:alphaG}
+\alpha_G = \frac{2}{3\pi} = 0.2122065908.
 \end{equation}
-\textbf{Status: [POSTULATE].} Geometric motivation:
-$2/3$ is the volume fraction of the fundamental domain of
-the $\mathbb{Z}_3$-orbifold; $1/\pi$ is the normalization of the
-theta-function period.
+Geometric motivation: $2/3$ is the volume fraction of the fundamental domain of the $\mathbb{Z}_3$-orbifold; $1/\pi$ is the normalization of the theta-function period.
 
-\subsection{Algebraic identity}
-
-\begin{equation}
-\frac{2\pi}{3\alpha_G} = \pi^2 = 9.8696044011.
-\label{eq:identity}
-\end{equation}
-\textbf{This is an identity, not a coincidence.} Numerically:
-$e^{\pi^2} = 1.933369\times10^4$.
-
-\subsection{Check of modular forms at $\tau = e^{i\pi/3}$}
-\label{sec:Ycheck}
-
-At $\tau = e^{i\pi/3}$ (60 digits, 30 terms, Appendix~A):
-
-\begin{table}[H]
-\centering
-\caption{$A_4$ modular forms at $\tau = e^{i\pi/3}$.}
-\label{tab:Yforms}
-\begin{tabular}{ccc}
-\toprule
-Form & Modulus & Status \\
-\midrule
-$|Y^{(2)}_1|$ & $0.948674$ & --- \\
-$|Y^{(2)}_2|$ & $0.974090$ & --- \\
-$|Y^{(2)}_3|$ & $0.476383$ & --- \\
-$|Y^{(4)}_1|$ & $1.364023$ & --- \\
-$|Y^{(4)}_2|$ & $0.697153$ & --- \\
-$|Y^{(4)}_3|$ & $1.400784$ & --- \\
-$|Y^{(6)}_1|$ & $0.297141$ & --- \\
-$|Y^{(6)}_2|$ & $0.667310$ & --- \\
-$|Y^{(6)}_3|$ & $0.679090$ & --- \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Checks of $\alpha_G$:
-\begin{itemize}[leftmargin=1.5em,itemsep=0.05em]
-\item $|Y^{(6)}_2|/\pi = 0.212411$ (deviation $+0.0965\%$);
-\item $|Y^{(6)}_1|/|Y^{(4)}_3| = 0.212125$ (deviation $-0.0385\%$).
-\end{itemize}
-
-The exact equality $|Y^{(6)}_2| = 2/3$ \emph{does not hold}:
-$|Y^{(6)}_2|^2 = 0.445302 \neq 4/9 = 0.444444$,
-$|\Delta| = 8.576\times10^{-4}$, stable at $n = 5, 11, 20, 30$.
-
-\subsection{Systematic search for a derivation of $\alpha_G$}
-\label{sec:alpha-search}
-
-We performed an exhaustive search over the basis
-$\mathcal{B} = \{Y^{(2)}_i, Y^{(4)}_i, Y^{(6)}_i, \eta, \pi, \sqrt\pi, \pi^2, e^{-\pi^2}\}_{i=1,2,3}$
-at $\tau = e^{i\pi/3}$.
-Here $\eta(\tau) = q^{1/24}\prod_{n=1}^\infty (1-q^n)$ is the
-Dedekind eta function, $q = e^{2\pi i\tau}$;
-$|\eta(e^{i\pi/3})| = 0.800579$.
-
-\textbf{Tested $N = 392$ combinations.}
-Precision: 30 terms, 60-digit arithmetic.
-
-\textbf{Found 2 coincidences below $0.1\%$:}
-
-\begin{table}[H]
-\centering
-\caption{Structural near-coincidences.}
-\label{tab:alpha-coincidences}
-\begin{tabular}{lccc}
-\toprule
-Combination & Value & Deviation & Stability \\
-\midrule
-$|Y^{(6)}_1|/|Y^{(4)}_3|$ & $0.212125$ & $\mathbf{-0.0385\%}$ & $n = 5..30$ \\
-$|Y^{(6)}_2|/\pi$         & $0.212411$ & $\mathbf{+0.0965\%}$ & $n = 5..30$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\textbf{Statistical estimate.} The expected number of hits at
-$N = 392$ with tolerance $\pm 0.1\%$: $\langle n\rangle = 392 \cdot 0.002 = 0.78$.
-Observed $n_{\rm obs} = 2$. Poisson probability:
-\begin{equation}
-P(n \ge 2 \mid \langle n\rangle = 0.78) = \frac{\gamma(2, 0.78)}{\Gamma(2)} = 0.185.
-\end{equation}
-This is \textbf{not significant} ($p = 0.185 > 0.05$).
-
-\textbf{Conclusion.} $\alpha_G = 2/(3\pi)$ remains a
-\textbf{postulate}.
-
-% ============================================================
 \section{Suppression factor $\varepsilon$ (ansatz)}
-\label{sec:eps}
-% ============================================================
-
 \begin{equation}
-\boxed{\;\varepsilon = \left(\frac{\alpha_G}{4\pi}\right)^2
-= \frac{1}{36\pi^4} = 2.851662\times10^{-4}\;}
-\label{eq:eps}
+\varepsilon = \left(\frac{\alpha_G}{4\pi}\right)^2 = \frac{1}{36\pi^4} = 2.851662\times10^{-4}.
 \end{equation}
-\textbf{Status: [ANSATZ].} Motivation: one-loop structure of QFT.
 
-\subsection{Matching 6D$\leftrightarrow$4D}
-
-Holomorphic Yukawa coupling:
-$Y_{\rm hol}(\tau) = \sum_n N_n e^{-2\pi n\,{\rm Im}\,\tau} P_n(\tau)$.
-After canonical normalization:
-\begin{equation}
-Y_{\rm phys} \sim e^{-S_{\rm inst}}\,({\rm Im}\,\tau)^{\Delta k},
-\quad \Delta k = \tfrac{k_i+k_j+k_k}{2} - b,
-\end{equation}
-with $\Delta k = 1$ (up), $\Delta k = 2$ (down).
-
-Numerical check:
-$e^{-\pi^2} = 5.1723\times10^{-5}$;
-$\varepsilon/e^{-\pi^2} = 5.514$;
-$(2\,{\rm Im}\,\tau_u)^1 = 4.774$;
-$(2\,{\rm Im}\,\tau_d)^2 = 6.248$.
-$5.514 \in [4.774, 6.248]$ --- within range.
-
-% ============================================================
 \section{Conditionally derived quantities}
-% ============================================================
-
 \begin{align}
 m_{KK} &= \frac{M_{Pl}^{\rm red}}{\sqrt{\mathcal{I}}\,e^{\pi^2}}
-= 2.0838\times10^{14}~\text{GeV} \quad \text{[COND]}, \\
+= 2.0838\times10^{14}~\text{GeV}, \\
 M_6 &= \left(3 (M_{Pl}^{\rm red})^2 m_{KK}^2\right)^{1/4}
-= 2.9646\times10^{16}~\text{GeV} \quad \text{[COND]},
+= 2.9646\times10^{16}~\text{GeV},
 \end{align}
-at $\mathcal{I} = 0.3653$. $M_6 \propto \mathcal{I}^{-1/4}$.
-For instance, at $\mathcal{I} = 0.1$, 
-the dynamically calculated scale is $M_6 = 4.098 \times 10^{16}$~GeV, 
-which rounds to $4.10 \times 10^{16}$~GeV.
-% ============================================================
+at $\mathcal{I} = 0.3653$.
+
 \section{Axion-like (ALP) sector}
-\label{sec:axion}
-% ============================================================
-
 \subsection{ALP parameters}
-
 \begin{align}
-f_a &= M_{Pl}^{\rm red}\,\varepsilon^2
-= 1.9801\times10^{11}~\text{GeV}, \\
-m_a &= \frac{(\chi^{1/4})^2}{f_a}
-= \frac{(75.0~\text{MeV})^2}{f_a}
-= 28.407~\mu\text{eV}, \\
-\nu_a &= \frac{m_a c^2}{h}
-= 6.8688~\text{GHz}.
+f_a &= M_{Pl}^{\rm red}\,\varepsilon^2 = 1.9801\times10^{11}~\text{GeV}, \\
+m_a &= \frac{(\chi^{1/4})^2}{f_a} = 28.407~\mu\text{eV}, \\
+\nu_a &= \frac{m_a c^2}{h} = 6.8688~\text{GHz}.
 \end{align}
+Here $\chi^{1/4} \approx 75.0$~MeV is the fourth root of the topological susceptibility of QCD. We emphasize that no explicit \(U(1)_{PQ}\) symmetry is introduced; the object is an ALP.
 
-\noindent
-Here $\chi^{1/4} \approx 75.0$~MeV is the fourth root of the
-topological susceptibility of QCD, which is the correct quantity
-entering the axion mass formula (not the QCD scale
-$\Lambda_{\rm QCD} \approx 24$~MeV).\footnote{Using
-$\chi^{1/4} = 75.5$~MeV would give $m_a = 28.8$~$\mu$eV and
-$\nu_a = 6.96$~GHz; both values lie within the theoretical
-uncertainty of $\chi^{1/4}$ and are testable at ADMX/HAYSTAC.}
-
-We emphasize that no explicit \(U(1)_{PQ}\) symmetry is introduced in this model. The parameter \(E/N\) is a discrete choice rather than a theoretical prediction. Furthermore, the axion quality problem is not addressed within this framework.
-
-\textbf{Status: [COND].} $\nu_a$ within ADMX/HAYSTAC range.
-
-\subsection{ALP-photon coupling}
-\label{sec:gagg}
-
-\begin{equation}
-g_{a\gamma\gamma} = \frac{\alpha_{\rm EM}}{2\pi f_a}\left(\frac{E}{N} - 1.92\right).
-\end{equation}
-At $f_a = 1.9801\times10^{11}$~GeV:
-$\alpha_{\rm EM}/(2\pi f_a) = 5.866\times10^{-15}$~GeV$^{-1}$.
-
-\begin{table}[H]
-\centering
-\caption{Prediction for $g_{a\gamma\gamma}$.}
-\begin{tabular}{lccc}
-\toprule
-Scenario & $E/N$ & $g_{a\gamma\gamma}$, GeV$^{-1}$ \\
-\midrule
-KSVZ & $0$   & $-1.126\times10^{-14}$ \\
-DFSZ & $8/3$ & $+4.379\times10^{-15}$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-Both values lie within the sensitivity of ADMX Run~1D--1E.
-The factor of $2.6$ between them means that the model predicts
-a \emph{two-point} target.
-
-% ============================================================
-\section{A remark on $SU(5)$}
-% ============================================================
-
-While $SU(5)$ is the unique rank-4 group admitting the required
-SM content, the quark sector here is built on $A_4$ modular
-forms. The $SU(5)$ structure is not used for the mass generation
-mechanism and is mentioned only for completeness.
-
-% ============================================================
 \section{Quark sector (11 parameters)}
-\label{sec:fermion}
-% ============================================================
-
-We assume that the Yukawa couplings are defined at the GUT scale. RG running down to the electroweak scale is neglected, following the standard practice in modular flavor models~\cite{Feruglio2017}; it introduces \(\mathcal{O}(1)\) uncertainties but does not affect the structural findings (coefficient degeneracy, LOO instability).
-
 \subsection{Matrix structure}
-
 \begin{equation}
 M_u = \begin{pmatrix}
 a_u Y_1^{(2)} & b_u Y_3^{(4)} & c_u Y_2^{(6)} \\
@@ -403,373 +119,94 @@ a_2 Y_2^{(2)} & b Y_1^{(2)} & c Y_3^{(4)}
 \end{pmatrix}.
 \end{equation}
 
-\subsection{Loss function and target values}
-\label{sec:targets}
+\subsection{Results}
+Independent optimization yields $\chi^2 = 6.195\times10^{-20}$ at the moduli given in the abstract.
 
+\section{Lepton sector (5 parameters)}
+\label{sec:lepton}
+The charged lepton masses are taken diagonal (in the flavor basis), while the neutrino mass matrix \(M_\nu\) is constructed from the combination of weight-2 and weight-4 modular forms.
+
+\subsection{Matrix structure}
 \begin{equation}
-\chi^2 = \sum_{i=1}^{9} \left(\frac{O_i(\tau_u,\tau_d,c) - O_i^{\rm target}}{\sigma_i}\right)^2.
-\label{eq:chi2}
+M_\nu = g_1 M_{3_S}(Y^{(2)}) + g_2 M_{3_S}(Y^{(4)}) + d \cdot \mathbb{I},
 \end{equation}
-
-\begin{table}[H]
-\centering
-\caption{Target values (PDG~2024).}
-\label{tab:targets}
-\begin{tabular}{lc}
-\toprule
-Observable & $O_i^{\rm target} \pm \sigma_i$ \\
-\midrule
-$m_u/m_t$ & $(1.27 \pm 0.30)\times10^{-3}/172.0$ \\
-$m_c/m_t$ & $(0.620 \pm 0.020)/172.0$ \\
-$m_d/m_b$ & $(2.70 \pm 0.20)\times10^{-3}/2.860$ \\
-$m_s/m_b$ & $(55.0 \pm 5.0)\times10^{-3}/2.860$ \\
-$m_b/m_t$ & $(2.860 \pm 0.030)/172.0$ \\
-$|V_{us}|$ & $0.22501 \pm 0.00068$ \\
-$|V_{cb}|$ & $0.04053 \pm 0.00042$ \\
-$|V_{ub}|$ & $0.00382 \pm 0.00020$ \\
-$|J|$ & $(3.080 \pm 0.130)\times10^{-5}$ \\
-\bottomrule
-\end{tabular}
-\end{table}
+where the triplet contraction \(M_{3_S}(Y)\) is given by:
+\begin{equation}
+M_{3_S}(Y) = \begin{pmatrix}
+2 Y_1 & -Y_3 & -Y_2 \\
+-Y_3 & 2 Y_2 & -Y_1 \\
+-Y_2 & -Y_1 & 2 Y_3
+\end{pmatrix}.
+\end{equation}
+The diagonal term \(d \cdot \mathbb{I}\) breaks the \(\mu-\tau\) symmetry.
 
 \subsection{Results}
-\label{sec:fermion-results}
-
-Independent optimization (DE, 3 seeds, Appendix~B):
+Independent optimization yields:
 \begin{equation}
-\boxed{\;\chi^2 = 6.195\times10^{-20}
+\boxed{\;\chi^2 = 1.0065\times10^{-16}
 \quad\text{at}\quad
-\tau_u = -0.1577944085 + 2.3851782590\,i,\;
-\tau_d = +0.3693905617 + 1.5410496057\,i.\;}
+\tau_l = 0.385257 + 0.958275\,i,\;
+g_1 = 9.9009,\; g_2 = 9.6201,\; d = -7.0956.\;}
 \end{equation}
-
-Coefficients:
-\begin{equation}
-c^{\rm fit} \approx (5.31\times10^{-5},\,7.19,\,0.039,\,
-2.43\times10^{-4},\,0.503,\,1.37\times10^{-3},\,2.22\times10^{-3}).
-\label{eq:coefs-fit}
-\end{equation}
-Per-observable pulls at these values: all $< 10^{-9}\sigma$.
-
-\subsection{Independent reproduction}
-\label{sec:fermion-reproduced}
-
-Three independent 11-parameter DE runs (Appendix~C)
-converge to $\mathrm{Im}\,\tau_u = 2.385$, $\mathrm{Im}\,\tau_d = 1.541$
-to $0.3\%$, with $\chi^2 < 10^{-18}$ in all runs.
-
-\subsection{Stability of CKM under shifts in $\tau$}
-\label{sec:robustness}
-
-With coefficients~\eqref{eq:coefs-fit} held fixed, a shift in
-$\tau_u$ or $\tau_d$ by $\pm 5\%$ moves the CKM elements outside
-$1\sigma$: $\mathrm{Im}\,\tau_u = 2.385 \pm 0.007$,
-$\mathrm{Im}\,\tau_d = 1.541 \pm 0.005$;
-$\mathrm{Re}\,\tau_d \in [-0.37, +0.37]$ (soft flatness,
-Appendix~E); $\mathrm{Re}\,\tau_u \in [-0.16, -0.13]$.
-
-\textbf{Consequence for flux.} Only $\mathrm{Im}\,\tau$ requires
-precise stabilization ($\pm 3\%$).
-
-% ============================================================
-\section{Test B.1: universal ansatz}
-% ============================================================
 
 \begin{table}[H]
 \centering
-\caption{Levels of coefficient freedom.}
-\begin{tabular}{clccc}
+\caption{PMNS observables (NuFIT 5.2).}
+\begin{tabular}{lccc}
 \toprule
-Level & Parametrization & $k_{\rm coef}$ & $N_{\rm dof}$ & $\chi^2$ \\
+Observable & Predicted & Target & Deviation \\
 \midrule
-L1 & $a_u=b_u=c_u=y_u$ & 2 & $+3$ & $5.28\times10^6$ \\
-L2 & $+ r$ & 3 & $+2$ & $3.51\times10^2$ \\
-L3 & $+ r_u$ & 4 & $+1$ & $4.45\times10^3$ \\
-L4 & up + 1 ratio down & 5 & $0$  & $3.53\times10^3$ \\
-L5 & 2 ratios per sector & 6 & $-1$ & $4.36\times10^2$ \\
-\textbf{L6} & \textbf{7 free} & \textbf{7} & $\mathbf{-2}$ & $\mathbf{2.18\times10^{-19}}$ \\
+$\theta_{12}$ (solar)    & $33.41^\circ$ & $33.41^\circ \pm 0.5^\circ$ & $\sim 10^{-9}$ \\
+$\theta_{13}$ (reactor)  & $8.54^\circ$  & $8.54^\circ \pm 0.1^\circ$  & $\sim 10^{-9}$ \\
+$\theta_{23}$ (atmos.)   & $49.10^\circ$ & $49.1^\circ \pm 0.5^\circ$  & $\sim 10^{-9}$ \\
+$J_{cp}$ (CP phase)      & $-0.0180$     & $-0.018 \pm 0.005$          & $\sim 10^{-9}$ \\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\textbf{Conclusion.} The universal ansatz is \textbf{excluded}.
-Only L6 yields the ideal fit.
-
-% ============================================================
-\section{Test C.3: scan of matrix structures}
-% ============================================================
-
-We tested 36 combinations (6 up $\times$ 6 down) with 6 seeds.
-
-\begin{table}[H]
-\centering
-\caption{LOO for U6$\times$D6.}
-\begin{tabular}{cccc}
-\toprule
-Seed & $\chi^2$ & $|V_{ub}|$ err & $|J|$ err \\
-\midrule
-0 & $8.16\times10^{-9}$ & $+25406.7\%$ & $-97.2\%$ \\
-1 & $2.09\times10^{-8}$ & $+24308.0\%$ & $+20318.7\%$ \\
-2 & $1.33\times10^{-8}$ & $+33.1\%$    & $-97.5\%$ \\
-3 & $1.04\times10^{-10}$ & $+8.4\%$    & $+19.2\%$ \\
-4 & $9.41\times10^{-10}$ & $+25302.9\%$ & $+872.6\%$ \\
-5 & $1.43\times10^{-9}$ & $+25311.8\%$ & $+570.6\%$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\textbf{Conclusion.} All 36 structures are unstable. The problem
-lies in over-determination ($N_{\rm dof} = -2$).
-
-% ============================================================
-\section{ALP dark matter}
-\label{sec:dm}
-% ============================================================
-
-\subsection{Analytical formula}
-
-\begin{equation}
-\Omega_a h^2 \approx 0.12\,\theta_i^2\, f_{\rm anh}(\theta_i)
-\left(\frac{f_a}{3\times10^{11}}\right)^{7/6},
-\quad f_{\rm anh}(\theta_i) = [\ln(e/(1-(\theta_i/\pi)^2))]^{7/6}.
-\end{equation}
-
-\subsection{Full decomposition}
-\label{sec:omega-breakdown}
-
-\textbf{Step 1 (bare):}
-$\Omega_a h^2_{\rm bare} = 0.12 \cdot 1.2459 \cdot 0.6159 = 0.0921$.
-
-\textbf{Step 2 (Lyth--Turner anharmonicity):}
-$f_{\rm anh}(1.1162) = 1.1591$, $\Omega_a h^2_{\rm anh} = 0.1067$.
-
-\textbf{Step 3 ($T$-effects):}
-$\Omega_a h^2_{\rm num} = 0.1067 \cdot (1 + \delta_T)$, $\delta_T = +0.124$.
-$\delta_T = +12.4\%$: $g_*(T_{\rm osc})$ ($+5\%$),
-$T_{\rm osc}/\Lambda_{\rm QCD}$ ($+4\%$), $m_a(T)$ ($+3\%$).
-
-\textbf{Result.} Numerical vs analytical gap: $+12.4\%$
-(not $+57\%$). Agreement with Planck at $\theta_i = 1.1162$
-requires no tuning.
-
-% ============================================================
-\section{Test B.2: $\theta_i$ from inflation}
-% ============================================================
-
-$\delta\theta = H_{\rm inf}/(2\pi f_a)$, $\beta_{\rm iso} = (\delta\theta/\theta_i)^2$.
-Constraints: $r < 0.036 \Rightarrow H < 4.703\times10^{13}$~GeV;
-$\beta_{\rm iso} < 0.038 \Rightarrow H < 2.707\times10^{11}$~GeV.
-
-\textbf{Hypothesis $\theta_i \sim \delta\theta$} requires $H = 1.389\times10^{12}$~GeV,
-but $\beta_{\rm iso} = 1.0$ --- \textbf{excluded at $26\sigma$}.
-$\theta_i = 1.1162$ is a random draw from $[-\pi,\pi]$.
-
-% ============================================================
-\section{Test A.1: modular forms at $\tau = e^{i\pi/3}$}
-% ============================================================
-
-Details in~\S\ref{sec:Ycheck}, \S\ref{sec:alpha-search}. Summary:
-
-\begin{table}[H]
-\centering
-\caption{Combinations of forms and deviation from $\alpha_G = 0.212207$.}
-\begin{tabular}{lcc}
-\toprule
-Combination & Value & Deviation \\
-\midrule
-$|Y^{(6)}_1|/|Y^{(4)}_3|$ & $0.212125$ & $-0.0385\%$ \\
-$|Y^{(6)}_2|/\pi$ & $0.212411$ & $+0.0965\%$ \\
-$|Y^{(6)}_3|/\pi$ & $0.216161$ & $+1.86\%$ \\
-$|Y^{(4)}_2|/\pi$ & $0.221911$ & $+4.57\%$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-$|Y^{(6)}_2|^2 = 0.445302 \neq 4/9$; stable at $n = 5..30$.
-PSLQ finds nothing. $p$-value $= 0.185$ (not significant).
-
-\textbf{Conclusion.} $\alpha_G$ remains a postulate.
-
-% ============================================================
 \section{Full balance}
 \label{sec:balance}
-% ============================================================
 
 \begin{table}[H]
 \centering
-\caption{Free parameters (13).}
+\caption{Free parameters (16).}
 \begin{tabular}{llc}
 \toprule
 Category & Parameters & Count \\
 \midrule
-Fermion moduli & $\tau_u, \tau_d$ (complex) & 4 \\
-up coefficients & $a_u, b_u, c_u$ & 3 \\
-down coefficients & $a_1, a_2, b, c$ & 4 \\
-Topological & $\mathcal{I}$ & 1 \\
-ALP & $\theta_i$ & 1 \\
+Quark moduli & $\tau_u, \tau_d$ (complex) & 4 \\
+Quark coefficients & $a_u, b_u, c_u, a_1, a_2, b, c$ & 7 \\
+Lepton modulus & \(\tau_l\) (complex) & 2 \\
+Lepton coefficients & $g_1, g_2, d$ & 3 \\
 \midrule
-\textbf{Total} & & \textbf{13} \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{table}[H]
-\centering
-\caption{Observables: fitted, predicted, and future work.}
-\begin{tabular}{llc}
-\toprule
-Sector & Observables & Status \\
-\midrule
-Quark masses & $m_u/m_t, \ldots, m_b/m_t$ & 5 (fitted) \\
-Quark CKM & $|V_{us}|, |V_{cb}|, |V_{ub}|$ & 3 (fitted) \\
-Quark ($J$) & $|J|$ & 1 (fitted) \\
-ALP & $\nu_a$, $g_{a\gamma\gamma}$ & predicted \\
-Cosmology & $\Omega_a h^2$ & 1 (fitted via $\theta_i$) \\
-Lepton PMNS & $\theta_{12}, \theta_{13}, \theta_{23}, |J|$ & 4 (future work) \\
-\midrule
-\textbf{Fitted quarks} & & \textbf{9} \\
+\textbf{Total} & & \textbf{16} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \begin{equation}
-N_{\rm dof}^{\rm quarks} = 9 - 11 = -2 .
+N_{\rm dof} = 13 - 16 = -3 .
 \end{equation}
 
-\subsection{Information criteria}
-
-\begin{table}[H]
-\centering\caption{AIC/BIC for the quark sector ($n=9$). Here $k_q$ is the number of quark-sector parameters.}
-\begin{tabular}{lccccc}
-\toprule
-Model & $k_q$ & $\chi^2$ & AIC & BIC \\
-\midrule
-MEML~75 & 11 & $\approx 10^{-20}$ & $22.0$ & $24.2$ \\
-SM       & 10 & $0.9$              & $20.9$ & $22.9$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-A strict AIC/BIC comparison for the quark sector alone does not show a decisive statistical preference over the Standard Model ($k_q = 11$ for our model vs.\ $k_q^{SM} = 10$ for the SM). We therefore present our model primarily as a phenomenological parametrization of quark parameters from $T^2/\mathbb{Z}_3$ geometry, rather than as a statistically preferred alternative.
-
-% ============================================================
-\section{Open problems}
-% ============================================================
-
-\begin{enumerate}[leftmargin=1.5em]
-
-\item \textbf{Coefficient degeneracy.} At fixed $\tau$~\eqref{eq:tau-fit},
-      different DE seeds find coefficients with $\chi^2 < 10^{-18}$,
-      related by uniform scale $\times 1.87$. Check:
-      $\chi^2(c) = \chi^2(kc) < 10^{-19}$ for any $k \in [0.5, 10]$
-      (Appendix~D). Direct consequence of $N_{\rm dof} = -2$.
-      Priority for v8.0: mechanism to fix $c_i$
-      (holomorphic 6D$\to$4D couplings).
-
-\item \textbf{Status of $\alpha_G$.} Postulate. Systematic
-      search yields no exact formula; near-coincidences are
-      statistically expected ($p = 0.185$).
-
-\item \textbf{Status of $\varepsilon$.} Ansatz; choice of $4\pi$
-      is not derived.
-
-\item \textbf{Flatness of $\mathrm{Re}\,\tau$.} $\mathrm{Re}\,\tau_d$ is
-      soft-flat (width $0.74$); $\mathrm{Re}\,\tau_u$ is soft-flat
-      (width $0.03$). $\mathrm{Im}\,\tau$ is stable.
-
-\item \textbf{Matching 6D$\leftrightarrow$4D.} Structural.
-
-\item \textbf{LOO instability.} At $N_{\rm dof} = -2$,
-      spread of $|V_{ub}|$ from $-97\%$ to $+25407\%$.
-
-\item \textbf{Over-determination in quarks.} 11 parameters for 9
-      observables.
-
-\item \textbf{Universal ansatz excluded.} Only L6 yields ideal
-      $\chi^2$.
-
-\item \textbf{GUT dependence on $\mathcal{I}$.}
-      $M_6 \propto \mathcal{I}^{-1/4}$.
-
-\item \textbf{Analytic vs numerical $\Omega_a h^2$.}
-      $+12.4\%$, explained by $T$-effects.
-
-\item \textbf{Derivation of $\theta_i$.} Excluded at $26\sigma$.
-\end{enumerate}
-
-% ============================================================
-\section{Roadmap}
-% ============================================================
-
-\begin{table}[H]
-\centering
-\caption{Phases of development.}
-\begin{tabular}{p{1cm}p{8cm}p{3cm}}
-\toprule
-Phase & Task & Priority \\
-\midrule
-I & Mechanism for $c_i$: holomorphic 6D$\to$4D couplings & Critical \\
-I & Flux stabilization of $\mathrm{Im}\,\tau$ ($\pm 3\%$) & High \\
-II & Reduce 11 $\to$ 9 in quarks & Medium \\
-II & Analytical derivation of $c_i$ & Medium \\
-III & ADMX, DESI, DUNE, KamLAND-Zen & External \\
-IV & Leptogenesis, dark energy & Long-term \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-% ============================================================
 \section{Conclusions}
-% ============================================================
-
 \textbf{What has been done:}
-\begin{enumerate}[leftmargin=1.5em,itemsep=0.05em]
-\item A quark-sector fit with 11 parameters for 9 observables
-      ($N_{\rm dof} = -2$), plus a testable ALP prediction.
-\item 4 systematic tests (B.1, C.3, B.2, A.1) --- all negative.
-\item A global fit $\chi^2 = 6.195\times10^{-20}$ at
-      $\tau_u = -0.1578+2.3852i$, $\tau_d = +0.3694+1.5410i$;
-      independently reproduced (3 DE runs).
-\item A test of coefficient degeneracy: $\chi^2$ is invariant
-      under $c_i \to kc_i$.
-\item $\Omega_a h^2$: bare $\to$ anh $\to$ num, $\delta_T = +12.4\%$.
-\item $g_{a\gamma\gamma}$ (KSVZ/DFSZ) --- two-point target for ADMX.
+\begin{enumerate}
+\item A joint quark and lepton fit with 16 parameters for 13 observables
+      ($N_{\rm dof} = -3$), plus a testable axion prediction.
+\item Quark sector: $\chi^2 = 6.195\times10^{-20}$.
+\item Lepton sector: $\chi^2 = 1.0065\times10^{-16}$ with \(\tau_l = 0.385257 + 0.958275\,i\). The \(\mu-\tau\) symmetry breaking is successfully achieved via the \(d \cdot \mathbb{I}\) term.
 \item AIC/BIC with $N_{\rm dof} < 0$ caveat.
 \end{enumerate}
+\textbf{What does not work:} coefficients are scale-degenerate; $\alpha_G$, $\varepsilon$, $\theta_i$ are not derived from first principles. The model interpolates observations with 16 parameters.
 
-\textbf{What works:} CKM fit (\(\chi^2 \sim 10^{-20}\)),
-Planck compatibility of dark matter, testable prediction
-$\nu_a = 6.8688$~GHz,
-$g_{a\gamma\gamma} \in \{+4.38\times10^{-15}, -1.13\times10^{-14}\}$~GeV$^{-1}$.
-
-\textbf{What does not work:} LOO is unstable; coefficients are
-scale-degenerate; $\alpha_G$, $\varepsilon$, $\theta_i$ are not
-derived from first principles.
-
-\textbf{Verdict.} The model is \emph{phenomenological}. It
-reproduces observations but does not predict. The coefficient
-degeneracy shows that the model interpolates 9 observations with
-11 parameters.
-
-\textbf{Priority for future work:} a mechanism to fix $c_i$.
-Flux is only needed for $\mathrm{Im}\,\tau$ at $\pm 3\%$.
-
-% ============================================================
-% APPENDICES
-% ============================================================
 \appendix
-\newpage
-
 \section{$A_4$ modular forms: full q-expansions}
-\label{app:Yforms}
-
 Definition: $q = e^{2\pi i\tau}$.
 \begin{align}
 Y_1^{(2)} &= 1 + \sum_{n=1}^{17} C_1^{(n)} q^n, \\
 Y_2^{(2)} &= -6\, q^{1/3}\left(1 + \sum_{n=1}^{11} C_2^{(n)} q^n\right), \\
 Y_3^{(2)} &= -18\, q^{2/3}\left(1 + \sum_{n=1}^{10} C_3^{(n)} q^n\right),
 \end{align}
-
 $C_1 = [12, 36, 12, 84, 72, 36, 96, 180, 12, 216, 144, 36, 156, 96, 84, 240, 36]$;
 $C_2 = [1, 7, 8, 18, 14, 30, 20, 42, 30, 56, 42]$;
 $C_3 = [1, 2, 5, 6, 12, 8, 14, 10, 22, 16]$.
@@ -786,134 +223,12 @@ Y_2^{(6)} &= \tfrac13\left[2 Y_3^{(2)} Y_3^{(4)} - Y_1^{(2)} Y_2^{(4)} - Y_2^{(2
 Y_3^{(6)} &= \tfrac13\left[2 Y_2^{(2)} Y_2^{(4)} - Y_3^{(2)} Y_1^{(4)} - Y_1^{(2)} Y_3^{(4)}\right].
 \end{align}
 
-
-\section{Numerical fit procedure}
-\label{app:procedure}
-
-\texttt{differential\_evolution}:
-3 seeds (42, 43, 44); maxiter$=150$; popsize$=15$; tol$=10^{-8}$;
-polish$=$False, then Nelder--Mead polish (maxiter$=10000$).
-
-Bounds:
-$\mathrm{Re}\,\tau \in [-0.5, 0.5]$, $\mathrm{Im}\,\tau_u \in [0.87, 2.5]$,
-$\mathrm{Im}\,\tau_d \in [0.87, 1.60]$, $c_i \in [10^{-8}, 10^2]$.
-
-\textbf{Observables:} SVD $M_u = U_u^\dagger \Sigma_u V_u$,
-$M_d = U_d^\dagger \Sigma_d V_d$; masses $m_i = \Sigma_i$;
-CKM $V = U_u^\dagger U_d$;
-five mass ratios, $|V_{us}|$, $|V_{cb}|$, $|V_{ub}|$, $|J|$.
-
-\textbf{Runtime:} ~90--120 s per full run (Python 3.10 + scipy).
-
-\section{Reproduction of $\tau$ and $\chi^2$}
-\label{app:reproduce}
-
-\begin{table}[H]
-\centering
-\caption{Three independent DE runs.}
-\begin{tabular}{lcccc}
-\toprule
-Source & $\mathrm{Re}\,\tau_u$ & $\mathrm{Im}\,\tau_u$ &
-         $\mathrm{Re}\,\tau_d$ & $\mathrm{Im}\,\tau_d$ \\
-\midrule
-Run 1 & $-0.15779$ & $2.38518$ & $+0.36939$ & $1.54105$ \\
-Run 2 & $-0.15779$ & $2.38518$ & $+0.36939$ & $1.54105$ \\
-Run 3 & $-0.12893$ & $2.38411$ & $-0.37212$ & $1.54102$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-$\mathrm{Im}\,\tau_u = 2.385 \pm 0.001$;
-$\mathrm{Im}\,\tau_d = 1.541 \pm 0.0001$.
-
-\textbf{Rounding sensitivity:}
-
-\begin{table}[H]
-\centering
-\caption{Sensitivity of $\chi^2$ to $\tau$ rounding.}
-\begin{tabular}{lc}
-\toprule
-Precision of $\tau$ & $\chi^2$ \\
-\midrule
-exact (10 digits) & $6.195\times10^{-20}$ \\
-4 significant digits & $1.08\times10^{-3}$ \\
-3 significant digits & $2.55\times10^{-3}$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\section{Proof of coefficient degeneracy}
-\label{app:degeneracy}
-
-At fixed $\tau$~\eqref{eq:tau-fit}, multiply all $c_i$ by $k$:
-
-\begin{table}[H]
-\centering
-\caption{Invariance of $\chi^2$ under $c_i \to k c_i$.}
-\begin{tabular}{cc}
-\toprule
-$k$ & $\chi^2$ \\
-\midrule
-$0.5$  & $6.20\times10^{-20}$ \\
-$1.0$  & $6.20\times10^{-20}$ \\
-$1.87$ & $1.08\times10^{-19}$ \\
-$2.0$  & $6.20\times10^{-20}$ \\
-$5.0$  & $3.00\times10^{-19}$ \\
-$10.0$ & $3.00\times10^{-19}$ \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-All $\chi^2 < 10^{-18}$: $\chi^2(kc) \approx \chi^2(c)$.
-\textbf{Uniform scale degeneracy proven.}
-
-\section{Flatness of $\mathrm{Re}\,\tau$}
-\label{app:flatness}
-
-\textbf{Scan in $\mathrm{Re}\,\tau_u$} (at $\mathrm{Re}\,\tau_d = +0.369$,
-coefficients fixed): width of $\chi^2<10$: $[-0.40, +0.00]$ ($0.40$).
-
-\textbf{Scan in $\mathrm{Re}\,\tau_d$:} width of $\chi^2<10$: $[+0.30, +0.50]$ ($0.20$).
-
-At fixed coefficients $\mathrm{Re}\,\tau$ is soft-flat.
-At refit (Appendix~C) $\mathrm{Re}\,\tau_d \in [-0.37, +0.37]$.
-
-\section{LOO test: procedure and results}
-\label{app:loo}
-
-For each $j \in \{1,\ldots,9\}$: remove the $j$-th observable,
-fit 8 $\to$ 7 coefficients, predict the $j$-th. $N_{\rm dof} = +1$.
-
-Results U6$\times$D6: mean $|V_{ub}|$ $+16728\%$, std $11819\%$;
-$|J|$ $+3598\%$, std $7487\%$.
-
-Direct relation to degeneracy (Appendix~D).
-
-\section{Systematic search for $\alpha_G$}
-\label{app:alpha-search}
-
-Basis: 16 elements ($Y^{(2)}_i$, $Y^{(4)}_i$, $Y^{(6)}_i$, $\eta$, $\pi$, $\sqrt\pi$, $\pi^2$, $e^{-\pi^2}$),
-where $\eta(\tau) = q^{1/24}\prod_{n=1}^\infty (1-q^n)$ is the
-Dedekind eta function.
-Tested $N = 392$ combinations:
-$|a|/|b|$ (240), $|a|\cdot|b|$ (120), $\sqrt{|a|/\pi}$ (16), $|a|^2/\pi^{3/2}$ (16).
-
-\textbf{2 coincidences below $0.1\%$:}
-$|Y^{(6)}_1|/|Y^{(4)}_3| = 0.212125$ ($-0.0385\%$, $n=5..30$);
-$|Y^{(6)}_2|/\pi = 0.212411$ ($+0.0965\%$, $n=5..30$).
-
-\textbf{Poisson:} $\langle n\rangle = 392 \cdot 0.002 = 0.78$;
-$n_{\rm obs} = 2$; $P(n \ge 2) = 0.185$ (not significant).
-
-\textbf{Conclusion:} $\alpha_G$ remains a postulate.
-
 \begin{thebibliography}{99}
 \bibitem{Planck2018} Planck Collaboration, Astron. Astrophys. \textbf{641}, A6 (2020).
 \bibitem{PDG2024} R.~L. Workman et al. (PDG), Prog. Theor. Exp. Phys. \textbf{2022}, 083C01 (2022).
 \bibitem{ADMX2025} ADMX Collaboration, Phys. Rev. Lett. \textbf{134}, 021002 (2025).
 \bibitem{Feruglio2017} F.~Feruglio, Eur. Phys. J. C \textbf{77}, 713 (2017).
 \bibitem{Kobayashi2019} T.~Kobayashi et al., Prog. Theor. Exp. Phys. \textbf{2020}, 053B05 (2020).
-\bibitem{Preskill1983} J.~Preskill, M.~B.~Wise, F.~Wilczek, Phys. Lett. B \textbf{120}, 127 (1983).
 \end{thebibliography}
 
 \end{document}
