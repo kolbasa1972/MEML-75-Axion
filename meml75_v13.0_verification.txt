@@ -1,0 +1,72 @@
+
+
+████████████████████████████████████████████████████████████████████████
+  MEML 75 — VERIFICATION (v13.0, Quark + ALP)
+████████████████████████████████████████████████████████████████████████
+
+========================================================================
+  §3 Bulk coupling alpha_G
+========================================================================
+  [OK] alpha_G: computed=2.122066e-01, expected=2.122066e-01 (rel err 5.09e-11)
+
+========================================================================
+  §4 Suppression factor epsilon
+========================================================================
+  [OK] epsilon = 1/(36 pi^4): computed=2.851662e-04, expected=2.851662e-04 (rel err 9.21e-08)
+
+========================================================================
+  §5 m_KK, M_6
+========================================================================
+  [OK] m_KK: computed=2.083816e+14, expected=2.083800e+14 (rel err 7.75e-06)
+  [OK] M_6: computed=2.964555e+16, expected=2.964600e+16 (rel err 1.52e-05)
+
+========================================================================
+  §6 ALP sector
+========================================================================
+  [OK] f_a: computed=1.980136e+11, expected=1.980100e+11 (rel err 1.81e-05)
+  [OK] m_a (u eV): computed=2.840714e+01, expected=2.840700e+01 (rel err 5.00e-06)
+  [OK] nu_a (GHz): computed=6.868816e+00, expected=6.868800e+00 (rel err 2.39e-06)
+  theta_i (fitted to Omega_a h^2 = 0.12, with T-effects) = 1.1163
+  [OK] theta_i ~ 1.1162: computed=1.116323e+00, expected=1.116200e+00 (rel err 1.10e-04)
+  [OK] g_KSVZ: computed=-1.126138e-14, expected=-1.126000e-14 (rel err 1.23e-04)
+  [OK] g_DFSZ: computed=4.379426e-15, expected=4.379000e-15 (rel err 9.74e-05)
+  [OK] M_BH (kg): computed=9.353951e+24, expected=9.360000e+24 (rel err 6.46e-04)
+
+========================================================================
+  §7 Quark sector
+========================================================================
+  chi2_quarks = 6.195e-20
+  [OK] Quark chi2 < 10^-15
+
+========================================================================
+  §8 Lepton sector (negative result)
+========================================================================
+  (i) Y2 + Y4 + diagonal shift:
+      Best joint fit gives chi2 ~ 39 (residual in theta_23).
+      -> Cannot simultaneously reproduce PMNS angles and mass differences.
+  (ii) Adding Y6:
+      Formally chi2 = 0 for any tau_l.
+      Six different values of tau_l (spread Delta Re tau_l = 2.25) give equivalent fits.
+      -> The modulus tau_l is undetermined; structure is not predictive.
+
+========================================================================
+  §11 Flux stabilization of moduli
+========================================================================
+  [OK] Up-sector   (-17, 0, 1): computed=1.589718e-01, expected=1.590000e-01 (rel err 1.77e-04)
+  [OK] Down-sector (-7, -1, 1): computed=1.352653e-01, expected=1.353000e-01 (rel err 2.56e-04)
+
+========================================================================
+  §9 Full balance
+========================================================================
+  [OK] N_eff: computed=1.100000e+01, expected=1.100000e+01 (rel err 0.00e+00)
+  [OK] N_obs: computed=1.000000e+01, expected=1.000000e+01 (rel err 0.00e+00)
+  [OK] N_dof: computed=-1.000000e+00, expected=-1.000000e+00 (rel err 0.00e+00)
+
+========================================================================
+  ALL ASSERTS PASSED (0.0s)
+  N_eff = 11, N_obs = 10, N_dof = -1 (borderline overfitted)
+  theta_i (fitted) = 1.1163
+  Lepton sector: negative result (chi2 ~ 39 or flat tau_l).
+========================================================================
+
+c:\MEML>
