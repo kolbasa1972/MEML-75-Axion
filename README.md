@@ -8,8 +8,8 @@ This repository contains the data, Python verification script, and LaTeX source 
 
 ## Contents
 
-* `MEML75_v13.0_Quark_ALP.tex` — LaTeX source of the manuscript.
-* `MEML75_v13.0_Quark_ALP.pdf` — Compiled PDF of the manuscript.
+* `MEML75_Quark_ALP_v13.0.tex` — LaTeX source of the manuscript.
+* `MEML75_Quark_ALP_v13.0.pdf` — Compiled PDF of the manuscript.
 * `meml75_v13.0_verification.py` — Python script reproducing the numerical results.
 * `meml75_v13.0_verification.txt` — Output log of the script (shows `ALL ASSERTS PASSED`).
 * `LICENSE` — MIT License.
