@@ -37,8 +37,10 @@ unphysical overall scales (\(a_u = g_1 = 1\)) and three ($g_3, g_4, g_5$)
 parametrize absolute neutrino masses, which are not constrained by the
 oscillation data used here. The remaining 13 parameters, together with
 the ALP misalignment angle $\theta_i$, give \textbf{14 effective parameters}
-that fit \textbf{13 fitted observables} (9 quarks $+$ 3 PMNS angles $+$ $\Omega_a h^2$),
-giving \(N_{\rm dof} = 13 - 14 = -1\).
+that fit \textbf{13 fitted observables} (9 quarks $+$ 3 PMNS angles $+$ $\Omega_a h^2$).
+The model additionally predicts \(J_{cp}=0\), so that it is overdetermined
+by one constraint: \(N_{\rm dof} = (13+1)-14 = 0\) counting the prediction,
+and \(N_{\rm dof}^{\rm fit} = -1\) counting fitted observables only.
 
 \textbf{The main testable consequence:}
 axion-like dark matter with
@@ -320,7 +322,8 @@ Observable & Model & NuFIT 5.2 & Status \\
 \caption{Free parameters. Nominal count is 18; two are fixed by overall scale
 ($a_u$ and $g_1$), three ($g_3,g_4,g_5$) parametrize absolute neutrino masses
 and are not fitted to the observables used here. The remaining 14 parameters
-(including the ALP misalignment angle $\theta_i$) are fitted to 13 observables.}
+(including the ALP misalignment angle $\theta_i$) fit 13 observables
+and predict one additional observable (\(J_{cp}=0\)).}
 \begin{tabular}{llc}
 \toprule
 Category & Parameters & Count \\
@@ -339,9 +342,32 @@ ALP & \(\theta_i\) & 1 \\
 \end{tabular}
 \end{table}
 
+\paragraph{Parameter classes.}
+The 14 fitted parameters group into three ontological classes:
+(i) the six real geometric moduli of the three tori
+(\(\tau_u\), \(\tau_d\), \(\tau_l\)), which are the core of the model;
+(ii) the seven Lagrangian Yukawa coefficients
+(\(b_u, c_u, a_1, a_2, b, c, g_2\)), which are phenomenological at this stage ---
+deriving them from holomorphic 6D~$\to$~4D couplings is the Critical item
+of the roadmap (\S11);
+(iii) the ALP misalignment angle \(\theta_i\), which is a cosmological
+initial condition rather than a Lagrangian parameter.
+The three spectator coefficients \(g_3,g_4,g_5\) are not fitted.
+
 \begin{equation}
-N_{\rm dof} = 13 - 14 = -1 \quad \text{(up to $J_{cp} = 0$ prediction)}.
+N_{\rm dof}^{\rm fit} = 13 - 14 = -1,
+\qquad
+N_{\rm dof} = (13 + 1) - 14 = 0 \quad \text{(with \(J_{cp}=0\) prediction)}.
 \end{equation}
+
+\paragraph{Information content.}
+The 13 fitted observables leave \(N_{\rm dof}^{\rm fit} = -1\).
+The model additionally predicts the value of a 14th observable,
+\(J_{cp}=0\) (\S8). Counting this prediction as a falsifiable constraint
+yields \(N_{\rm dof} = (13+1)-14 = 0\): the model is overdetermined by
+one constraint, not underdetermined. We report both numbers;
+\S9.1 uses the fitted-only count \(N_{\rm dof}^{\rm fit}\), which is the
+standard input for AIC/BIC.
 
 \subsection{Information criteria}
 \begin{table}[H]
@@ -360,8 +386,11 @@ SM       & 19 & \(0.9\)      & \(38.9\) & \(49.6\) \\
 We caution that AIC and BIC are derived in the asymptotic regime
 \(n \to \infty\) with fixed \(k\). Here \(k/n = 14/13 > 1\), beyond the
 asymptotic regime; the values are reported for completeness only.
-The residuals \(<10^{-15}\) reflect the exactly solvable structure of the
-fit, not an exceptionally good agreement beyond the model's degrees of freedom.
+If the structural prediction \(J_{cp}=0\) is counted as an additional datum
+(\(n=14\)), then \(k/n=1\), exactly at the boundary --- the criteria remain
+inapplicable in either case. The residuals \(<10^{-15}\) reflect the exactly
+solvable structure of the fit, not an exceptionally good agreement beyond
+the model's degrees of freedom.
 
 \section{Open problems}
 \begin{enumerate}[leftmargin=1.5em]
@@ -371,7 +400,7 @@ fit, not an exceptionally good agreement beyond the model's degrees of freedom.
 \item \textbf{Status of \(\alpha_G\).} Postulate. The topological reading \(\alpha_G = \chi(S^2)/(N_{\rm fix}\pi)\) (\S3) is a geometric motivation, not a derivation.
 \item \textbf{Status of \(\varepsilon\).} Ansatz; the two-loop reading \(\varepsilon = \alpha_G^2/(16\pi^2)\) (\S4) is a physical interpretation, not a derivation.
 \item \textbf{Flatness of \(\mathrm{Re}\,\tau\).} \(\mathrm{Re}\,\tau\) is soft-flat (Appendix~E).
-\item \textbf{LOO instability.} At \(N_{\rm dof} = -1\), spread of \(|V_{ub}|\) from \(-97\%\) to \(+25407\%\).
+\item \textbf{LOO instability.} At \(N_{\rm dof}^{\rm fit} = -1\), spread of \(|V_{ub}|\) from \(-97\%\) to \(+25407\%\).
 \end{enumerate}
 
 \section{Roadmap}
@@ -393,7 +422,7 @@ III & ADMX, DESI, DUNE, KamLAND-Zen, Hyper-K & External \\
 \section{Conclusions}
 \textbf{What has been done:}
 \begin{enumerate}[leftmargin=1.5em]
-\item A joint quark and lepton fit with 14 effective parameters for 13 fitted observables, giving \(N_{\rm dof} = -1\), plus a structural prediction \(J_{cp} = 0\).
+\item A joint quark and lepton fit with 14 effective parameters that fit 13 observables and predict one further observable, \(J_{cp}=0\). The model is overdetermined by one constraint: \(N_{\rm dof} = (13+1)-14 = 0\); the fitted-only count is \(N_{\rm dof}^{\rm fit} = 13-14 = -1\).
 \item Quark sector: \(\chi^2 < 10^{-15}\) (machine limit).
 \item Lepton sector: three PMNS angles reproduced to high precision at \(\tau_l = -0.8534397135 + 1.6846113968\,i\). Structural prediction \(J_{cp} = 0\), currently at \(\approx 3.6\sigma\) from the NuFIT 5.2 central value.
 \item The ALP mass (from the chain $\alpha_G \to \varepsilon \to f_a$) implies a black hole superradiance window at \(M_{\rm BH} \sim 10^{25}\)~kg.

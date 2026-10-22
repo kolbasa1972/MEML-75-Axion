@@ -2,16 +2,16 @@
 # -*- coding: utf-8 -*-
 """
 ================================================================================
-MEML 75 — COMPLETE CALCULATION AND VERIFICATION (Version 10.9)
+MEML 75 — COMPLETE CALCULATION AND VERIFICATION (Version 11.0)
 ================================================================================
-Verifies the numerical claims of the paper (v10.9, revised lepton sector).
+Verifies the numerical claims of the paper (v11.0, revised lepton sector).
 
 Structure:
   - quark sector: 9 observables, χ² < 10⁻¹⁵
   - lepton sector: 3 PMNS angles to high precision, J_cp = 0 as prediction
   - ALP sector, including §6.3 relic density (θ_i = 1.1162 → Ω_a h² = 0.12)
   - black hole superradiance
-  - AIC/BIC with N_eff = 14, N_dof = -1
+  - AIC/BIC with N_eff = 14, N_dof = 0 (with prediction)
   - Appendix D (degeneracy), Appendix E (sharpness only)
 
 What is NOT verified:
@@ -52,9 +52,6 @@ COEFS_Q = np.array([
 ])
 
 # ═══ Exact fitted values: Lepton Sector ═════════════════════════
-# From DE fit (seeds 42-45, 2/-1 form), angles to machine precision,
-# J_cp = 0 structurally. g_3, g_4, g_5 affect only absolute neutrino
-# masses; not fitted to PMNS.
 TAU_L = -0.853439713469788 + 1.684611396843088j
 COEFS_L = np.array([
     92.532545527063320,   # g_1
@@ -294,12 +291,6 @@ def sec6():
 
 # ═══ §6.3 ALP dark matter relic density ═══════════════════════
 def sec6_3_alp_dm():
-    """Verifies the statement 'agreement with Planck at θ_i = 1.1162'.
-
-    Ω_a h² ≈ 0.12 · θ_i² · f_anh(θ_i) · (f_a / 3×10¹¹)^{7/6} · (1 + 0.124)
-
-    The +12.4% factor accounts for numerical T-effects quoted in §6.3.
-    """
     head("§6.3 ALP dark matter (θ_i = 1.1162 → Ω_a h² = 0.12)")
     alpha_G = 2.0/(3*PI)
     eps = (alpha_G/(4*PI))**2
@@ -355,11 +346,25 @@ def sec6_4_bh():
 
 # ═══ §9 Calibration ════════════════════════════════════════════
 def sec_calibration():
-    head("§9 Calibration: N_eff and N_dof")
+    head("§9 Calibration: N_eff, N_dof (fitted and constraint count)")
+    # Fitted parameters:
+    #   quark moduli (4) + quark coefs (7) - a_u fixed (-1)   = 10
+    #   lepton modulus (2)
+    #   g_1, g_2 (2) - g_1 fixed (-1)                        = 1
+    #   ALP misalignment angle θ_i (fitted to Ω_a h²)         = 1
+    # Total: 10 + 2 + 1 + 1 = 14
     n_eff = (4 + 7 - 1) + 2 + (2 - 1) + 1
-    n_obs = 13
+    n_obs_fit = 13
+    n_pred = 1   # J_cp = 0, structural prediction
+    
     check("N_eff (fitted)", n_eff, 14, 1e-10)
-    check("N_dof = n_obs - N_eff", n_obs - n_eff, -1, 1e-10)
+    check("N_dof^fit = n_obs_fit - N_eff", n_obs_fit - n_eff, -1, 1e-10)
+    check("N_dof (with J_cp prediction) = (n_obs_fit + n_pred) - N_eff",
+          (n_obs_fit + n_pred) - n_eff, 0, 1e-10)
+    
+    # Spectators: g_3, g_4, g_5 (absolute neutrino masses; not fitted).
+    # Nominal = 18; effective fitted = 14.
+    # Sanity: calibration invariance
     scale_q = 1.0 / COEFS_Q[0]
     scale_l = 1.0 / COEFS_L[0]
     Mu, Md = build_M_quarks(TAU_U, TAU_D, COEFS_Q * scale_q)
@@ -427,7 +432,7 @@ def main():
     args = ap.parse_args()
 
     print("\n" + "█"*72)
-    print("  MEML 75 — COMPLETE VERIFICATION (v10.9)")
+    print("  MEML 75 — COMPLETE VERIFICATION (v11.0)")
     print("█"*72)
 
     t0 = time.time()
@@ -447,6 +452,7 @@ def main():
     print(f"  ✅ ALL ASSERTS PASSED ({time.time()-t0:.1f}s)")
     print(f"  Lepton sector: 3 angles to high precision, J_cp = 0 predicted.")
     print(f"  ALP dark matter: θ_i = 1.1162 reproduces Ω_a h² = 0.12.")
+    print(f"  N_dof = (13 fitted + 1 predicted) - 14 = 0; fitted-only N_dof = -1.")
     print(f"  Appendix E (refit-flatness) is NOT verified by this script.")
     print(f"{'='*72}")
 
