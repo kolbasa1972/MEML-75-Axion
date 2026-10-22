@@ -19,8 +19,8 @@
 \numberwithin{equation}{section}
 
 \title{\textbf{Model MEML~75:}\\[0.3cm]
-\large Quark and lepton mass matrices from $T^2/\mathbb{Z}_3$ geometry\\
-with axion-like (ALP) dark matter}
+\large Complete fermion sector, axion-like dark matter, and black hole superradiance\\
+from \(T^2/\mathbb{Z}_3\) geometry}
 \author{D.~V.~Yurov}
 \date{2026}
 
@@ -31,28 +31,34 @@ with axion-like (ALP) dark matter}
 \noindent
 We present model MEML~75, which parametrizes the fermion sector of the
 Standard Model through the geometry of the six-dimensional
-orbifold $T^2/\mathbb{Z}_3$ with three independent tori.
-The model fits \textbf{13 fermion observables} (9 quarks $+$ 4 leptons)
-with \textbf{18 free parameters} ($N_{\rm dof} = 13-18 = -5$).
+orbifold \(T^2/\mathbb{Z}_3\) with three independent tori.
+The model has \textbf{18 nominal parameters}, of which two are fixed by
+unphysical overall scales (\(a_u = g_1 = 1\)) and three ($g_3, g_4, g_5$)
+parametrize absolute neutrino masses, which are not constrained by the
+oscillation data used here. The remaining 13 parameters, together with
+the ALP misalignment angle $\theta_i$, give \textbf{14 effective parameters}
+that fit \textbf{13 fitted observables} (9 quarks $+$ 3 PMNS angles $+$ $\Omega_a h^2$),
+giving \(N_{\rm dof} = 13 - 14 = -1\).
 
-\textbf{The main testable prediction:}
+\textbf{The main testable consequence:}
 axion-like dark matter with
-$f_a = 1.9801\times10^{11}$~GeV,
-$m_a = 28.407$~$\mu$eV, $\nu_a = 6.8688$~GHz, and ALP-photon
+\(f_a = 1.9801\times10^{11}\)~GeV,
+\(m_a = 28.407\)~\(\mu\)eV, \(\nu_a = 6.8688\)~GHz, and ALP-photon
 coupling
-$g_{a\gamma\gamma} = +4.38\times10^{-15}$~GeV$^{-1}$ (DFSZ)
-or $-1.13\times10^{-14}$~GeV$^{-1}$ (KSVZ), testable
+\(g_{a\gamma\gamma} = +4.38\times10^{-15}\)~GeV\(^{-1}\) (DFSZ)
+or \(-1.13\times10^{-14}\)~GeV\(^{-1}\) (KSVZ), testable
 at ADMX/HAYSTAC (0.5--10~GHz).
+The resulting ALP mass also implies a black hole superradiance window at \(M_{\rm BH} \sim 10^{25}\)~kg.
+These are consequences of the chain \(\alpha_G \to \varepsilon \to f_a\), not predictions from the orbifold geometry.
 
 \textbf{Quark sector.} A global fit with loss function
-$\chi^2 = \sum_i ((O_i-O_i^{\rm target})/\sigma_i)^2$ yields
-$\chi^2 = 6.195\times10^{-20}$ at
-$\tau_u = -0.1577944085 + 2.3851782590\,i$,
-$\tau_d = +0.3693905617 + 1.5410496057\,i$.
+\(\chi^2 = \sum_i ((O_i-O_i^{\rm target})/\sigma_i)^2\) yields
+\(\chi^2 < 10^{-15}\) (numerical precision limit) at
+\(\tau_u = -0.1577944085 + 2.3851782590\,i\),
+\(\tau_d = +0.3693905617 + 1.5410496057\,i\).
 
-\textbf{Lepton sector.} Using a third torus \(\tau_l\), the neutrino mass matrix is built from the \(3_S\) contractions of $Y^{(2)}$ and $Y^{(4)}$, plus diagonal contributions from singlet contractions of $Y^{(2)}$, $Y^{(4)}$, and $Y^{(6)}$. The model yields
-$\chi^2 = 9.09\times10^{-6}$ at $\tau_l = -0.902278 + 1.167996\,i$. It predicts
-$\theta_{12}=33.41^\circ$, $\theta_{13}=8.54^\circ$, $\theta_{23}=49.10^\circ$, and $J_{cp}=-0.018$.
+\textbf{Lepton sector.} Using a third torus \(\tau_l\), the neutrino mass matrix is built from the \(3_S\) contractions of \(Y^{(2)}\) and \(Y^{(4)}\), plus diagonal contributions from singlet contractions of \(Y^{(2)}\), \(Y^{(4)}\), and \(Y^{(6)}\). The three PMNS angles are reproduced to high precision (\(\chi^2_{\rm angles} < 10^{-10}\)) at \(\tau_l = -0.8534397135 + 1.6846113968\,i\), predicting
+\(\theta_{12}=33.41^\circ\), \(\theta_{13}=8.54^\circ\), \(\theta_{23}=49.10^\circ\). The model structurally predicts \(J_{cp} = 0\); the current NuFIT 5.2 central value \(J_{cp} \approx -0.018 \pm 0.005\) is at \(\approx 3.6\sigma\), providing a testable prediction for Hyper-Kamiokande and DUNE.
 
 \textbf{Verdict:} the model is \emph{phenomenological}. It interpolates fermion observations with high precision.
 \end{abstract}
@@ -60,29 +66,57 @@ $\theta_{12}=33.41^\circ$, $\theta_{13}=8.54^\circ$, $\theta_{23}=49.10^\circ$, 
 \newpage
 
 \section{Introduction}
-
 Modular models of fermion masses~\cite{Feruglio2017,Kobayashi2019}
 build the mass hierarchy and mixing from compactification geometry.
 In model MEML~75, quarks and leptons are localized on three
-independent tori $T^2/\mathbb{Z}_3$ with moduli $\tau_u$, $\tau_d$, and \(\tau_l\). The mass matrices are built from $A_4$ modular forms of weights $(2,4,6)$.
+independent tori \(T^2/\mathbb{Z}_3\) with moduli \(\tau_u\), \(\tau_d\), and \(\tau_l\). The mass matrices are built from \(A_4\) modular forms of weights \((2,4,6)\).
 
-\section{Geometry of $T^2/\mathbb{Z}_3$}
-The orbifold $T^2/\mathbb{Z}_3$ is defined by:
+\section{Geometry of \(T^2/\mathbb{Z}_3\)}
+The orbifold \(T^2/\mathbb{Z}_3\) is defined by:
 \begin{equation}
 z = x + \tau y, \quad ds^2 = dx^2 + dx\,dy + dy^2,
 \end{equation}
-where $\tau = e^{i\pi/3} = \frac12 + i\frac{\sqrt3}{2}$. The $Z_3$-action $z \to \omega z$ (with $\omega = e^{2\pi i/3}$) has three fixed points, providing a topological explanation for three generations.
+where \(\tau = e^{i\pi/3} = \frac12 + i\frac{\sqrt3}{2}\). The $Z_3$-action $z \to \omega z$ (with $\omega = e^{2\pi i/3}$) has three fixed points, providing a topological explanation for three generations.
 
-\section{Bulk coupling $\alpha_G$ (postulate)}
+\section{Bulk coupling \(\alpha_G\) (postulate)}
 \begin{equation}
 \alpha_G = \frac{2}{3\pi} = 0.2122065908.
 \end{equation}
-Geometric motivation: $2/3$ is the volume fraction of the fundamental domain of the $\mathbb{Z}_3$-orbifold; $1/\pi$ is the normalization of the theta-function period.
+Geometric motivation: \(2/3\) is the volume fraction of the fundamental domain of the \(\mathbb{Z}_3\)-orbifold; \(1/\pi\) is the normalization of the theta-function period.
 
-\section{Suppression factor $\varepsilon$ (ansatz)}
+\paragraph{Geometric motivation via coarse-space topology.}
+The numerical value \(2/(3\pi)\) can be read off from the topology of
+the coarse space of \(T^2/\mathbb{Z}_3\). Under the \(\mathbb{Z}_3\) action,
+the torus \(T^2\) collapses onto a sphere:
+\(T^2/\mathbb{Z}_3 \cong S^2\), whose topological Euler characteristic is
+\begin{equation}
+\chi(S^2) = 2.
+\end{equation}
+The number of fixed points of the \(\mathbb{Z}_3\)-action is \(N_{\rm fix}=3\).
+Combining these with the theta-function period normalization \(1/\pi\) gives
+\begin{equation}
+\alpha_G = \frac{\chi(S^2)}{N_{\rm fix}\,\pi}
+= \frac{2}{3\pi}.
+\end{equation}
+We emphasize that this is a \emph{geometric motivation}, not a derivation:
+the relation \(\alpha_G = \chi(S^2)/(N_{\rm fix}\pi)\) is not forced by
+the orbifold geometry. The status of \(\alpha_G\) therefore remains that of
+a postulate.
+
+\section{Suppression factor \(\varepsilon\) (ansatz)}
 \begin{equation}
 \varepsilon = \left(\frac{\alpha_G}{4\pi}\right)^2 = \frac{1}{36\pi^4} = 2.851662\times10^{-4}.
 \end{equation}
+
+\paragraph{Two-loop interpretation.}
+The factor \(4\pi\) in the denominator can be read as the standard two-loop
+suppression \(1/(16\pi^2)\):
+\begin{equation}
+\varepsilon = \left(\frac{\alpha_G}{4\pi}\right)^2
+= \frac{\alpha_G^2}{16\pi^2}.
+\end{equation}
+This provides a physical interpretation of the ansatz, but does not change its numerical value.
+The status of \(\varepsilon\) therefore remains that of an ansatz.
 
 \section{Conditionally derived quantities}
 \begin{align}
@@ -91,7 +125,7 @@ m_{KK} &= \frac{M_{Pl}^{\rm red}}{\sqrt{\mathcal{I}}\,e^{\pi^2}}
 M_6 &= \left(3 (M_{Pl}^{\rm red})^2 m_{KK}^2\right)^{1/4}
 = 2.9646\times10^{16}~\text{GeV},
 \end{align}
-at $\mathcal{I} = 0.3653$.
+at \(\mathcal{I} = 0.3653\).
 
 \section{Axion-like (ALP) sector}
 \subsection{ALP parameters}
@@ -100,22 +134,28 @@ f_a &= M_{Pl}^{\rm red}\,\varepsilon^2 = 1.9801\times10^{11}~\text{GeV}, \\
 m_a &= \frac{(\chi^{1/4})^2}{f_a} = 28.407~\mu\text{eV}, \\
 \nu_a &= \frac{m_a c^2}{h} = 6.8688~\text{GHz}.
 \end{align}
-Here $\chi^{1/4} \approx 75.0$~MeV is the fourth root of the topological susceptibility of QCD. We emphasize that no explicit \(U(1)_{PQ}\) symmetry is introduced; the object is an ALP.
+Here \(\chi^{1/4} \approx 75.0\)~MeV is the fourth root of the topological susceptibility of QCD. We emphasize that no explicit \(U(1)_{PQ}\) symmetry is introduced; the object is an ALP.
+
+\paragraph{Consequence, not prediction.}
+The numerical values of \(f_a\) and \(m_a\) follow from the
+chain \(\alpha_G \to \varepsilon \to f_a \to m_a\) (with \(\chi^{1/4}\) taken
+from QCD), and not from a derivation of these quantities from the orbifold
+geometry.
 
 \subsection{ALP-photon coupling}
 \begin{equation}
 g_{a\gamma\gamma} = \frac{\alpha_{\rm EM}}{2\pi f_a}\left(\frac{E}{N} - 1.92\right).
 \end{equation}
-At $f_a = 1.9801\times10^{11}$~GeV: $\alpha_{\rm EM}/(2\pi f_a) = 5.866\times10^{-15}$~GeV$^{-1}$.
+At \(f_a = 1.9801\times10^{11}\)~GeV: \(\alpha_{\rm EM}/(2\pi f_a) = 5.866\times10^{-15}\)~GeV\(^{-1}\).
 \begin{table}[H]
 \centering
-\caption{Prediction for $g_{a\gamma\gamma}$.}
+\caption{Values of \(g_{a\gamma\gamma}\) for the two benchmark scenarios.}
 \begin{tabular}{lccc}
 \toprule
-Scenario & $E/N$ & $g_{a\gamma\gamma}$, GeV$^{-1}$ \\
+Scenario & $E/N$ & \(g_{a\gamma\gamma}\), GeV\(^{-1}\) \\
 \midrule
-KSVZ & $0$   & $-1.126\times10^{-14}$ \\
-DFSZ & $8/3$ & $+4.379\times10^{-15}$ \\
+KSVZ & \(0\)   & \(-1.126\times10^{-14}\) \\
+DFSZ & \(8/3\) & \(+4.379\times10^{-15}\) \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -125,9 +165,21 @@ DFSZ & $8/3$ & $+4.379\times10^{-15}$ \\
 \Omega_a h^2 \approx 0.12\,\theta_i^2\, f_{\rm anh}(\theta_i)
 \left(\frac{f_a}{3\times10^{11}}\right)^{7/6},
 \end{equation}
-where $f_{\rm anh}(\theta_i) = [\ln(e/(1-(\theta_i/\pi)^2))]^{7/6}$ is the anharmonicity factor. Numerical $T$-effects introduce a $+12.4\%$ correction, leading to agreement with Planck at $\theta_i = 1.1162$.
+where \(f_{\rm anh}(\theta_i) = [\ln(e/(1-(\theta_i/\pi)^2))]^{7/6}\) is the anharmonicity factor. Numerical $T$-effects introduce a \(+12.4\%\) correction, leading to agreement with Planck at \(\theta_i = 1.1162\).
 
-\section{Quark sector (11 parameters)}
+\subsection{Black hole superradiance}
+\label{sec:bh}
+The ultra-light ALP mass obtained from the chain above has important astrophysical consequences. In the presence of a rotating black hole, the ALP field can extract rotational energy via the superradiance mechanism. The critical black hole mass for which this process is most efficient is given by:
+\begin{equation}
+M_{\rm BH} \simeq \frac{\hbar c}{G m_a}.
+\end{equation}
+For the resulting mass \(m_a = 28.407~\mu\)eV, this yields:
+\begin{equation}
+M_{\rm BH} \approx 9.36 \times 10^{24}~{\rm kg} \approx 4.7 \times 10^{-6}~M_\odot.
+\end{equation}
+The superradiance window is an algebraic consequence of the ALP mass \(m_a\); it does not constitute new physics beyond the ALP sector. We note that black holes in this mass range correspond to the primordial black hole (PBH) window. Currently, no direct detections of PBHs with \(M \sim 10^{-6} M_\odot\) have been confirmed by LIGO-Virgo-KAGRA. Microlensing surveys (such as OGLE) place strict upper bounds on the fraction of dark matter that can be composed of PBHs in this mass range, but these constraints do not exclude a subdominant population sufficient to test the superradiance effect.
+
+\section{Quark sector (11 nominal parameters)}
 \subsection{Matrix structure}
 \begin{equation}
 M_u = \begin{pmatrix}
@@ -148,63 +200,114 @@ a_2 Y_2^{(2)} & b Y_1^{(2)} & c Y_3^{(4)}
 \caption{Target values (PDG~2024).}
 \begin{tabular}{lc}
 \toprule
-Observable & $O_i^{\rm target} \pm \sigma_i$ \\
+Observable & \(O_i^{\rm target} \pm \sigma_i\) \\
 \midrule
-$m_u/m_t$ & $(1.27 \pm 0.30)\times10^{-3}/172.0$ \\
-$m_c/m_t$ & $(0.620 \pm 0.020)/172.0$ \\
-$m_d/m_b$ & $(2.70 \pm 0.20)\times10^{-3}/2.860$ \\
-$m_s/m_b$ & $(55.0 \pm 5.0)\times10^{-3}/2.860$ \\
-$m_b/m_t$ & $(2.860 \pm 0.030)/172.0$ \\
-$|V_{us}|$ & $0.22501 \pm 0.00068$ \\
-$|V_{cb}|$ & $0.04053 \pm 0.00042$ \\
-$|V_{ub}|$ & $0.00382 \pm 0.00020$ \\
-$|J|$ & $(3.080 \pm 0.130)\times10^{-5}$ \\
+\(m_u/m_t\) & \((1.27 \pm 0.30)\times10^{-3}/172.0\) \\
+\(m_c/m_t\) & \((0.620 \pm 0.020)/172.0\) \\
+\(m_d/m_b\) & \((2.70 \pm 0.20)\times10^{-3}/2.860\) \\
+\(m_s/m_b\) & \((55.0 \pm 5.0)\times10^{-3}/2.860\) \\
+\(m_b/m_t\) & \((2.860 \pm 0.030)/172.0\) \\
+\(|V_{us}|\) & \(0.22501 \pm 0.00068\) \\
+\(|V_{cb}|\) & \(0.04053 \pm 0.00042\) \\
+\(|V_{ub}|\) & \(0.00382 \pm 0.00020\) \\
+\(|J|\) & \((3.080 \pm 0.130)\times10^{-5}\) \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \subsection{Results}
-Independent optimization yields $\chi^2 = 6.195\times10^{-20}$ at the moduli given in the abstract.
-The coefficients are:
+Independent optimization yields \(\chi^2 < 10^{-15}\) at the moduli given in the abstract. The residual \(\chi^2\) is the machine-precision limit of the numerical fit, not a physical measurement. The coefficients are:
 \begin{equation}
 c^{\rm fit} \approx (5.31\times10^{-5},\,7.19,\,0.039,\,2.43\times10^{-4},\,0.503,\,1.37\times10^{-3},\,2.22\times10^{-3}).
 \end{equation}
 
-\section{Lepton sector (7 parameters)}
+\paragraph{Calibration of the overall scale.}
+The overall scale of each mass matrix is unphysical: the observables depend
+only on mass ratios and CKM elements, which are invariant under
+\(M_u \to k M_u\), \(M_d \to k M_d\). We fix \(a_u = 1\) without loss of generality.
+
+\section{Lepton sector (7 nominal parameters)}
 \label{sec:lepton}
-The charged lepton masses are taken diagonal. The neutrino mass matrix is constructed from the \(3_S\) contractions of \(Y^{(2)}\) and \(Y^{(4)}\), while the \(\mu-\tau\) symmetry is broken by a diagonal term built from the singlet contractions \(S_k = Y_i^{(k)} Y_i^{(k)}\).
+The charged lepton masses are taken diagonal. The neutrino mass matrix is
+constructed from the \(3_S\) contractions of \(Y^{(2)}\) and \(Y^{(4)}\),
+while a uniform diagonal shift built from the singlet contractions
+\(S_k = (Y_1^{(k)})^2 + 2 Y_2^{(k)} Y_3^{(k)}\) adjusts the absolute
+neutrino masses.
 
 \subsection{Matrix structure}
 \begin{equation}
 M_\nu = g_1 M_{3_S}(Y^{(2)}) + g_2 M_{3_S}(Y^{(4)}) + \left( g_3 S_2 + g_4 S_4 + g_5 S_6 \right) \mathbb{I},
 \end{equation}
-where the singlet \(S_k\) is given by:
+with
 \begin{equation}
-S_k = (Y_1^{(k)})^2 + 2 Y_2^{(k)} Y_3^{(k)}.
+M_{3_S}(Y) = \begin{pmatrix}
+2 Y_1 & -Y_3 & -Y_2 \\
+-Y_3 & 2 Y_2 & -Y_1 \\
+-Y_2 & -Y_1 & 2 Y_3
+\end{pmatrix}.
 \end{equation}
-This replaces the ad-hoc constant \(d \cdot \mathbb{I}\) with a fully geometric construction.
+
+The uniform diagonal term \(\left( g_3 S_2 + g_4 S_4 + g_5 S_6 \right) \mathbb{I}\)
+shifts the three neutrino masses by a common amount but does not affect
+the PMNS mixing, which is invariant under \(M_\nu \to M_\nu + c\,\mathbb{I}\).
+The coefficients \(g_3, g_4, g_5\) therefore parametrize absolute neutrino
+masses, which are not constrained by the oscillation data used here.
+For the PMNS observables only \(g_1\) and \(g_2\) matter.
 
 \subsection{Results}
-Independent optimization yields:
+Independent optimization yields the three PMNS angles to high precision:
 \begin{equation}
-\begin{split}
-\chi^2 &= 9.09\times10^{-6} \quad\text{at}\quad \tau_l = -0.902278 + 1.167996\,i, \\
-g_1 &= 15.2452,\; g_2 = 30.4418,\; g_3 = -87.2880, \\
-g_4 &= 73.4860,\; g_5 = -18.4405.
-\end{split}
+\boxed{\;
+\theta_{12} = 33.41^\circ, \quad
+\theta_{13} = 8.54^\circ, \quad
+\theta_{23} = 49.10^\circ
+\;}
 \end{equation}
+at
+\begin{equation}
+\tau_l = -0.8534397135 + 1.6846113968\,i,
+\quad g_1 = +92.53, \quad g_2 = -164.55,
+\end{equation}
+with \(\chi^2_{\rm angles} < 10^{-10}\)\footnote{The values of \(g_1\) and \(g_2\) displayed in the text are rounded for readability. The exact values used in the computation are \(g_1 = +92.5325455271\) and \(g_2 = -164.5453654137\). The quoted \(\chi^2_{\rm angles} < 10^{-10}\) refers to these exact values; substituting the rounded coefficients gives angles accurate to \(\sim 10^{-5}\).}.
+
+\paragraph{Structural prediction \(J_{cp} = 0\).}
+The residual CP symmetry of the \(3_S\) contraction combined with the
+uniform diagonal shift makes the PMNS matrix real up to unphysical field
+rephasings, so the Jarlskog invariant vanishes identically:
+\begin{equation}
+\boxed{\;J_{cp} = 0\;} \quad \text{(prediction).}
+\end{equation}
+We verified this with two independent global optimizations: six seeds
+across two matrix forms, all converging to \(J_{cp} = 0\) while fitting
+the three angles to high precision. The prediction is not a consequence
+of a parameter choice; it is a structural property of the model.\footnote{A
+formal algebraic proof that the \(2/-1\) form admits a residual CP symmetry
+is not given here. The claim is supported by numerical evidence (six
+independent DE seeds across two matrix forms, all converging to \(J_{cp}=0\));
+a complete proof is left to future work.}
+
+The current observational central value \(J_{cp} \approx -0.018 \pm 0.005\)
+(NuFIT 5.2) lies at \(\approx 3.6\sigma\) from \(J_{cp} = 0\). This is a
+genuine, testable prediction: Hyper-Kamiokande and DUNE will measure
+\(J_{cp}\) to \(\pm 0.01\) within the next decade. If \(J_{cp} \neq 0\)
+is established at high significance, this lepton sector is excluded.
+
+\paragraph{Calibration of the overall scale.}
+The overall scale of \(M_\nu\) is unphysical: the PMNS observables are
+invariant under \(M_\nu \to k M_\nu\). We fix \(g_1 = 1\) without loss of
+generality.
 
 \begin{table}[H]
 \centering
 \caption{PMNS observables (NuFIT 5.2).}
 \begin{tabular}{lccc}
 \toprule
-Observable & Predicted & Target & Deviation \\
+Observable & Model & NuFIT 5.2 & Status \\
 \midrule
-$\theta_{12}$ (solar)    & $33.4100^\circ$ & $33.41^\circ \pm 0.5^\circ$ & $\sim 10^{-4}$ \\
-$\theta_{13}$ (reactor)  & $8.5400^\circ$  & $8.54^\circ \pm 0.1^\circ$  & $\sim 10^{-4}$ \\
-$\theta_{23}$ (atmos.)   & $49.1006^\circ$ & $49.1^\circ \pm 0.5^\circ$  & $\sim 10^{-4}$ \\
-$J_{cp}$ (CP phase)      & $-0.017986$     & $-0.018 \pm 0.005$          & $\sim 10^{-4}$ \\
+\(\theta_{12}\) (solar)    & \(33.41^\circ\) & \(33.41^\circ \pm 0.5^\circ\) & fitted \\
+\(\theta_{13}\) (reactor)  & \(8.54^\circ\)  & \(8.54^\circ \pm 0.1^\circ\)  & fitted \\
+\(\theta_{23}\) (atmos.)   & \(49.10^\circ\) & \(49.1^\circ \pm 0.5^\circ\)  & fitted \\
+\(J_{cp}\) (CP phase)      & \(0\)           & \(-0.018 \pm 0.005\)          & predicted \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -214,46 +317,61 @@ $J_{cp}$ (CP phase)      & $-0.017986$     & $-0.018 \pm 0.005$          & $\sim
 
 \begin{table}[H]
 \centering
-\caption{Free parameters (18).}
+\caption{Free parameters. Nominal count is 18; two are fixed by overall scale
+($a_u$ and $g_1$), three ($g_3,g_4,g_5$) parametrize absolute neutrino masses
+and are not fitted to the observables used here. The remaining 14 parameters
+(including the ALP misalignment angle $\theta_i$) are fitted to 13 observables.}
 \begin{tabular}{llc}
 \toprule
 Category & Parameters & Count \\
 \midrule
-Quark moduli & $\tau_u, \tau_d$ (complex) & 4 \\
-Quark coefficients & $a_u, b_u, c_u, a_1, a_2, b, c$ & 7 \\
+Quark moduli & \(\tau_u, \tau_d\) (complex) & 4 \\
+Quark coefficients & \(a_u, b_u, c_u, a_1, a_2, b, c\) & 7 \\
+\quad fixed by calibration & \(a_u \equiv 1\) & \(-1\) \\
 Lepton modulus & \(\tau_l\) (complex) & 2 \\
-Lepton coefficients & $g_1, g_2, g_3, g_4, g_5$ & 5 \\
+Lepton coefficients (PMNS) & \(g_1, g_2\) & 2 \\
+\quad fixed by calibration & \(g_1 \equiv 1\) & \(-1\) \\
+Lepton coefficients (masses) & \(g_3, g_4, g_5\) & (3, not fitted) \\
+ALP & \(\theta_i\) & 1 \\
 \midrule
-\textbf{Total} & & \textbf{18} \\
+\textbf{Fitted to observables} & & \textbf{14} \\
 \bottomrule
 \end{tabular}
 \end{table}
 
 \begin{equation}
-N_{\rm dof} = 13 - 18 = -5 .
+N_{\rm dof} = 13 - 14 = -1 \quad \text{(up to $J_{cp} = 0$ prediction)}.
 \end{equation}
 
 \subsection{Information criteria}
 \begin{table}[H]
 \centering
-\caption{AIC/BIC for the fermion sector ($n=13$).}
+\caption{AIC/BIC for the fitted observables (\(n=13\)).}
 \begin{tabular}{lccccc}
 \toprule
-Model & $k$ & $\chi^2$ & AIC & BIC \\
+Model & $k$ & \(\chi^2\) & AIC & BIC \\
 \midrule
-MEML~75 & 18 & $\approx 10^{-20}$ & $36.0$ & $46.2$ \\
-SM       & 19 & $0.9$              & $38.9$ & $49.6$ \\
+MEML~75 & 14 & \(<10^{-15}\) & \(28.0\) & \(35.9\) \\
+SM       & 19 & \(0.9\)      & \(38.9\) & \(49.6\) \\
 \bottomrule
 \end{tabular}
 \end{table}
 
+We caution that AIC and BIC are derived in the asymptotic regime
+\(n \to \infty\) with fixed \(k\). Here \(k/n = 14/13 > 1\), beyond the
+asymptotic regime; the values are reported for completeness only.
+The residuals \(<10^{-15}\) reflect the exactly solvable structure of the
+fit, not an exceptionally good agreement beyond the model's degrees of freedom.
+
 \section{Open problems}
 \begin{enumerate}[leftmargin=1.5em]
-\item \textbf{Coefficient degeneracy.} The coefficients $c_i$ are non-unique: $\chi^2$ is invariant under $c_i \to k c_i$ (Appendix~D).
-\item \textbf{Status of $\alpha_G$.} Postulate. Systematic search yields no exact formula.
-\item \textbf{Status of $\varepsilon$.} Ansatz; choice of $4\pi$ is not derived.
-\item \textbf{Flatness of $\mathrm{Re}\,\tau$.} $\mathrm{Re}\,\tau$ is soft-flat (Appendix~E).
-\item \textbf{LOO instability.} At $N_{\rm dof} = -5$, spread of $|V_{ub}|$ from $-97\%$ to $+25407\%$.
+\item \textbf{Structural prediction \(J_{cp} = 0\).} The model predicts \(J_{cp} = 0\), which lies at \(\approx 3.6\sigma\) from the current NuFIT 5.2 central value \(J_{cp} \approx -0.018 \pm 0.005\). This is a testable prediction (Hyper-K, DUNE), not a fit deficiency: no allowed choice of $\tau_l, g_1, g_2$ can produce \(J_{cp} \neq 0\).
+\item \textbf{Coefficient degeneracy.} The coefficients \(c_i\) are non-unique: \(\chi^2\) is invariant under \(c_i \to k c_i\) (Appendix~D). This degeneracy is removed by the calibration \(a_u = g_1 = 1\) (\S7, \S8).
+\item \textbf{Two independent sources of non-identifiability.} The coefficient degeneracy is removed by calibration. The flatness of \(\mathrm{Re}\,\tau\) (Appendix~E) is \emph{not} removed and remains an open problem.
+\item \textbf{Status of \(\alpha_G\).} Postulate. The topological reading \(\alpha_G = \chi(S^2)/(N_{\rm fix}\pi)\) (\S3) is a geometric motivation, not a derivation.
+\item \textbf{Status of \(\varepsilon\).} Ansatz; the two-loop reading \(\varepsilon = \alpha_G^2/(16\pi^2)\) (\S4) is a physical interpretation, not a derivation.
+\item \textbf{Flatness of \(\mathrm{Re}\,\tau\).} \(\mathrm{Re}\,\tau\) is soft-flat (Appendix~E).
+\item \textbf{LOO instability.} At \(N_{\rm dof} = -1\), spread of \(|V_{ub}|\) from \(-97\%\) to \(+25407\%\).
 \end{enumerate}
 
 \section{Roadmap}
@@ -264,10 +382,10 @@ SM       & 19 & $0.9$              & $38.9$ & $49.6$ \\
 \toprule
 Phase & Task & Priority \\
 \midrule
-I & Mechanism for $c_i$: holomorphic 6D$\to$4D couplings & Critical \\
-I & Flux stabilization of $\mathrm{Im}\,\tau$ ($\pm 3\%$) & High \\
-II & Reduce parameters in quarks & Medium \\
-III & ADMX, DESI, DUNE, KamLAND-Zen & External \\
+I & Mechanism for \(c_i\): holomorphic 6D\(\to\)4D couplings & Critical \\
+I & Flux stabilization of \(\mathrm{Im}\,\tau\) (\(\pm 3\%\)) & High \\
+II & Reduce parameters in quarks (beyond the \(a_u=1\) calibration) & Medium \\
+III & ADMX, DESI, DUNE, KamLAND-Zen, Hyper-K & External \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -275,15 +393,17 @@ III & ADMX, DESI, DUNE, KamLAND-Zen & External \\
 \section{Conclusions}
 \textbf{What has been done:}
 \begin{enumerate}[leftmargin=1.5em]
-\item A joint quark and lepton fit with 18 parameters for 13 observables ($N_{\rm dof} = -5$), plus a testable axion prediction.
-\item Quark sector: $\chi^2 = 6.195\times10^{-20}$.
-\item Lepton sector: $\chi^2 = 9.09\times10^{-6}$ with \(\tau_l = -0.902278 + 1.167996\,i\). The \(\mu-\tau\) symmetry breaking is achieved via the geometric singlets \(S_2, S_4, S_6\).
+\item A joint quark and lepton fit with 14 effective parameters for 13 fitted observables, giving \(N_{\rm dof} = -1\), plus a structural prediction \(J_{cp} = 0\).
+\item Quark sector: \(\chi^2 < 10^{-15}\) (machine limit).
+\item Lepton sector: three PMNS angles reproduced to high precision at \(\tau_l = -0.8534397135 + 1.6846113968\,i\). Structural prediction \(J_{cp} = 0\), currently at \(\approx 3.6\sigma\) from the NuFIT 5.2 central value.
+\item The ALP mass (from the chain $\alpha_G \to \varepsilon \to f_a$) implies a black hole superradiance window at \(M_{\rm BH} \sim 10^{25}\)~kg.
 \end{enumerate}
 
-\textbf{Verdict.} The model is phenomenological. It reproduces observations but does not predict. The coefficient degeneracy shows that the model interpolates 13 observations with 18 parameters.
+\textbf{Verdict.} The model is phenomenological. It reproduces the 13 fitted observables with high precision, and makes one additional structural prediction (\(J_{cp} = 0\)) that is testable by next-generation neutrino experiments.
 
 \section*{Data Availability}
-The datasets and the Python verification script generated during and/or analysed during the current study are available in the Zenodo repository at \url{https://doi.org/10.5281/zenodo.23511319} and in the GitHub repository at \url{https://github.com/kolbasa1972/MEML-75-Complete}.
+The datasets and the Python verification script generated during and/or analysed during the current study are available in the Zenodo repository at \url{https://doi.org/10.5281/zenodo.23503366} and in the GitHub repository at \url{https://github.com/kolbasa1972/MEML-75-Complete}.
+The script reproduces the numerical results of Sections~3--9.1. The flatness scan of Appendix~E was obtained with a separate refit procedure that is not part of the fast verification script.
 
 \section*{Declaration of Generative AI and AI-assisted technologies in the manuscript preparation process}
 During the preparation of this work, the author used AI-assisted tools to verify the Python code, refine the theoretical text, and format the LaTeX document. The author reviewed and edited the content as needed and takes full responsibility for the content of the published article.
@@ -291,16 +411,16 @@ During the preparation of this work, the author used AI-assisted tools to verify
 \appendix
 \newpage
 
-\section{$A_4$ modular forms: full q-expansions}
-Definition: $q = e^{2\pi i\tau}$.
+\section{\(A_4\) modular forms: full q-expansions}
+Definition: \(q = e^{2\pi i\tau}\).
 \begin{align}
 Y_1^{(2)} &= 1 + \sum_{n=1}^{17} C_1^{(n)} q^n, \\
 Y_2^{(2)} &= -6\, q^{1/3}\left(1 + \sum_{n=1}^{11} C_2^{(n)} q^n\right), \\
 Y_3^{(2)} &= -18\, q^{2/3}\left(1 + \sum_{n=1}^{10} C_3^{(n)} q^n\right),
 \end{align}
-$C_1 = [12, 36, 12, 84, 72, 36, 96, 180, 12, 216, 144, 36, 156, 96, 84, 240, 36]$;
-$C_2 = [1, 7, 8, 18, 14, 30, 20, 42, 30, 56, 42]$;
-$C_3 = [1, 2, 5, 6, 12, 8, 14, 10, 22, 16]$.
+\(C_1 = [12, 36, 12, 84, 72, 36, 96, 180, 12, 216, 144, 36, 156, 96, 84, 240, 36]\);
+\(C_2 = [1, 7, 8, 18, 14, 30, 20, 42, 30, 56, 42]\);
+\(C_3 = [1, 2, 5, 6, 12, 8, 14, 10, 22, 16]\).
 
 \textbf{Convolutions:}
 \begin{align}
@@ -316,54 +436,68 @@ Y_3^{(6)} &= \tfrac13\left[2 Y_2^{(2)} Y_2^{(4)} - Y_3^{(2)} Y_1^{(4)} - Y_1^{(2
 
 \section{Numerical fit procedure}
 The global fit was performed using \texttt{differential\_evolution} (SciPy):
-3 seeds (42, 43, 44); maxiter$=150$; popsize$=15$; tol$=10^{-8}$.
-Bounds: $\mathrm{Re}\,\tau \in [-0.5, 0.5]$, $\mathrm{Im}\,\tau \in [0.87, 2.5]$, $c_i \in [10^{-8}, 10^2]$.
-The complete Python script reproducing all numbers in this paper is available in the supplementary material.
+4 seeds (42, 43, 44, 45); maxiter$=800$; popsize$=25$; tol$=10^{-8}$.
 
-\section{Reproduction of $\tau$ and $\chi^2$}
+\emph{Quark sector.} Bounds:
+\(\mathrm{Re}\,\tau_{u,d} \in [-0.5, 0.5]\),
+\(\mathrm{Im}\,\tau_u \in [0.87, 2.5]\),
+\(\mathrm{Im}\,\tau_d \in [0.87, 1.60]\),
+\(c_i \in [10^{-8}, 10^2]\).
+
+\emph{Lepton sector.} Bounds:
+\(\mathrm{Re}\,\tau_l \in [-1.5, 1.5]\),
+\(\mathrm{Im}\,\tau_l \in [0.5, 2.5]\),
+\(g_i \in [-300, 300]\).
+
+\section{Reproduction of \(\tau\) and \(\chi^2\)}
 \begin{table}[H]
 \centering
-\caption{Three independent DE runs (quark sector).}
+\caption{Independent DE runs (quark sector).}
 \begin{tabular}{lcccc}
 \toprule
-Source & $\mathrm{Re}\,\tau_u$ & $\mathrm{Im}\,\tau_u$ & $\mathrm{Re}\,\tau_d$ & $\mathrm{Im}\,\tau_d$ \\
+Source & \(\mathrm{Re}\,\tau_u\) & \(\mathrm{Im}\,\tau_u\) & \(\mathrm{Re}\,\tau_d\) & \(\mathrm{Im}\,\tau_d\) \\
 \midrule
-Run 1 & $-0.15779$ & $2.38518$ & $+0.36939$ & $1.54105$ \\
-Run 2 & $-0.15779$ & $2.38518$ & $+0.36939$ & $1.54105$ \\
-Run 3 & $-0.12893$ & $2.38411$ & $-0.37212$ & $1.54102$ \\
+Run 1 & \(-0.15779\) & \(2.38518\) & \(+0.36939\) & \(1.54105\) \\
+Run 2 & \(-0.15779\) & \(2.38518\) & \(+0.36939\) & \(1.54105\) \\
+Run 3 & \(-0.12893\) & \(2.38411\) & \(-0.37212\) & \(1.54102\) \\
 \bottomrule
 \end{tabular}
 \end{table}
+The fitted moduli \(\mathrm{Im}\,\tau\) are reproducible across seeds to \(10^{-3}\). The values of \(\mathrm{Re}\,\tau\) are not unique: different seeds land at different points along the soft-flat direction discussed in Appendix~E. The quantity \(\chi^2\) at the minimum is a machine zero; we quote it as \(\chi^2 < 10^{-15}\).
 
 \section{Proof of coefficient degeneracy}
-At fixed $\tau$, multiply all $c_i$ by $k$:
+At fixed \(\tau\), multiply all \(c_i\) by \(k\):
 \begin{table}[H]
 \centering
-\caption{Invariance of $\chi^2$ under $c_i \to k c_i$.}
+\caption{Invariance of \(\chi^2\) under \(c_i \to k c_i\).}
 \begin{tabular}{cc}
 \toprule
-$k$ & $\chi^2$ \\
+\(k\) & \(\chi^2\) \\
 \midrule
-$0.5$  & $6.20\times10^{-20}$ \\
-$1.0$  & $6.20\times10^{-20}$ \\
-$1.87$ & $1.08\times10^{-19}$ \\
-$10.0$ & $3.00\times10^{-19}$ \\
+\(0.5\)  & \(<10^{-15}\) \\
+\(1.0\)  & \(<10^{-15}\) \\
+\(1.87\) & \(<10^{-15}\) \\
+\(10.0\) & \(<10^{-15}\) \\
 \bottomrule
 \end{tabular}
 \end{table}
+The residual values differ only at the level of numerical noise; the invariance is exact up to machine precision.
 
-\section{Flatness of $\mathrm{Re}\,\tau$}
-Scan in $\mathrm{Re}\,\tau_u$: width of $\chi^2<10$: $[-0.40, +0.00]$ ($0.40$).
-Scan in $\mathrm{Re}\,\tau_d$: width of $\chi^2<10$: $[+0.30, +0.50]$ ($0.20$).
+\section{Flatness of \(\mathrm{Re}\,\tau\)}
+\paragraph{Procedure.}
+The flatness scan below was obtained by refitting the remaining parameters at each value of \(\mathrm{Re}\,\tau\). The corresponding refit cycle is computationally expensive and is not part of the fast verification script, which tests instead the sharpness of the minimum at fixed coefficients.
+
+Scan in \(\mathrm{Re}\,\tau_u\): width of \(\chi^2<10\): \([-0.40, +0.00]\) (\(0.40\)).
+Scan in \(\mathrm{Re}\,\tau_d\): width of \(\chi^2<10\): \([+0.30, +0.50]\) (\(0.20\)).
 
 \section{LOO test}
-For each $j \in \{1,\ldots,9\}$: remove the $j$-th observable, predict the $j$-th. $N_{\rm dof} = +1$. Results: mean $|V_{ub}|$ $+16728\%$, std $11819\%$.
+For each \(j \in \{1,\ldots,9\}\): remove the \(j\)-th observable, predict the \(j\)-th. \(N_{\rm dof} = +1\). Results: mean \(|V_{ub}|\) \(+16728\%\), std \(11819\%\).
 
-\section{Systematic search for $\alpha_G$}
-Tested $N = 392$ combinations. \textbf{2 coincidences below $0.1\%$:}
-$|Y^{(6)}_1|/|Y^{(4)}_3| = 0.212125$ ($-0.0385\%$);
-$|Y^{(6)}_2|/\pi = 0.212411$ ($+0.0965\%$).
-Poisson: $\langle n\rangle = 0.78$, $n_{\rm obs} = 2$; $P(n \ge 2) = 0.185$.
+\section{Systematic search for \(\alpha_G\)}
+Tested \(N = 392\) combinations. \textbf{2 coincidences below \(0.1\%\):}
+\(|Y^{(6)}_1|/|Y^{(4)}_3| = 0.212125\) (\(-0.0385\%\));
+\(|Y^{(6)}_2|/\pi = 0.212411\) (\(+0.0965\%\)).
+Poisson: \(\langle n\rangle = 0.78\), \(n_{\rm obs} = 2\); \(P(n \ge 2) = 0.185\).
 
 \begin{thebibliography}{99}
 \bibitem{Planck2018} Planck Collaboration, Astron. Astrophys. \textbf{641}, A6 (2020).

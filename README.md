@@ -1,38 +1,20 @@
-# MEML 75 — Quark and lepton mass matrices from T²/Z₃ geometry
+# Model MEML 75: Verification Scripts and Data
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23511319.svg)](https://doi.org/10.5281/zenodo.23511319)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/kolbasa1972/MEML-75-Complete)](https://github.com/kolbasa1972/MEML-75-Complete/releases)
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
-![LaTeX](https://img.shields.io/badge/LaTeX-XeLaTeX-green)
-
-Reference implementation of the model described in:
-
-- **Preprint:** Zenodo (archived with DOI)
-- **ORCID:** [0009-0006-5467-7510](https://orcid.org/0009-0006-5467-7510)
-
-This paper presents a **complete phenomenological parametrization of the quark and lepton mass matrices** through the geometry of the six-dimensional orbifold `T²/Z₃` with three independent tori, and predicts an **axion-like particle (ALP)** as dark matter. 
-
-In the latest version (v9.0), the \(\mu-\tau\) symmetry breaking in the lepton sector is achieved via a **geometric singlet contraction** of \(A_4\) modular forms, eliminating the need for an ad-hoc diagonal parameter.
+This repository contains the numerical verification scripts and source files for the paper:
+**"Model MEML 75: Complete fermion sector, axion-like dark matter, and black hole superradiance from T²/Z₃ geometry"** (submitted to Nuclear Physics B).
 
 ## Contents
 
-### Paper (source + compiled)
+*   `meml75_complete_EN.py` — The complete Python verification script (v10.9).
+*   `MEML_75_final_EN.tex` — The LaTeX source of the manuscript.
+*   `MEML_75_final_EN.pdf` — The compiled PDF of the manuscript.
 
-- `MEML_75_final_EN.tex` — full paper source (XeLaTeX)
-- `MEML_75_final_EN.pdf` — compiled English version
-- `MEML_75_final_RU.tex` — Russian translation (source)
-- `MEML_75_final_RU.pdf` — compiled Russian version
+## Requirements
 
-### Verification
+To run the verification script, you need Python 3 and the following standard scientific libraries:
+*   `numpy`
+*   `scipy` (required for the differential evolution fit, though the default fast check runs without it)
 
-- `meml75_complete_EN.py` — all numerical checks for quarks, leptons, and ALP sectors.
-- `verification_log.txt` — snapshot of `✅ ALL ASSERTS PASSED` output (archived with the Zenodo release).
-- `README.md` — this file.
-
-## Reproduce
-
-To run the verification script (requires `numpy` and `scipy`):
-
+You can install the dependencies via pip:
 ```bash
-python meml75_complete_EN.py
-# → "✅ ALL ASSERTS PASSED"
+pip install numpy scipy
