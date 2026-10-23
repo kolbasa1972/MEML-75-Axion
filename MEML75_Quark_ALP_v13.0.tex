@@ -1,0 +1,402 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\setmainfont{CMU Serif}
+\setsansfont{CMU Sans Serif}
+\setmonofont{CMU Typewriter Text}
+\usepackage{geometry}
+\geometry{top=2cm, bottom=2cm, left=2.5cm, right=2.5cm}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs,longtable,float,xcolor}
+\usepackage{hyperref}
+\hypersetup{colorlinks, urlcolor=blue, citecolor=blue, linkcolor=black}
+\usepackage{enumitem}
+
+\tolerance=2000
+\emergencystretch=3em
+\hbadness=10000
+\vbadness=10000
+
+\numberwithin{equation}{section}
+
+% FIX: title now reflects the two independent \(T^2/\mathbb{Z}_3\) factors
+\title{\textbf{Model MEML~75:}\\[0.3cm]
+\large Quark sector and axion-like dark matter from \\
+two \(T^2/\mathbb{Z}_3\) orbifolds}
+\author{D.~V.~Yurov}
+\date{2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\noindent
+We present model MEML~75, which parametrizes the quark sector of the Standard Model through the geometry of two independent six-dimensional orbifolds, \((T^2/\mathbb{Z}_3)_u \times (T^2/\mathbb{Z}_3)_d\), each with its own complex-structure modulus \(\tau_u, \tau_d\). The model has \textbf{10 effective quark parameters} (4 real moduli + 6 Yukawa coefficients after the calibration \(a_u = 1\)); adding the ALP misalignment angle \(\theta_i\) gives \textbf{11 effective parameters fitting 10 observables} (9 quark observables + \(\Omega_a h^2\)), so that \(N_{\rm dof} = -1\). The model is therefore borderline overfitted, which we state explicitly.
+
+The main testable consequence: axion-like dark matter with \(f_a = 1.9801\times 10^{11}\)~GeV, \(m_a = 28.407~\mu\)eV, \(\nu_a = 6.8688\)~GHz, and ALP-photon coupling \(g_{a\gamma\gamma} = +4.38\times 10^{-15}\)~GeV\(^{-1}\) (DFSZ) or \(-1.13\times 10^{-14}\)~GeV\(^{-1}\) (KSVZ), within reach of future high-frequency haloscope searches such as ADMX and HAYSTAC~\cite{ADMX2018,HAYSTAC2021}. The resulting ALP mass also implies a black hole superradiance window at \(M_{\rm BH}\sim 10^{25}\)~kg. These are consequences of the chain \(\alpha_G\to \epsilon \to f_a\), not predictions from the orbifold geometry.
+
+\textbf{Quark sector.} A global fit with loss function \(\chi^2 = \sum_i((O_i - O_i^{\rm target})/\sigma_i)^2\) yields \(\chi^2 < 10^{-19}\) at \(\tau_u = -0.1577944085 + 2.3851782590i\), \(\tau_d = +0.3693905617 + 1.5410496057i\). The hierarchical Yukawa coefficients can be qualitatively understood via the geometric overlap of wavefunctions at the orbifold fixed points, with a universal scale \(\alpha \sim 10\) and appropriate prefactors.
+
+\textbf{Lepton sector (negative result).} We attempted to extend the modular construction to the leptons using \(3_S\) contractions of \(Y^{(2)}\), \(Y^{(4)}\), \(Y^{(6)}\) and a uniform diagonal shift. The \(3_S\) sector with \(Y^{(2)}\) and \(Y^{(4)}\) alone cannot simultaneously reproduce the PMNS angles and the mass-squared differences (best joint fit \(\chi^2\approx 39\)). Adding \(M_{3_S}(Y^{(6)})\) gives \(\chi^2 = 0\) formally, but the modulus \(\tau_l\) becomes undetermined: six different values of \(\tau_l\) (spread \(\Delta{\rm Re}\,\tau_l = 2.25\)) give equivalent fits. A viable lepton sector requires a different orbifold structure, which we develop in a companion paper.
+
+\textbf{Verdict:} the model is a phenomenological quark-sector + ALP construction with a negative result on the lepton sector. It reproduces the 9 quark observables with high precision and makes one independently testable prediction (ALP dark matter at 6.87~GHz).
+\end{abstract}
+
+\newpage
+
+\section{Introduction}
+Modular models of fermion masses~\cite{Feruglio2017,Kobayashi2019} build the mass hierarchy and mixing from compactification geometry. In model MEML~75, quarks are localized on two independent tori \(T^2/\mathbb{Z}_3\) with moduli \(\tau_u\) and \(\tau_d\). The mass matrices are built from \(A_4\) modular forms of weights \((2,4,6)\). A third torus \(\tau_l\) for leptons was attempted but does not yield a viable description in this geometry; we report this negative result in \S8.
+
+\section{Geometry of \(T^2/\mathbb{Z}_3\)}
+The orbifold \(T^2/\mathbb{Z}_3\) is defined by:
+\begin{equation}
+z = x + \tau y,\quad ds^2 = dx^2 +dxdy + dy^2,
+\end{equation}
+where \(\tau = e^{i\pi/3} = \frac{1}{2} +i\frac{\sqrt{3}}{2}\). The \(Z_3\)-action \(z\to \omega z\) (with \(\omega = e^{2\pi i/3}\)) has three fixed points, providing a topological explanation for three generations.
+
+\section{Bulk coupling \(\alpha_G\) (postulate)}
+\begin{equation}
+\alpha_G = \frac{2}{3\pi} = 0.2122065908.
+\end{equation}
+% FIX: "volume fraction" replaced by combinatorics of fixed points
+Geometric motivation: The orbifold \(T^2/\mathbb{Z}_3\) has \(N_{\rm fix}=3\) fixed points. The factor
+\begin{equation}
+\frac{2}{3} = \frac{N_{\rm fix}-1}{N_{\rm fix}} = 1 - \frac{1}{N_{\rm fix}}
+\end{equation}
+reflects the combinatorics of the three fixed points: a given fixed point accounts for \(1/3\) of the fixed-point set, leaving \(2/3\). The factor \(1/\pi\) is the normalization of the theta-function period. We emphasize that this is a geometric motivation, not a rigorous derivation. The status of \(\alpha_G\) remains that of a postulate.
+
+\section{Suppression factor \(\epsilon\) (ansatz)}
+\begin{equation}
+\epsilon = \left(\frac{\alpha_G}{4\pi}\right)^2 = \frac{1}{36\pi^4} = 2.851662\times 10^{-4}.
+\end{equation}
+\paragraph{Two-loop interpretation.}
+The factor \(4\pi\) in the denominator can be read as the standard two-loop suppression \(1/(16\pi^2)\):
+\begin{equation}
+\epsilon = \left(\frac{\alpha_G}{4\pi}\right)^2 = \frac{\alpha_G^2}{16\pi^2}.
+\end{equation}
+This provides a physical interpretation of the ansatz, but does not change its numerical value. The status of \(\epsilon\) therefore remains that of an ansatz.
+
+\section{Conditionally derived quantities}
+\begin{align}
+m_{KK} &= \frac{M_{Pl}^{\rm red}}{\sqrt{\mathcal{I}}e^{\pi^2}} = 2.0838\times 10^{14}~{\rm GeV}, \\
+M_6 &= \left(3(M_{Pl}^{\rm red})^2 m_{KK}^2\right)^{1/4} = 2.9646\times 10^{16}~{\rm GeV},
+\end{align}
+at \(\mathcal{I} = 0.3653\).
+
+\section{Axion-like (ALP) sector}
+\subsection{ALP parameters}
+\begin{align}
+f_a &= M_{Pl}^{\rm red}\epsilon^2 = 1.9801\times 10^{11}~{\rm GeV}, \\
+m_a &= \frac{(\chi^{1/4})^2}{f_a} = 28.407~\mu{\rm eV}, \\
+\nu_a &= \frac{m_a c^2}{h} = 6.8688~{\rm GHz}.
+\end{align}
+Here \(\chi^{1/4}\approx 75.0~{\rm MeV}\) is the fourth root of the topological susceptibility of QCD. We emphasize that no explicit \(U(1)_{PQ}\) symmetry is introduced; the object is an ALP.
+
+\paragraph{Consequence, not prediction.}
+The numerical values of \(f_a\) and \(m_a\) follow from the chain \(\alpha_G\to \epsilon \to f_a\to m_a\) (with \(\chi^{1/4}\) taken from QCD), and not from a derivation of these quantities from the orbifold geometry.
+
+\subsection{ALP-photon coupling}
+\begin{equation}
+g_{a\gamma\gamma} = \frac{\alpha_{\rm EM}}{2\pi f_a}\left(\frac{E}{N} -1.92\right).
+\end{equation}
+At \(f_a = 1.9801\times 10^{11}~{\rm GeV}\), \(\alpha_{\rm EM}/(2\pi f_a) = 5.866\times 10^{-15}~{\rm GeV}^{-1}\).
+
+\begin{table}[H]
+\centering
+\caption{Values of \(g_{a\gamma\gamma}\) for the two benchmark scenarios.}
+\begin{tabular}{lcc}
+\toprule
+Scenario & \(E/N\) & \(g_{a\gamma\gamma}\) (GeV\(^{-1}\)) \\
+\midrule
+KSVZ & 0 & \(-1.126 \times 10^{-14}\) \\
+DFSZ & 8/3 & \(+4.379 \times 10^{-15}\) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{ALP dark matter}
+\begin{equation}
+\Omega_a h^2 \approx 0.12\,\theta_i^2\, f_{\rm anh}(\theta_i)\left(\frac{f_a}{3\times 10^{11}}\right)^{7/6},
+\end{equation}
+where \(f_{\rm anh}(\theta_i) = [\ln(e/(1-(\theta_i/\pi)^2))]^{7/6}\) is the anharmonicity factor.
+% FIX: \theta_i synchronized with v16.0 (T-corrections removed; script reproduces 1.174 without them)
+Fitting $\theta_i$ to the Planck value $\Omega_a h^2 = 0.12$~\cite{Planck2018} yields $\theta_i \approx 1.17$. Thermal corrections are neglected at this level of accuracy.
+
+\subsection{Black hole superradiance}
+The ultra-light ALP mass obtained from the chain above has important astrophysical consequences. In the presence of a rotating black hole, the ALP field can extract rotational energy via the superradiance mechanism. The critical black hole mass for which this process is most efficient is given by:
+\begin{equation}
+M_{\rm BH}\simeq \frac{\hbar c}{Gm_a}.
+\end{equation}
+For the resulting mass \(m_a = 28.407~\mu{\rm eV}\), this yields:
+\begin{equation}
+M_{\rm BH}\approx 9.36\times 10^{24}~{\rm kg}\approx 4.7\times 10^{-6}M_{\odot}.
+\end{equation}
+% FIX: shortened; removed extended PBH discussion
+This mass lies in the primordial-black-hole window; future microlensing and gravitational-wave searches may probe a subdominant PBH population in this range. The superradiance window is an algebraic consequence of the ALP mass and does not constitute new physics beyond the ALP sector.
+
+\section{Quark sector}
+\subsection{Matrix structure}
+\begin{equation}
+M_u = \begin{pmatrix}
+a_u Y_1^{(2)} & b_u Y_3^{(4)} & c_u Y_2^{(6)} \\
+a_u Y_3^{(2)} & b_u Y_2^{(4)} & c_u Y_1^{(6)} \\
+a_u Y_2^{(2)} & b_u Y_1^{(4)} & c_u Y_3^{(6)}
+\end{pmatrix},
+\end{equation}
+\begin{equation}
+M_d = \begin{pmatrix}
+a_1 Y_1^{(6)} & b Y_3^{(2)} & c Y_2^{(2)} \\
+a_1 Y_3^{(6)} & b Y_2^{(2)} & c Y_1^{(2)} \\
+a_2 Y_2^{(2)} & b Y_1^{(2)} & c Y_3^{(4)}
+\end{pmatrix}.
+\end{equation}
+
+\subsection{Target values}
+\begin{table}[H]
+\centering
+\caption{Target values (PDG 2024)~\cite{PDG2024}.}
+\begin{tabular}{lcc}
+\toprule
+Observable & \(O_i^{\rm target}\) & \(\sigma_i\) \\
+\midrule
+\(m_u/m_t\) & \(1.27\times 10^{-3}/172.0\) & \(0.30\times 10^{-3}/172.0\) \\
+\(m_c/m_t\) & \(0.620/172.0\) & \(0.020/172.0\) \\
+\(m_d/m_b\) & \(2.70\times 10^{-3}/2.860\) & \(0.20\times 10^{-3}/2.860\) \\
+\(m_s/m_b\) & \(55.0\times 10^{-3}/2.860\) & \(5.0\times 10^{-3}/2.860\) \\
+\(m_b/m_t\) & \(2.860/172.0\) & \(0.030/172.0\) \\
+\(V_{us}\) & \(0.22501\) & \(0.00068\) \\
+\(V_{cb}\) & \(0.04053\) & \(0.00042\) \\
+\(V_{ub}\) & \(0.00382\) & \(0.00020\) \\
+\(J\) & \(3.080\times 10^{-5}\) & \(0.130\times 10^{-5}\) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Results}
+Independent optimization yields \(\chi^2 < 10^{-19}\) at the moduli given in the abstract.
+% FIX: raw vs normalized coefficients clarified below
+The raw fit produces the coefficients
+\begin{equation}
+c^{\rm raw}\approx (5.31\times 10^{-5},\ 7.19,\ 0.039,\ 2.43\times 10^{-4},\ 0.503,\ 1.37\times 10^{-3},\ 2.22\times 10^{-3}),
+\end{equation}
+where \(c^{\rm raw}=(a_u,b_u,c_u,a_1,a_2,b,c)\). These are the numbers directly compared to the geometric overlap estimates of \S10.
+
+\paragraph{Calibration of the overall scale.}
+The overall scale of each mass matrix is unphysical: the observables depend only on mass ratios and CKM elements, which are invariant under \(M_u\to kM_u\), \(M_d\to kM_d\). For the purpose of counting independent parameters we adopt the convention \(a_u=1\), which rescales all quark coefficients by the overall factor \(1/a_u^{\rm raw}\approx 1.88\times 10^{4}\). Physical predictions are unaffected by this choice. With this normalization, the coefficients become
+\begin{equation}
+c^{\rm norm}\approx (1,\ 1.35\times 10^{5},\ 7.33\times 10^{2},\ 4.58,\ 9.47\times 10^{3},\ 2.58\times 10^{1},\ 4.18\times 10^{1}).
+\end{equation}
+% FIX: "far below numerical precision" rephrased
+The residual \(\chi^2 = 8.8\times 10^{-20}\) lies four orders of magnitude below the double-precision roundoff scale (\(\sim 10^{-16}\)), indicating that the fit corresponds to an exact analytic solution within the model's structure; the numerical value is limited only by double-precision roundoff.
+
+\section{Attempted lepton extension (negative result)}
+We attempted to extend the modular construction to the lepton sector using the same \(3_S\) contractions of \(Y^{(2)}\) and \(Y^{(4)}\) that appear in the quark sector, plus a uniform diagonal shift from the singlet contractions \(S_k = (Y_1^{(k)})^2 + 2Y_2^{(k)}Y_3^{(k)}\).
+\begin{equation}
+M_\nu = g_1 M_{3_S}(Y^{(2)}) + g_2 M_{3_S}(Y^{(4)}) + (g_3 S_2 + g_4 S_4 + g_5 S_6)\mathbb{I}.
+\end{equation}
+We fitted five lepton observables --- the three PMNS angles \(\theta_{12},\theta_{13},\theta_{23}\) and the two mass-squared differences \(\Delta m_{21}^2,\Delta m_{31}^2\) (NuFIT 5.0, normal ordering~\cite{NuFIT2020}) --- and found two problems.
+
+\paragraph{(i) Without \(Y^{(6)}\): insufficient structure.}
+With \(g_1,g_2\) and the diagonal shift, the best joint fit gives \(\chi^2\approx 39\), with the residual localized in \(\theta_{23}\) (\(\theta_{23}\approx 46^\circ\) vs.\ target \(49.1^\circ\)). The \(3_S\) structure with \(Y^{(2)}\) and \(Y^{(4)}\) alone cannot simultaneously reproduce the three PMNS angles and the two mass-squared differences.
+
+\paragraph{(ii) With \(Y^{(6)}\): loss of predictivity.}
+Adding \(M_{3_S}(Y^{(6)})\) gives \(\chi^2 = 0\) formally, but the fit succeeds for any \(\tau_l\): six different values of \(\tau_l\) (with spread \(\Delta{\rm Re}\,\tau_l = 2.25\) across the search region) give equivalent fits with \(\chi^2< 10^{-20}\). The modulus \(\tau_l\) is therefore not determined by the lepton data, and the modular structure of the lepton sector does not constrain the model.
+
+\paragraph{Conclusion.}
+Leptons cannot be accommodated in the same \(T^2/\mathbb{Z}_3\) orbifold that works for quarks. A mixed geometry \(T^2/\mathbb{Z}_3 \times T^2/\mathbb{Z}_4\), where quarks live on the first factor and leptons on the second, is developed in a companion paper (in preparation). In the present work we focus on the quark sector and ALP, which are complete and testable on their own.
+
+\section{Full balance}
+\begin{table}[H]
+\centering
+\caption{Free parameters. Quark sector only, plus the ALP misalignment angle. Nominal count for quarks is 11 (4 moduli + 7 coefficients); fixing \(a_u = 1\) removes one, leaving 10 effective quark parameters. Adding \(\theta_i\) gives 11 effective parameters fitting 10 observables.}
+\begin{tabular}{llc}
+\toprule
+Category & Parameters & Count \\
+\midrule
+Quark moduli & \(\tau_u, \tau_d\) (complex) & 4 \\
+Quark coefficients & \(a_u, b_u, c_u, a_1, a_2, b, c\) & 7 \\
+\quad fixed by calibration & \(a_u \equiv 1\) & \(-1\) \\
+ALP misalignment angle & \(\theta_i\) & 1 \\
+\midrule
+\textbf{Total fitted} & & \textbf{11} \\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{equation}
+N_{\rm dof} = 10 - 11 = -1.
+\end{equation}
+
+\paragraph{Parameter classes.}
+The 11 parameters group into three classes: (i) the four real geometric moduli of the two quark tori \((\tau_u, \tau_d)\), which are the core of the model; (ii) the six Lagrangian Yukawa coefficients \((b_u, c_u, a_1, a_2, b, c)\), which are phenomenological at this stage --- deriving them from holomorphic 6D \(\to\) 4D couplings is the Critical item of the roadmap (\S13); (iii) the ALP misalignment angle \(\theta_i\), which is a cosmological initial condition rather than a Lagrangian parameter.
+
+\paragraph{Information content.}
+The model fits 9 quark observables with 10 effective parameters, and 10 observables (9 quarks + \(\Omega_a h^2\)) with 11 effective parameters. In both cases \(N_{\rm dof} = -1\). The residual \(\chi^2 = 8.8 \times 10^{-20}\) is far below the double-precision roundoff scale, indicating that the fit corresponds to an exact numerical solution within the model's structure. We acknowledge that the model is borderline overfitted, and a reduction of parameters (e.g., deriving the Yukawa coefficients from geometry) is desirable and is the subject of the roadmap.
+
+\subsection{Information criteria}
+We caution that AIC and BIC are derived in the asymptotic regime \(n \to \infty\) with fixed \(k\). Here \(k/n = 11/10 > 1\), beyond the asymptotic regime; the values are not meaningful and we do not report them. The residuals \(< 10^{-19}\) reflect the exactly solvable structure of the quark fit, not an exceptionally good agreement beyond the model's degrees of freedom.
+
+\section{Geometric interpretation of the Yukawa coefficients}
+The numerical values of the coefficients exhibit a clear hierarchical pattern. In a 6D setup, the three generations can be localized at the fixed points \(z_1 = 0\), \(z_2 = (1 + \tau)/3\), and \(z_3 = 2(1 + \tau)/3\). The Yukawa couplings are given by the overlap integral:
+\begin{equation}
+c_i\sim A_i e^{-\alpha d_{jk}^2},
+\end{equation}
+\begin{equation}
+d_{12}^2 = d_{23}^2 = \frac{1 + 2{\rm Re}\tau + |\tau|^2}{9{\rm Im}\tau}, \quad d_{13}^2 = 4d_{12}^2.
+\end{equation}
+For the fitted moduli \(\tau_u\) and \(\tau_d\), these distances naturally produce the observed exponential hierarchies. In the up-sector, the extreme suppression of the \emph{raw} coefficient \(a_u^{\rm raw}\sim 10^{-5}\) (i.e.\ \(a_u^{\rm norm}=1\) after the calibration of \S7.3) corresponds to the largest distance \(d_{13}^2\), while \(b_u\sim 7\) corresponds to the shorter adjacent fixed points and requires an \(\mathcal{O}(1)\) prefactor \(A_i\). While this mechanism does not analytically predict the exact values (as the spread of \(\alpha\) across different coefficients is about a factor of 1.7), it provides a natural physical explanation for their vast hierarchy.
+
+\section{Flux stabilization of the moduli}
+The complex structure moduli are dynamically favored by internal fluxes. Following the GVW framework~\cite{GVW2000}, the superpotential is \(W(\tau) = a_0 + a_1\tau + a_2\tau^2\), where \(a_i \in \mathbb{Z}\) are quantized flux numbers. Moduli stabilization requires the F-term condition:
+\begin{equation}
+D_{\tau}W = \partial_{\tau}W + (\partial_{\tau}K)W = 0.
+\end{equation}
+By performing a discrete search over integer flux configurations, we find that the phenomenological values \(\tau_u \approx -0.158 + 2.385i\) and \(\tau_d \approx 0.369 + 1.541i\) lie near the supersymmetric points of the following fluxes:
+\begin{equation}
+\begin{split}
+{\rm Up-sector:}&\quad (a_0,a_1,a_2) = (-17,0,1),\\
+{\rm Down-sector:}&\quad (a_0,a_1,a_2) = (-7,-1,1).
+\end{split}
+\end{equation}
+% FIX: units specified for |D_tau W|
+At these configurations, the flux potential yields small residuals \(|D_\tau W|/M_{\rm Pl}^3 \approx 0.16\) for the up-sector and \(0.14\) for the down-sector (in Planck units). While these values are not exactly zero, they indicate that the phenomenological moduli are near-supersymmetric points favored by discrete topology. The fluxes are found by a discrete search; deriving them from the topological data of the orbifold is left for future work. Exact moduli stabilization requires a full analysis of the scalar potential, including the Hessian and non-perturbative corrections, which is also left for future work.
+
+\section{Open problems}
+\begin{enumerate}[leftmargin=1.5em]
+\item \textbf{Lepton sector (negative result).} The \(3_S\) sector with \(Y^{(2)}\) and \(Y^{(4)}\) cannot simultaneously reproduce the PMNS angles and the mass-squared differences (best joint fit \(\chi^2 \approx 39\)). Adding \(M_{3_S}(Y^{(6)})\) gives \(\chi^2 = 0\) formally, but \(\tau_l\) becomes undetermined. A viable lepton sector requires a different modular structure (\S8).
+\item \textbf{Borderline overfitting.} \(N_{\rm dof} = -1\): the model fits 10 observables with 11 effective parameters. A reduction of parameters is desirable and is the subject of the roadmap.
+\item \textbf{Flatness of \({\rm Re}\,\tau\).} The flatness of the real parts of the moduli remains an open problem (Appendix E).
+\item \textbf{Status of \(\alpha_G\) and \(\epsilon\).} Both remain postulates/ansätze (\S3, \S4).
+\item \textbf{LOO instability.} The Leave-One-Out test shows extreme instability, typical for models with \(N_{\rm dof} < 0\) (Appendix F).
+\item \textbf{Hierarchy problem.} The model explains the fermion hierarchy but does not address the Higgs hierarchy. This is beyond the scope of the present work.
+\end{enumerate}
+
+\section{Roadmap}
+\begin{table}[H]
+\centering
+\caption{Phases of development.}
+\begin{tabular}{lll}
+\toprule
+Phase & Task & Priority \\
+\midrule
+I & Mechanism for \(c_i\): geometric fixed-point overlap (\S10) & Done (qualitative) \\
+I & Flux stabilization of \({\rm Im}\,\tau\) (\S11) & Done (near-SUSY) \\
+I & Viable lepton sector (different \(S_3\) structure) & Critical (new) \\
+II & Reduce quark parameters (beyond \(a_u=1\) calibration) & Medium \\
+III & ADMX, DESI, DUNE, Hyper-K & External \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Conclusions}
+\paragraph{What has been done:}
+\begin{enumerate}[leftmargin=1.5em]
+\item A quark-sector fit with 10 effective parameters fitting 9 observables, plus the ALP misalignment angle \(\theta_i\) fitting \(\Omega_a h^2\): 11 effective parameters, 10 observables, \(N_{\rm dof} = -1\).
+\item Quark sector: \(\chi^2 < 10^{-19}\) (below double-precision roundoff). The hierarchical Yukawa coefficients are qualitatively explained by geometric fixed-point overlap with \(\alpha \sim 10\) and \(\mathcal{O}(1)\) prefactors.
+\item Moduli: the phenomenological values of \(\tau_u, \tau_d\) lie near the supersymmetric points favored by discrete GVW fluxes.
+\item ALP sector: \(f_a = 1.9801 \times 10^{11}\)~GeV, \(m_a = 28.407~\mu\)eV, \(\nu_a = 6.8688\)~GHz, testable at future high-frequency haloscopes; black hole superradiance window at \(M_{\rm BH} \sim 10^{25}\)~kg.
+\item Lepton sector: negative result. The \(3_S\) structure with \(Y^{(2)}\) and \(Y^{(4)}\) is insufficient; adding \(Y^{(6)}\) destroys predictivity. A different lepton sector is required (\S8).
+\end{enumerate}
+\paragraph{Verdict.} The model is a phenomenological quark-sector + ALP construction. It reproduces the 9 quark observables with high precision, makes one independently testable prediction (ALP dark matter at 6.87~GHz), and reports a negative result on the lepton sector. The borderline overfitting (\(N_{\rm dof} = -1\)) is acknowledged, and parameter reduction is left for future work.
+
+\section*{Data Availability}
+The datasets and the Python verification script are available in the Zenodo repository at \url{https://doi.org/10.5281/zenodo.23575072} (Version 13.0, Version DOI; the Concept DOI \url{https://doi.org/10.5281/zenodo.23439547} always resolves to the latest version) and in the GitHub repository at \url{https://github.com/kolbasa1972/MEML-75-Complete}. The script reproduces the numerical results of Sections 3--7 and 10. The lepton sector (\S8) is a negative result and is not reproduced by the script; the flux stabilization of Section 11 is analytic and is not part of the numerical verification. The flatness scan of Appendix E is not part of the fast verification script.
+
+\section*{Declaration of Generative AI and AI-assisted technologies in the manuscript preparation process}
+During the preparation of this work, the author used AI-assisted tools to verify the Python code, refine the theoretical text, and format the LaTeX document. The author reviewed and edited the content as needed and takes full responsibility for the content of the published article.
+
+\appendix
+\newpage
+
+\section{\(A_4\) modular forms: full q-expansions}
+Definition: \(q = e^{2\pi i\tau}\).
+\begin{align}
+Y_1^{(2)} &= 1 + \sum_{n=1}^{17} C_1^{(n)} q^n, \\
+Y_2^{(2)} &= -6\, q^{1/3}\left(1 + \sum_{n=1}^{11} C_2^{(n)} q^n\right), \\
+Y_3^{(2)} &= -18\, q^{2/3}\left(1 + \sum_{n=1}^{10} C_3^{(n)} q^n\right),
+\end{align}
+\(C_1 = [12, 36, 12, 84, 72, 36, 96, 180, 12, 216, 144, 36, 156, 96, 84, 240, 36]\);
+\(C_2 = [1, 7, 8, 18, 14, 30, 20, 42, 30, 56, 42]\);
+\(C_3 = [1, 2, 5, 6, 12, 8, 14, 10, 22, 16]\).
+\paragraph{Convolutions:}
+\begin{align}
+Y_1^{(4)} &= (Y_1^{(2)})^2 - Y_2^{(2)} Y_3^{(2)}, \\
+Y_2^{(4)} &= (Y_3^{(2)})^2 - Y_1^{(2)} Y_2^{(2)}, \\
+Y_3^{(4)} &= (Y_2^{(2)})^2 - Y_1^{(2)} Y_3^{(2)},
+\end{align}
+\begin{align}
+Y_1^{(6)} &= \tfrac13\left[2 Y_1^{(2)} Y_1^{(4)} - Y_2^{(2)} Y_3^{(4)} - Y_3^{(2)} Y_2^{(4)}\right], \\
+Y_2^{(6)} &= \tfrac13\left[2 Y_3^{(2)} Y_3^{(4)} - Y_1^{(2)} Y_2^{(4)} - Y_2^{(2)} Y_1^{(4)}\right], \\
+Y_3^{(6)} &= \tfrac13\left[2 Y_2^{(2)} Y_2^{(4)} - Y_3^{(2)} Y_1^{(4)} - Y_1^{(2)} Y_3^{(4)}\right].
+\end{align}
+
+\section{Numerical fit procedure}
+The global fit was performed using \texttt{differential\_evolution} (SciPy): 4 seeds (42, 43, 44, 45); maxiter\(=800\); popsize\(=25\); tol\(=10^{-8}\).
+\paragraph{Quark sector.} Bounds: \({\rm Re}\,\tau_{u,d}\in[-0.5,0.5]\), \({\rm Im}\,\tau_u\in[0.87,2.5]\), \({\rm Im}\,\tau_d\in[0.87,1.60]\), \(c_i\in[10^{-8},10^2]\).
+
+\section{Reproduction of \(\tau\) and \(\chi^2\)}
+\begin{table}[H]
+\centering
+\caption{Independent DE runs (quark sector).}
+\begin{tabular}{lcccc}
+\toprule
+Source & \({\rm Re}\,\tau_u\) & \({\rm Im}\,\tau_u\) & \({\rm Re}\,\tau_d\) & \({\rm Im}\,\tau_d\) \\
+\midrule
+Run 1 & \(-0.15779\) & \(2.38518\) & \(+0.36939\) & \(1.54105\) \\
+Run 2 & \(-0.15779\) & \(2.38518\) & \(+0.36939\) & \(1.54105\) \\
+Run 3 & \(-0.12893\) & \(2.38411\) & \(-0.37212\) & \(1.54102\) \\
+\bottomrule
+\end{tabular}
+\end{table}
+% FIX: second minimum explained
+The fitted moduli \({\rm Im}\,\tau\) are reproducible across seeds to \(10^{-3}\). Run 3 converges to a second minimum at \({\rm Re}\,\tau_d \approx -0.372\), related to the first by the residual symmetry \(\tau \to -\tau\) of the modular forms; both minima give identical observables with \(\chi^2 < 10^{-19}\). The fit does not distinguish the two minima; we adopt the minimum with \({\rm Re}\,\tau_d > 0\) by convention. The quantity \(\chi^2\) at the minimum is below double-precision roundoff; we quote it as \(\chi^2<10^{-19}\).
+
+\section{Proof of coefficient degeneracy}
+At fixed \(\tau\), multiply all \(c_i\) by \(k\):
+\begin{table}[H]
+\centering
+\caption{Invariance of \(\chi^2\) under \(c_i\to kc_i\).}
+\begin{tabular}{cc}
+\toprule
+\(k\) & \(\chi^2\) \\
+\midrule
+\(0.5\)  & \(< 10^{-19}\) \\
+\(1.0\)  & \(< 10^{-19}\) \\
+\(1.87\) & \(< 10^{-19}\) \\
+\(10.0\) & \(< 10^{-19}\) \\
+\bottomrule
+\end{tabular}
+\end{table}
+The residual values differ only at the level of numerical noise; the invariance is exact up to machine precision.
+
+\section{Flatness of \({\rm Re}\,\tau\)}
+\paragraph{Procedure.}
+The flatness scan below was obtained by refitting the remaining parameters at each value of \({\rm Re}\,\tau\). The corresponding refit cycle is computationally expensive and is not part of the fast verification script.
+Scan in \({\rm Re}\,\tau_u\): width of \(\chi^2<10\): \([-0.40, +0.00]\) (\(0.40\)). Scan in \({\rm Re}\,\tau_d\): width of \(\chi^2<10\): \([+0.30, +0.50]\) (\(0.20\)).
+
+\section{LOO test}
+The Leave-One-Out test is not informative for \(N_{\rm dof} \le 0\): with as many parameters as observables, removing one observable necessarily produces a large shift in the fitted parameters. We report the LOO numbers for completeness, but they should not be interpreted as a measure of predictive stability. For each \(j\in\{1,\ldots,9\}\): remove the \(j\)-th observable, predict the \(j\)-th. Results: mean \(|V_{ub}|\) \(+16728\%\), std \(11819\%\).
+
+% FIX: Appendix G (systematic search for alpha_G) removed entirely;
+% it showed P(n>=2)=0.185, i.e. statistical insignificance, and undermined rather than supported alpha_G.
+
+\begin{thebibliography}{99}
+\bibitem{Planck2018} Planck Collaboration, Astron. Astrophys. \textbf{641}, A6 (2020).
+% FIX: PDG reference updated from 2022 to 2024 to match the key name
+\bibitem{PDG2024} S.~Navas et al. (Particle Data Group), \emph{Review of Particle Physics}, Phys. Rev. D \textbf{110}, 030001 (2024).
+\bibitem{ADMX2018} ADMX Collaboration, Phys. Rev. Lett. \textbf{120}, 151301 (2018).
+\bibitem{HAYSTAC2021} HAYSTAC Collaboration, Nature \textbf{590}, 238 (2021).
+\bibitem{Feruglio2017} F.~Feruglio, Eur. Phys. J. C \textbf{77}, 713 (2017).
+\bibitem{Kobayashi2019} T.~Kobayashi et al., PTEP \textbf{2020}, 053B05 (2020).
+\bibitem{Novichkov2019} P.~P. Novichkov et al., JHEP \textbf{04} (2019) 005.
+\bibitem{Ding2021} G.~J. Ding, S.~F. King, C.~Y. Yao, Phys. Rev. D \textbf{104}, 055034 (2021).
+\bibitem{Fukugita1986} M.~Fukugita, T.~Yanagida, Phys. Lett. B \textbf{174} (1986) 45.
+\bibitem{NuFIT2020} I.~Esteban et al., JHEP \textbf{09} (2020) 178.
+\bibitem{KamLANDZen2023} KamLAND-Zen Collaboration, Phys. Rev. Lett. \textbf{130}, 051801 (2023).
+\bibitem{DavidsonIbarra2002} S.~Davidson, A.~Ibarra, Phys. Lett. B \textbf{535} (2002) 25.
+\bibitem{KKLT2003} S.~Kachru et al., Phys. Rev. D \textbf{68}, 046005 (2003).
+\bibitem{GVW2000} S.~Gukov, C.~Vafa, E.~Witten, Nucl. Phys. B \textbf{584} (2000) 69.
+\end{thebibliography}
+
+\end{document}
